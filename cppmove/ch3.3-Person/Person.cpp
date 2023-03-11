@@ -293,8 +293,44 @@ namespace p53cd
 
 		Person p{ "Tina", "fox" };
 
-		coll.push_back(p);            // ? [B7] OK, copies p
-		coll.push_back(std::move(p)); // ? [D7] OK, copies p (as fallback)
+		coll.push_back(p);            // [B7]? OK, copies p
+		coll.push_back(std::move(p)); // [D7]? OK, copies p (as fallback)
+	}
+}
+
+
+namespace B5B7
+{
+	class Person
+	{
+	public:
+		std::string sur, giv;
+		Person(const char* s, const char* g)
+			: sur{ s }, giv{ g } {}
+
+	public:
+		// Omit copy constructor/assignment.
+
+		// Declare move constructor/assignment.
+		Person(Person&&) = default;
+		Person& operator=(Person&&) = default;
+
+		// Add own dtor!
+		~Person() { }
+	};
+
+	void test()
+	{
+		std::vector<Person> coll;
+
+		Person p{ "Tina", "fox" };
+
+#ifdef SEE_ERROR_B5B7
+		// [Chj] Will this choose B5(copy-ctor deleted)
+		// or B7(use default copy-ctor)?
+		// Result is B5.
+		coll.push_back(p);
+#endif
 	}
 }
 
