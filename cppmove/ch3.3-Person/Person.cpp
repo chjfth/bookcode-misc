@@ -116,9 +116,10 @@ namespace p51
 	public:
 		// NO copy constructor declared.
 		
-		// move constructor/assignment declared:
+		// move constructor/assignment positively declared:
 		Person(Person&&) = default;
 		Person& operator=(Person&&) = default; //Chj: writing `=delete` (same result here)
+
 	};
 
 	void test_p51()
@@ -135,6 +136,80 @@ namespace p51
 		coll.push_back(Person{ "Ben", "Cook" }); // [D5]
 	}
 }
+
+
+namespace p52a
+{
+	// p52a: Declared-moving deletes copying.
+
+	class Person
+	{
+	public:
+		std::string sur, giv;
+		Person(const char* s, const char* g)
+			: sur{ s }, giv{ g } {}
+
+	public:
+		// NO copy constructor declared.
+
+		// move constructor/assignment declared as deleted:
+		Person(Person&&) = delete; // ! delete, diff to p51
+		Person& operator=(Person&&) = delete;
+	};
+
+	void test_p52a()
+	{
+		std::vector<Person> coll;
+
+		Person p{ "Tina", "fox" };
+
+#ifdef SEE_ERROR_p52a1
+		coll.push_back(p);            // [B5] ERROR: copying disabled
+#endif
+#ifdef SEE_ERROR_p52a2
+		coll.push_back(std::move(p)); // [D5] ERROR: moving disabled
+#endif
+	}
+}
+
+
+namespace p52b
+{
+	// p52a: Declared-moving deletes copying.
+
+	class Person
+	{
+	public:
+		std::string sur, giv;
+		Person(const char* s, const char* g)
+			: sur{ s }, giv{ g } {}
+
+	public:
+		// Copy constructor/assignment declared as deleted:
+		Person(const Person&) = delete; // ! delete, diff to p50
+		Person& operator=(const Person&) = delete;
+
+		// Chj: Leave move-ctor/assignment as "default" proposal,
+		// which fallback to copy-ctor/assignment,
+		// resulting in "deleted" as well.
+	};
+
+	void test_p52b()
+	{
+		std::vector<Person> coll;
+
+		Person p{ "Tina", "fox" };
+
+#ifdef SEE_ERROR_p52b1
+		coll.push_back(p);            // [B5] ERROR: copying disabled
+#endif
+#ifdef SEE_ERROR_p52b2
+		coll.push_back(std::move(p)); // [D5] ERROR: moving disabled
+#endif
+	}
+}
+
+
 
 int main(int argc, char* argv[])
 {
