@@ -224,7 +224,7 @@ namespace p53c
 
 		// Add own ctor!
 		// Result: move-ctor fallbacks to copy-ctor.
-		~Person() { }
+		Person() { }
 	};
 
 	void test_p53c()
@@ -233,8 +233,8 @@ namespace p53c
 
 		Person p{ "Tina", "fox" };
 
-		coll.push_back(p);            // [B0] OK, copies p
-		coll.push_back(std::move(p)); // [D0] OK, copies p (as fallback)
+		coll.push_back(p);            // [B0] OK, copies p (default copy-tor)
+		coll.push_back(std::move(p)); // [D0] OK, moves p  (default move-tor)
 	}
 }
 
@@ -268,6 +268,37 @@ namespace p53d
 	}
 }
 
+namespace p53cd
+{
+	class Person
+	{
+	public:
+		std::string sur, giv;
+		Person(const char* s, const char* g)
+			: sur{ s }, giv{ g } {}
+
+	public:
+		// Omit copy constructor/assignment.
+		// Omit move constructor/assignment.
+
+		// Add own ctor & dtor!
+		// Result: move-ctor fallbacks to copy-ctor.
+		Person() { }
+		~Person() { }
+	};
+
+	void test_p53cd()
+	{
+		std::vector<Person> coll;
+
+		Person p{ "Tina", "fox" };
+
+		coll.push_back(p);            // ? [B7] OK, copies p
+		coll.push_back(std::move(p)); // ? [D7] OK, copies p (as fallback)
+	}
+}
+
+
 
 int main(int argc, char* argv[])
 {
@@ -283,6 +314,7 @@ int main(int argc, char* argv[])
 
 	p53c::test_p53c();
 	p53d::test_p53d();
+	p53cd::test_p53cd();
 
 	return 0;
 }
