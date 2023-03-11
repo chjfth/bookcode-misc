@@ -11,8 +11,7 @@ namespace p50z
 	class Person
 	{
 	public:
-		std::string sur;
-		std::string giv;
+		std::string sur, giv;
 		
 	public:
 		// NO copy constructor/assignment declared
@@ -40,8 +39,7 @@ namespace p50
 	class Person
 	{
 	public:
-		std::string sur;
-		std::string giv;
+		std::string sur, giv;
 		Person(const char* s, const char* g)
 			: sur{s}, giv{g} {}
 
@@ -73,8 +71,7 @@ namespace p50b
 	class Person
 	{
 	public:
-		std::string sur;
-		std::string giv;
+		std::string sur, giv;
 		Person(const char* s, const char* g)
 			: sur{ s }, giv{ g } {}
 
@@ -83,7 +80,7 @@ namespace p50b
 		Person(const Person&) = default;
 		Person& operator=(const Person&) = default;
 
-#ifdef SEE_ERROR
+#ifdef SEE_ERROR_p50b1
 		// Mark move-ctor deleted.
 		Person(Person&&) = delete;
 #endif
@@ -96,7 +93,7 @@ namespace p50b
 		Person p{ "Tina", "fox" };
 
 		coll.push_back(p);            // [C0] OK, copies p
-#ifdef SEE_ERROR
+#ifdef SEE_ERROR_p50b1
 		coll.push_back(std::move(p)); // ERROR compile.
 #endif
 	}
@@ -107,9 +104,36 @@ namespace p50b
 
 namespace p51
 {
-	// p51: Declared-moving disables copying.
+	// p51: Declared-moving deletes copying.
 
-	
+	class Person
+	{
+	public:
+		std::string sur, giv;
+		Person(const char* s, const char* g)
+			: sur{ s }, giv{ g } {}
+
+	public:
+		// NO copy constructor declared.
+		
+		// move constructor/assignment declared:
+		Person(Person&&) = default;
+		Person& operator=(Person&&) = default; //Chj: writing `=delete` (same result here)
+	};
+
+	void test_p51()
+	{
+		std::vector<Person> coll;
+
+		Person p{ "Tina", "fox" };
+
+#ifdef SEE_ERROR_p51
+		coll.push_back(p);            // [B5] ERROR: copying deleted
+#endif
+		coll.push_back(std::move(p)); // [D5] OK, moves p
+
+		coll.push_back(Person{ "Ben", "Cook" }); // [D5]
+	}
 }
 
 int main(int argc, char* argv[])
@@ -121,6 +145,8 @@ int main(int argc, char* argv[])
 	p50z::test_p50z();
 
 	p50::test_p50();
+
+	p51::test_p51();
 
 	return 0;
 }
