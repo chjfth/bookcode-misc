@@ -25,7 +25,7 @@ namespace p50z
 
 		std::vector<Person> coll;
 		Person p { "Tina", "Fox" };
-		coll.push_back(p);            // [C0] OK, copies p
+		coll.push_back(p);            // [B0] OK, copies p
 		coll.push_back(std::move(p)); // [D0] OK, moves p	
 	}
 
@@ -46,7 +46,7 @@ namespace p50
 	public:
 		// copy constructor/assignment declared:
 		Person(const Person&) = default;
-		Person& operator=(const Person&) = default;
+		Person& operator=(const Person&) = delete;
 		
 		// NO move constructor/assignment declared
 	};
@@ -57,7 +57,7 @@ namespace p50
 
 		Person p{ "Tina", "fox" };
 		
-		coll.push_back(p);            // [C0] OK, copies p
+		coll.push_back(p);            // [B3] OK, copies p
 		coll.push_back(std::move(p)); // [D3] OK, copies p (as fallback)
 	}
 	
@@ -80,9 +80,9 @@ namespace p50b
 		Person(const Person&) = default;
 		Person& operator=(const Person&) = default;
 
-#ifdef SEE_ERROR_p50b1
+#ifdef SEE_ERROR_p50b_vc
 		// Mark move-ctor deleted.
-		Person(Person&&) = delete;
+		Person(Person&&) = delete; // VC2019 ERROR on this, but gcc-12 not.
 #endif
 	};
 
@@ -140,7 +140,7 @@ namespace p51
 
 namespace p52a
 {
-	// p52a: Declared-moving deletes copying.
+	// p52a: Delete both copy-ctor and move-ctor.
 
 	class Person
 	{
@@ -164,10 +164,10 @@ namespace p52a
 		Person p{ "Tina", "fox" };
 
 #ifdef SEE_ERROR_p52a1
-		coll.push_back(p);            // [B5] ERROR: copying disabled
+		coll.push_back(p);            // [B5] ERROR: copying implicitly deleted
 #endif
 #ifdef SEE_ERROR_p52a2
-		coll.push_back(std::move(p)); // [D5] ERROR: moving disabled
+		coll.push_back(std::move(p)); // [D5] ERROR: moving explicitly deleted
 #endif
 	}
 }
@@ -175,7 +175,7 @@ namespace p52a
 
 namespace p52b
 {
-	// p52a: Declared-moving deletes copying.
+	// p52b: Delete both copy-ctor and move-ctor. (better)
 
 	class Person
 	{
@@ -204,6 +204,44 @@ namespace p52b
 		coll.push_back(p);            // [B5] ERROR: copying disabled
 #endif
 #ifdef SEE_ERROR_p52b2
+		coll.push_back(std::move(p)); // [D5] ERROR: moving disabled
+#endif
+	}
+}
+
+
+namespace p52c
+{
+	// p52c: Delete move-ctor but enable copy-ctor, OK but no actual sense.
+
+	class Person
+	{
+	public:
+		std::string sur, giv;
+		Person(const char* s, const char* g)
+			: sur{ s }, giv{ g } {}
+
+	public:
+		// copy constructor positive declared:
+		Person(const Person& p) = default;
+		Person& operator=(const Person&) = default;
+
+		// move constructor/assignment declared as deleted:
+		Person(Person&&) = delete;
+		Person& operator=(Person&&) = delete;
+	};
+
+	void test_p52c()
+	{
+		std::vector<Person> coll;
+
+		Person p{ "Tina", "fox" };
+
+#ifdef SEE_ERROR_p52c_vc
+		// VC2019 ERROR on this, but gcc-12 not.
+		coll.push_back(p);            // [B3] OK(gcc): copying enabled
+#endif
+#ifdef SEE_ERROR_p52c2
 		coll.push_back(std::move(p)); // [D5] ERROR: moving disabled
 #endif
 	}
