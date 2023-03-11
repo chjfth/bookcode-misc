@@ -64,44 +64,6 @@ namespace p50
 } // namespace p50
 
 
-namespace p50b
-{
-	// [Chj] Based on p50, plus: mark move-ctor =deleted.
-
-	class Person
-	{
-	public:
-		std::string sur, giv;
-		Person(const char* s, const char* g)
-			: sur{ s }, giv{ g } {}
-
-	public:
-		// copy constructor/assignment declared:
-		Person(const Person&) = default;
-		Person& operator=(const Person&) = default;
-
-#ifdef SEE_ERROR_p50b_vc
-		// Mark move-ctor deleted.
-		Person(Person&&) = delete; // VC2019 ERROR on this, but gcc-12 not.
-#endif
-	};
-
-	void test_p50b()
-	{
-		std::vector<Person> coll;
-
-		Person p{ "Tina", "fox" };
-
-		coll.push_back(p);            // [C0] OK, copies p
-#ifdef SEE_ERROR_p50b1
-		coll.push_back(std::move(p)); // ERROR compile.
-#endif
-	}
-
-} // namespace p50
-
-
-
 namespace p51
 {
 	// p51: Declared-moving deletes copying.
