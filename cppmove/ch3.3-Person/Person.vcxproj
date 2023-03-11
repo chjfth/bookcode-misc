@@ -97,6 +97,9 @@
       <PreprocessorDefinitions>;;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 
       <AdditionalIncludeDirectories>.;;$(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      
+      <LanguageStandard Condition=" $(Configuration.Contains('vs2019'))">stdcpp20</LanguageStandard>
+      
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
