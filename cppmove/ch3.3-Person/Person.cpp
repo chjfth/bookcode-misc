@@ -42,7 +42,8 @@ namespace p50
 	public:
 		std::string sur;
 		std::string giv;
-		Person(const char* s, const char* g) : sur{s}, giv{g} {}
+		Person(const char* s, const char* g)
+			: sur{s}, giv{g} {}
 
 	public:
 		// copy constructor/assignment declared:
@@ -65,11 +66,57 @@ namespace p50
 } // namespace p50
 
 
+namespace p50b
+{
+	// [Chj] Based on p50, plus: mark move-ctor =deleted.
+
+	class Person
+	{
+	public:
+		std::string sur;
+		std::string giv;
+		Person(const char* s, const char* g)
+			: sur{ s }, giv{ g } {}
+
+	public:
+		// copy constructor/assignment declared:
+		Person(const Person&) = default;
+		Person& operator=(const Person&) = default;
+
+#ifdef SEE_ERROR
+		// Mark move-ctor deleted.
+		Person(Person&&) = delete;
+#endif
+	};
+
+	void test_p50b()
+	{
+		std::vector<Person> coll;
+
+		Person p{ "Tina", "fox" };
+
+		coll.push_back(p);            // [C0] OK, copies p
+#ifdef SEE_ERROR
+		coll.push_back(std::move(p)); // ERROR compile.
+#endif
+	}
+
+} // namespace p50
+
+
+
+namespace p51
+{
+	// p51: Declared-moving disables copying.
+
+	
+}
+
 int main(int argc, char* argv[])
 {
-	setlocale(LC_ALL, "");
-	
 	printf("Hello, cppmove CH3.3 Person!\n");
+
+	// NOTE to  user: You need to observe the program behavior in a debugger.
 
 	p50z::test_p50z();
 
