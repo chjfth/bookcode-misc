@@ -41,8 +41,8 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230324-0000-0000-0000-122034000001}</ProjectGuid>
-    <ProjectName>basics</ProjectName>
-     <TargetName>basics</TargetName>
+    <ProjectName>basics-ch2</ProjectName>
+     <TargetName>$(ProjectName)</TargetName>
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
