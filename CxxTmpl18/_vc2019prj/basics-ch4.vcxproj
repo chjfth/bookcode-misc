@@ -40,8 +40,8 @@
   <!-- User project properties -->
   
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{20230324-0000-0000-0000-122034000001}</ProjectGuid>
-    <ProjectName>basics-ch2</ProjectName>
+    <ProjectGuid>{20230324-0000-0000-0000-122034000002}</ProjectGuid>
+    <ProjectName>basics-ch4</ProjectName>
      <TargetName>$(ProjectName)</TargetName>
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
@@ -154,7 +154,7 @@
     Source file list:
    -->
   <ItemGroup>
-    <ClCompile Include="basics-ch2.cpp" />
+    <ClCompile Include="basics-ch4.cpp" />
   </ItemGroup>
 
   <!-- MSBuild system stock Cpp.targets -->
