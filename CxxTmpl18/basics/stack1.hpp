@@ -1,3 +1,6 @@
+#ifndef __stack1_hpp_
+#define __stack1_hpp_
+
 #include <vector>
 #include <cassert>
 
@@ -34,3 +37,5 @@ T const& Stack<T>::top () const
     assert(!elems.empty());
     return elems.back();       // return copy of last element
 }
+
+#endif

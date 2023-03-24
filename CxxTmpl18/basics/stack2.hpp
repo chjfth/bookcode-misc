@@ -1,3 +1,6 @@
+#ifndef __stack2_hpp_
+#define __stack2_hpp_
+
 #include "stack1.hpp"
 #include <deque>
 #include <string>
@@ -33,3 +36,5 @@ std::string const& Stack<std::string>::top () const
     assert(!elems.empty());
     return elems.back();      // return copy of last element
 }
+
+#endif
