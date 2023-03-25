@@ -1,7 +1,9 @@
-#include <complex>
 #include <stdio.h>
+#include <complex>
 #include <iostream>
+#include <tuple>
 #include <vector>
+#include <array>
 
 namespace p55
 {
@@ -218,9 +220,45 @@ namespace p63
 	}
 }
 
+namespace p64
+{
+	using namespace ch4;
+
+	// type for arbitrary number of indices:
+	template<std::size_t...>
+	struct Indices {};
+
+	template<typename T, std::size_t... Idx>
+	void printByIdx(T t, Indices<Idx...>) // book p64
+	{
+		print(std::get<Idx>(t)...);
+	}
+
+	void test()
+	{
+		std::array<std::string, 5> arr = { "Hello", "my", "new", "!", "World" };
+		printByIdx(arr, Indices<0, 4, 3>());
+		
+		auto t = std::make_tuple(12, "monkeys", 2.0);
+		printByIdx(t, Indices<0, 1, 2>());
+	}
+
+	template<typename T, typename... TIdx>
+	void printByIdx_me(T t, TIdx... Idx)
+	{
+		print(t[Idx]...);
+	}
+
+	void test_me()
+	{
+		std::array<std::string, 5> arr = { "Hello", "my", "new", "!", "World" };
+		printByIdx_me(arr, 0, 4, 3);
+	}
+}
+
 int main()
 {
-	p63::test();
+	p64::test_me();
 //	p59::main();
 	
 	return 0;
