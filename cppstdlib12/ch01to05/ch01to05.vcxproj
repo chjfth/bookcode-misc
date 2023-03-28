@@ -319,9 +319,7 @@
     <ClCompile Include="ch01to05.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <!-- 
-    <ClInclude Include="ps_headers.h" />
-     -->
+    <ClInclude Include="Stringd.h" />
   </ItemGroup>
 
   <!-- MSBuild system stock Cpp.targets -->
