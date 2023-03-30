@@ -174,28 +174,32 @@ namespace p81_mod1
 	public:
 		FileDeleter (const std::string& fn)
 			: filename(fn) {
+			cout << "+FileDeleter() +'" << fn << "'\n";
 		}
-
 		~FileDeleter() {
-			cout << "~FileDeleter() called.\n";
+			cout << "~FileDeleter() '" << filename << "'\n";
 		}
-		
 		void operator () (std::ofstream* fp) {
-			fp->close(); // close.file
+			fp->close(); // close file, but keep file content for investigation
+		}
 
-			//std::remove(filename.c_str()); // don't delete, keep for investigate
+		FileDeleter(FileDeleter&& src)
+		{
+			cout << "+FileDeleter() move: '" << src.filename << "'\n";
+			filename = std::move(src.filename);
 		}
 	};
 
 	void main(const char* prg = "")
 	{
 		// create and open temporary file
-
 		const char* myfile = "tmpfile.txt";
 		auto ofile = new std::ofstream(myfile);
-		std::shared_ptr<std::ofstream> fp(ofile, FileDeleter(myfile));
+		std::shared_ptr<std::ofstream> spFile(ofile, FileDeleter(myfile));
 
-		(*fp) << "p81 main(): " << prg << endl;
+		cout << "[strt] Write to file\n";
+		(*spFile) << "p81 main(): " << prg << endl;
+		cout << "[done] Write to file\n";
 	}
 }
 
