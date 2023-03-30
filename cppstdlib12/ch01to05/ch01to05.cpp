@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 #include <memory>
@@ -138,8 +139,69 @@ namespace p80_user_deleter
 	}
 }
 
+namespace p81_orig 
+{
+	class FileDeleter // util/sharedptr2.cpp
+	{
+	private:
+		std::string filename;
+	public:
+		FileDeleter (const std::string& fn)
+			: filename(fn) {
+		}
+		void operator () (std::ofstream* fp) {
+			fp->close(); // close.file
+			std::remove(filename.c_str()); // delete file
+		}
+	};
+
+	void main(const char *prg="")
+	{
+		// create and open temporary file
+		std::shared_ptr<std::ofstream> fp(
+			new std::ofstream("tmpfile.txt"),
+			FileDeleter("tmpfile.txt")
+		);
+	}
+}
+
+namespace p81_mod1
+{
+	class FileDeleter
+	{
+	private:
+		std::string filename;
+	public:
+		FileDeleter (const std::string& fn)
+			: filename(fn) {
+		}
+
+		~FileDeleter() {
+			cout << "~FileDeleter() called.\n";
+		}
+		
+		void operator () (std::ofstream* fp) {
+			fp->close(); // close.file
+
+			//std::remove(filename.c_str()); // don't delete, keep for investigate
+		}
+	};
+
+	void main(const char* prg = "")
+	{
+		// create and open temporary file
+
+		const char* myfile = "tmpfile.txt";
+		auto ofile = new std::ofstream(myfile);
+		std::shared_ptr<std::ofstream> fp(ofile, FileDeleter(myfile));
+
+		(*fp) << "p81 main(): " << prg << endl;
+	}
+}
+
 
 int main(int argc, char *argv[])
 {
 	p80_user_deleter::main();
+	p81_mod1::main(argv[0]);
 }
