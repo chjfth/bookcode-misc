@@ -201,6 +201,20 @@ namespace p81_mod1
 		(*spFile) << "p81 main(): " << prg << endl;
 		cout << "[done] Write to file\n";
 	}
+
+	void test_reset(const char* prg = "")
+	{
+		// create and open temporary file
+		const char* myfile = "tmpfile_p81mod.txt";
+		auto ofile = new std::ofstream(myfile);
+		std::shared_ptr<std::ofstream> spFile(ofile, FileDeleter(myfile));
+
+		(*spFile) << "p81 test_reset(): " << prg << endl;
+
+		spFile.reset();
+
+		cout << "test_reset() return.\n";
+	}
 }
 
 #ifdef __linux__ // __USE_POSIX
@@ -271,7 +285,7 @@ namespace p82
 
 int main(int argc, char *argv[])
 {
-	p82::main();
+	p81_mod1::test_reset(argv[0]);
 	
 //	p80_user_deleter::main();
 //	p81_mod1::main(argv[0]);
