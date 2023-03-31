@@ -90,13 +90,13 @@ namespace p77
 	}
 }
 
-namespace p80_user_deleter
+namespace p80_custom_deleter
 {
 	void main()
 	{
 		// two shared pointers representing two persons by their name
 		shared_ptr<string> pNico(new string("nico"), 
-			[](string* p)
+			[](string* p) // lambda deleter
 			{
 				cout << "Custom delete: " << *p << endl;
 			});
@@ -139,7 +139,7 @@ namespace p80_user_deleter
 	}
 }
 
-namespace p81_orig 
+namespace p81_FileDeleter_orig 
 {
 	class FileDeleter // util/sharedptr2.cpp
 	{
@@ -349,7 +349,9 @@ namespace p87
 	{
 		shared_ptr<Person> mom(new Person(name + "'s mom"));
 		shared_ptr<Person> dad(new Person(name + "'s dad"));
+
 		shared_ptr<Person> kid(new Person(name, mom, dad));
+
 		mom->kids.push_back(kid);
 		dad->kids.push_back(kid);
 		return kid;
@@ -367,11 +369,44 @@ namespace p87
 		cout << "jim's family exists" << endl;
 	}
 
+	void test_empty_weakptr() 
+	{
+		shared_ptr<Person> p = initFamily("nico");
+		cout << "nico's family exists" << endl;
+		cout << "- nico is shared " << p.use_count() << " times" << endl;
+		cout << "- name of 1st kid of nico's mom: "
+			<< p->mother->kids[0].lock()->name << endl;
+
+		shared_ptr<Person> mom1 = p->mother;
+
+		p = initFamily("jim");
+		cout << "jim's family exists" << endl;
+
+		// ==== Chj test ====
+		auto kid0  = mom1->kids[0];
+		auto nico0 = mom1->kids[0].lock();
+		cout << " # Chj checking nico-mon's kid again: " << nico0 << endl;
+
+		/* VC2019 output:
+nico's family exists
+- nico is shared 1 times
+- name of 1st kid of nico's mom: nico
+delete nico
+delete nico's dad
+jim's family exists
+ # Chj checking nico-mon's kid again: 0000000000000000
+delete nico's mom
+delete jim
+delete jim's dad
+delete jim's mom
+		*/
+	}
 }
 
 int main(int argc, char *argv[])
 {
-	p87::main();
+	p87::test_empty_weakptr();
+//	p87::main();
 //	p85_circref::main();
 	
 //	p77::main();
