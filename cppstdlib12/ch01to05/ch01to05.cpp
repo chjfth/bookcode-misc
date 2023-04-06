@@ -90,6 +90,27 @@ namespace p77
 	}
 }
 
+namespace p78_make_shared
+{
+	using namespace std;
+	void test()
+	{
+		shared_ptr<string> pNico1 = make_shared<string>("nico1");
+		shared_ptr<string> pJutta1 = make_shared<string>("jutta1");
+
+		shared_ptr<string> pNico2{ new string("nico2") };
+		shared_ptr<string> pJutta2{ new string("jutta2") };
+
+		string chjname("chj");
+		string* pchjname = &chjname;
+		printf("sizeof(chjname)=%d , sizeof(pchjname)=%d\n", sizeof(chjname), sizeof(pchjname));
+		
+		printf("pNico1 - pJutta1: %d\n", int((char*)&pNico1 - (char*)&pJutta1));
+		printf("pNico2 - pJutta2: %d\n", int((char*)&pNico2 - (char*)&pJutta2));
+
+	}
+}
+
 namespace p80_custom_deleter
 {
 	void main()
@@ -405,7 +426,9 @@ delete jim's mom
 
 int main(int argc, char *argv[])
 {
-	p87::test_empty_weakptr();
+	p78_make_shared::test();
+	
+//	p87::test_empty_weakptr();
 //	p87::main();
 //	p85_circref::main();
 	
