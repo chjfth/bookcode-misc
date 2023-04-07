@@ -101,13 +101,33 @@ namespace p78_make_shared
 		shared_ptr<string> pNico2{ new string("nico2") };
 		shared_ptr<string> pJutta2{ new string("jutta2") };
 
-		string chjname("chj");
-		string* pchjname = &chjname;
-		printf("sizeof(chjname)=%d , sizeof(pchjname)=%d\n", sizeof(chjname), sizeof(pchjname));
-		
+		printf("sizeof(pNico1)=%d , sizeof(&pNico1)=%d\n", 
+			(int)sizeof(pNico1), (int)sizeof(&pNico1));
+
+		printf("&pNico1  = %p\n", &pNico1);
+		printf("&pJutta1 = %p\n", &pJutta1);
+		printf("&pNico2  = %p\n", &pNico2);
+		printf("&pJutta2 = %p\n", &pJutta2);
+
+		printf("\n");
 		printf("pNico1 - pJutta1: %d\n", int((char*)&pNico1 - (char*)&pJutta1));
 		printf("pNico2 - pJutta2: %d\n", int((char*)&pNico2 - (char*)&pJutta2));
 
+	}
+
+	void test_shared_ptr_2refs()
+	{
+		string* pstring = new string("ABC");
+		shared_ptr<string> sp1{ pstring };
+		shared_ptr<string> sp2 = sp1;
+
+		printf("sizeof(string)=%d , sizeof(share_ptr<string>)=%d\n",
+			(int)sizeof(string), (int)sizeof(shared_ptr<string>));
+
+		int* sp1raw = (int*)&sp1;
+		int* sp2raw = (int*)&sp2;
+		printf("sp1 dump 2 ints: 0x%08X , 0x%08X\n", sp1raw[0], sp1raw[1]);
+		printf("sp2 dump 2 ints: 0x%08X , 0x%08X\n", sp2raw[0], sp2raw[1]);
 	}
 }
 
@@ -424,9 +444,25 @@ delete jim's mom
 	}
 }
 
+void test_weakptr()
+{
+	string* pstring = new string("abc");
+
+	shared_ptr<string> sp1(pstring);
+	weak_ptr<string> wp1(sp1);
+
+	// Memo:
+	//		&(*sp1._Rep)._Uses == &(*wp1._Rep)._Uses
+	// So, the weak_ptr object's control block is exactly its master-shared_ptr's control block.
+	
+}
+
 int main(int argc, char *argv[])
 {
+	test_weakptr();
+	
 	p78_make_shared::test();
+	p78_make_shared::test_shared_ptr_2refs();
 	
 //	p87::test_empty_weakptr();
 //	p87::main();
