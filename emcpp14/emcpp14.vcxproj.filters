@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="emcpp14.cpp" />
+    <ClCompile Include="i22-pimpl.cpp">
+      <Filter>item22</Filter>
+    </ClCompile>
+    <ClCompile Include="i22-user.cpp">
+      <Filter>item22</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="emcpp14.h" />
+    <ClInclude Include="i22-widget.h">
+      <Filter>item22</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="item22">
+      <UniqueIdentifier>{7fb6a7bb-c06c-4ee9-8cc0-76710e97afeb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
