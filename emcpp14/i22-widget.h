@@ -8,6 +8,7 @@ namespace item22
 	{
 	public:
 		Widget();
+		~Widget();
 
 	private:
 		struct Impl;

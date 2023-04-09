@@ -7,5 +7,5 @@ int main()
 	// In the case of using unique_ptr, only a class declaration(incomplete type)
 	// is NOT enough.
 	
-	Widget w1;
+	Widget* p = new Widget; // w1;
 }

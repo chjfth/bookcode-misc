@@ -319,7 +319,7 @@
    -->
   <ItemGroup>
     <ClCompile Include="i22_p150_main.cpp" />
-    <ClCompile Include="pimpl.cpp" />
+    <ClCompile Include="widget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="widget.h" />

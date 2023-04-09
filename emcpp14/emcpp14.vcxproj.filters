@@ -2,10 +2,10 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="emcpp14.cpp" />
-    <ClCompile Include="i22-pimpl.cpp">
+    <ClCompile Include="i22-user.cpp">
       <Filter>item22</Filter>
     </ClCompile>
-    <ClCompile Include="i22-user.cpp">
+    <ClCompile Include="i22-widget.cpp">
       <Filter>item22</Filter>
     </ClCompile>
   </ItemGroup>
