@@ -20,4 +20,22 @@ namespace item22
 	}
 
 //	Widget::~Widget() = default; // Chj: This has been moved above.
+
+	// move-ctor/assign
+	//
+	Widget::Widget(Widget&& rhs) = default; // declarations
+	Widget& Widget::operator=(Widget&& rhs) = default;
+
+	// copy-ctor/assign
+	//
+	Widget::Widget(const Widget& rhs) // copy ctor
+		: pImpl(std::make_unique<Impl>(*rhs.pImpl))
+	{
+		
+	}
+	Widget& Widget::operator=(const Widget& rhs)
+	{
+		*pImpl = *rhs.pImpl;
+		return *this;
+	}
 }

@@ -6,4 +6,6 @@ using namespace item22;
 void i22_pimpl()
 {
 	Widget w1;
+
+	Widget w2 = w1;
 }

@@ -10,6 +10,14 @@ namespace item22
 		Widget();
 		~Widget();
 
+		// move-ctor/assign
+		Widget(Widget&& rhs); 
+		Widget& operator=(Widget&& rhs);
+
+		// copy-ctor/assign
+		Widget(const Widget& rhs);
+		Widget& operator=(const Widget& rhs);
+		
 	private:
 		struct Impl;
 		std::unique_ptr<Impl> pImpl;
