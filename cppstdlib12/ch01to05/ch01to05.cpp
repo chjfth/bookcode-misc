@@ -191,7 +191,7 @@ namespace p81_FileDeleter_orig
 			: filename(fn) {
 		}
 		void operator () (std::ofstream* fp) {
-			fp->close(); // close.file
+			delete fp;					   // close.file
 			std::remove(filename.c_str()); // delete file
 		}
 	};
@@ -221,7 +221,9 @@ namespace p81_mod1
 			cout << "~FileDeleter() '" << filename << "'\n";
 		}
 		void operator () (std::ofstream* fp) {
-			fp->close(); // close file, but keep file content for investigation
+			delete fp; // close file
+
+			// Not calling std::remove(), bcz I want to keep file content for investigation
 		}
 
 		FileDeleter(FileDeleter&& src)
@@ -454,15 +456,91 @@ void test_weakptr()
 	// Memo:
 	//		&(*sp1._Rep)._Uses == &(*wp1._Rep)._Uses
 	// So, the weak_ptr object's control block is exactly its master-shared_ptr's control block.
-	
+
+	weak_ptr<string> weak0;
+	auto lock0 = weak0.lock();
+	weak0 = sp1;
+}
+
+namespace p91 // enable_shared_from_this
+{
+	class Person : public enable_shared_from_this<Person> {
+	public:
+		string name;
+		shared_ptr<Person> mother;
+		shared_ptr<Person> father;
+		vector<weak_ptr<Person>> kids;  // weak pointer !!!
+
+		Person (const string& n)
+			: name(n) {
+		}
+
+		void setParentsAndTheirKids (shared_ptr<Person> m = nullptr,
+			shared_ptr<Person> f = nullptr)
+		{
+			mother = m;
+			father = f;
+			if (m != nullptr) {
+				m->kids.push_back(shared_from_this());
+			}
+			if (f != nullptr) {
+				f->kids.push_back(shared_from_this());
+			}
+		}
+
+		~Person() {
+			cout << "delete " << name << endl;
+		}
+	};
+
+	shared_ptr<Person>
+	initFamily (const string& name)
+	{
+		shared_ptr<Person> mom(new Person(name + "'s mom"));
+		shared_ptr<Person> dad(new Person(name + "'s dad"));
+
+		Person* pkid = new Person(name);
+		shared_ptr<Person> kid(pkid);
+
+		kid->setParentsAndTheirKids(mom, dad);
+		return kid;
+	}
+
+	void main()
+	{
+		shared_ptr<Person> p = initFamily("nico");
+		cout << "nico's family exists" << endl;
+		cout << "- nico is shared " << p.use_count() << " times" << endl;
+		cout << "- name of 1st kid of nico's mom: "
+			<< p->mother->kids[0].lock()->name << endl;
+
+		p = initFamily("jim");
+		cout << "jim's family exists" << endl;
+	}
+}
+
+#if 0
+string&& foo ()
+{
+	string x;
+	return x; // compile ERROR: returns reference to nonexisting object
+}
+#endif
+
+void trivial_test()
+{
+	unique_ptr<string> up1 (new string("abc"));
+	unique_ptr<string> up2 (new string("Abc"));
+	up1.reset(new string("zyx"));
 }
 
 int main(int argc, char *argv[])
 {
-	test_weakptr();
+//	test_weakptr();
+//	p91::main();
 	
-	p78_make_shared::test();
-	p78_make_shared::test_shared_ptr_2refs();
+//	p78_make_shared::test();
+//	p78_make_shared::test_shared_ptr_2refs();
 	
 //	p87::test_empty_weakptr();
 //	p87::main();
@@ -473,5 +551,5 @@ int main(int argc, char *argv[])
 //	p81_mod1::test_reset(argv[0]);
 	
 //	p80_user_deleter::main();
-//	p81_mod1::main(argv[0]);
+	p81_mod1::main(argv[0]);
 }
