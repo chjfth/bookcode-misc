@@ -519,6 +519,91 @@ namespace p91 // enable_shared_from_this
 	}
 }
 
+std::string string_from_malloced_ptr(char *inptr)
+{
+	std::string s(inptr);
+	free(inptr);
+	return s;
+}
+
+#ifdef __linux__ // __USE_POSIX
+#include <dirent.h>
+
+namespace p108_orig // custom deleter for unique_ptr
+{
+	class DirCloser
+	{
+	public:
+		void operator()(DIR *dirp)
+		{
+			if(closedir(dirp)!=0)
+			{
+				std::cerr << "closedir() failed." << std::endl;
+
+				// How about using this?
+			}
+		}
+	};
+
+	void main()
+	{
+		std::string curdir = string_from_malloced_ptr(get_current_dir_name());
+
+		std::cout << "curdir : " << curdir << std::endl;
+		
+		// open current directory
+		unique_ptr<DIR, DirCloser> pDir(opendir("."));
+
+		std::cout << "p108_orig: sizeof(unique_ptr<DIR, DirCloser>) = "
+			<< sizeof(unique_ptr<DIR, DirCloser>) << std::endl;
+		
+		// process each directory entry:
+		struct dirent* dp = nullptr;
+		while( (dp=readdir(pDir.get())) != nullptr )
+		{
+			std::string filename(dp->d_name);
+			std::cout << "See in-dir item: " << filename << std::endl;		
+		}
+	}
+}
+
+template <typename T>
+using uniquePtr = std::unique_ptr<T, void(*)(T*)>; // p108, alias template, for a shorter name
+
+namespace p108_plainfunc_deleter
+{
+	void closedir_plainfunc(DIR *dirp)
+	{
+		closedir(dirp);
+	}
+
+	void main()
+	{
+		std::string curdir = string_from_malloced_ptr(get_current_dir_name());
+
+		std::cout << "curdir : " << curdir << std::endl;
+
+		// open current directory
+		uniquePtr<DIR> pDir(opendir("."), closedir_plainfunc); // OK
+		// -- TWO WRONG STATEMENTS:
+		// unique_ptr<DIR, void(*)(DIR*)> pDir(opendir("."));
+		// unique_ptr<DIR, decltype(closedir_plainfunc)> pDir(opendir("."));
+
+		std::cout << "p108_plainfunc_deleter: sizeof(uniquePtr<DIR>) = "
+			<< sizeof(uniquePtr<DIR>) << std::endl;
+
+		// process each directory entry:
+		struct dirent* dp = nullptr;
+		while ((dp = readdir(pDir.get())) != nullptr)
+		{
+			std::string filename(dp->d_name);
+			std::cout << "See in-dir item: " << filename << std::endl;
+		}
+	}
+}
+
+#endif // __linux__
+
 #if 0
 string&& foo ()
 {
@@ -536,6 +621,11 @@ void trivial_test()
 
 int main(int argc, char *argv[])
 {
+#ifdef __linux__
+	p108_orig::main();
+	p108_plainfunc_deleter::main();
+#endif
+	
 //	test_weakptr();
 //	p91::main();
 	
@@ -551,5 +641,5 @@ int main(int argc, char *argv[])
 //	p81_mod1::test_reset(argv[0]);
 	
 //	p80_user_deleter::main();
-	p81_mod1::main(argv[0]);
+//	p81_mod1::main(argv[0]);
 }
