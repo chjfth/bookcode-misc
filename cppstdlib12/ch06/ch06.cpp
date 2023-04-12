@@ -24,7 +24,36 @@ void p230_lambda()
 	cout << "First elem >5 and <12: " << *pos << endl;
 }
 
+namespace p234 // class object as function-object
+{
+	class PrintInt
+	{
+	public:
+		void operator() (int elem) const
+		{
+			cout << elem << ' ';
+		}
+	};
+
+	void main()
+	{
+		vector<int> coll;
+
+		// insert elements from 1 to 9
+		for(int i=1; i<=9; ++i)
+			coll.push_back(i);
+
+		for_each(coll.cbegin(), coll.cend(), // range
+			PrintInt());
+		cout << endl;
+	}
+}
+
+
+
 int main(int argc, char *argv[])
 {
+	p234::main();
+	
 	p230_lambda();
 }
