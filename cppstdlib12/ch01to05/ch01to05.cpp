@@ -540,7 +540,7 @@ namespace p108_orig // custom deleter for unique_ptr
 			{
 				std::cerr << "closedir() failed." << std::endl;
 
-				// How about using this?
+				// How about using `this`? Hmm, it is an "empty" object, whose sizeof is 1.
 			}
 		}
 	};
