@@ -107,7 +107,7 @@ void f(int n)
 	// n should be in range [1:Max)
 		
 	Assert::dynamic(
-		(n >= 0 && n < Max), 
+		(n >= 1 && n < Max), 
 		Assert::compose(__FILE__, __LINE__, "range problem"));
 }
 
