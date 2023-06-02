@@ -12,7 +12,7 @@
 	cl /EHsc /DCURRENT_MODE=Mode::terminate_ ch13_bjassert.cpp  /link /out:bjterminate.exe
 	cl /EHsc /DCURRENT_MODE=Mode::ignore_    ch13_bjassert.cpp  /link /out:bjignore.exe
 
-  [gcc 7.4]
+  [gcc 7.5]
 	 g++ -o bjthrow     -DCURRENT_MODE=Mode::throw_ ch13_bjassert.cpp
 	 g++ -o bjterminate -DCURRENT_MODE=Mode::terminate_ ch13_bjassert.cpp
 	 g++ -o bjignore    -DCURRENT_MODE=Mode::ignore_ ch13_bjassert.cpp
