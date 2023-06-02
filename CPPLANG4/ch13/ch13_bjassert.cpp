@@ -46,7 +46,7 @@ namespace Assert
 	constexpr int current_level = CURRENT_LEVEL; // hardcode level
 	constexpr int user_verbose_level = 1; // orig-code: default_level
 
-	constexpr bool level(int n)
+	constexpr bool is_report_error(int n)
 	{
 		// "more verbose" means "more likely to spout error"
 		//
@@ -69,9 +69,11 @@ namespace Assert
 		return os.str();
 	}
 
-	// same naming is_report_error?
-	template<bool is_report_error = level(user_verbose_level), class Except = Error>
-	void dynamic(bool assertion, const string& message="Assert::dynamic() failed.")
+	template<
+		bool is_report_error = is_report_error(user_verbose_level),
+		class Except = Error>
+	void dynamic(bool assertion, 
+		const string& message="Assert::dynamic() failed.")
 	{
 		if (assertion)
 			return; // runtime stuff OK, proceed 
