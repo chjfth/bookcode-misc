@@ -43,17 +43,12 @@ namespace Assert
 
 	constexpr Mode current_mode = CURRENT_MODE;
 
-	constexpr int current_level = CURRENT_LEVEL; // hardcode level
-	constexpr int user_verbose_level = 1; // orig-code: default_level
+	constexpr int current_level = CURRENT_LEVEL; // sneak level threshold
+	constexpr int default_sneak_level = 1; // bjarne-name: default_level (not vivid)
 
-	constexpr bool is_report_error(int n)
+	constexpr bool is_report_error(int sneak_level)
 	{
-		// "more verbose" means "more likely to spout error"
-		//
-		return n >= current_level; 
-		
-		// Orig code: (not rational)
-		// return n <= current_level; 
+		return sneak_level <= current_level; 
 	}
 
 	struct Error : runtime_error
@@ -70,7 +65,7 @@ namespace Assert
 	}
 
 	template<
-		bool is_report_error = is_report_error(user_verbose_level),
+		bool is_report_error = is_report_error(default_sneak_level),
 		class Except = Error>
 	void dynamic(bool assertion, 
 		const string& message="Assert::dynamic() failed.")
