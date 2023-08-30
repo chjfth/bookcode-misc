@@ -20,7 +20,7 @@ int main( void )
 {
 	cudaDeviceProp  prop = {};
 
-    int count;
+    int count = 0;
     HANDLE_ERROR( cudaGetDeviceCount( &count ) );
     for (int i=0; i< count; i++) {
         HANDLE_ERROR( cudaGetDeviceProperties( &prop, i ) );
