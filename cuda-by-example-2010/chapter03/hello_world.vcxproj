@@ -40,9 +40,9 @@
   <!-- User project properties -->
   
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{20230830-0000-0000-0000-123813000001}</ProjectGuid>
-    <ProjectName>simple_kernel</ProjectName>
-     <TargetName>simple_kernel</TargetName>
+    <ProjectGuid>{20230830-0000-0000-0000-125901000001}</ProjectGuid>
+    <ProjectName>hello_world</ProjectName>
+     <TargetName>hello_world</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
   
@@ -171,7 +171,7 @@
     Source file list:
    -->
   <ItemGroup>
-    <CudaCompile Include="simple_kernel.cu" />
+    <CudaCompile Include="hello_world.cu" />
   </ItemGroup>
 
   <!-- MSBuild system stock Cpp.targets -->
