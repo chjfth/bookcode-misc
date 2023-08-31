@@ -40,9 +40,9 @@
   <!-- User project properties -->
   
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{20230831-0000-0000-0000-173646000001}</ProjectGuid>
-    <ProjectName>julia_cpu</ProjectName>
-     <TargetName>julia_cpu</TargetName>
+    <ProjectGuid>{20230901-0000-0000-0000-000104000001}</ProjectGuid>
+    <ProjectName>julia_gpu</ProjectName>
+     <TargetName>julia_gpu</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
   
@@ -135,7 +135,9 @@
       <ImportLibrary>$(OutDir)$(TargetName)--imp.lib</ImportLibrary>
       <GenerateMapFile>true</GenerateMapFile>
       <AdditionalLibraryDirectories>;;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>cudart_static.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories Condition="'$(Platform)'=='Win32'">;;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Platform)'=='x64'"  >;;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cudart_static.lib;SetupAPI.lib;;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <!-- Better build.log file naming -->
     <BuildLog>
@@ -175,7 +177,7 @@
    -->
   <ItemGroup>
     <ClCompile Include="..\common\chjdbg-windows.cpp" />
-    <CudaCompile Include="julia_cpu.cu" />
+    <CudaCompile Include="julia_gpu.cu" />
   </ItemGroup>
 
   <!-- MSBuild system stock Cpp.targets -->
