@@ -16,6 +16,7 @@
 
 #include "../common/book.h"
 #include "../common/cpu_bitmap.h"
+#include "../common/chjdbg.h"
 
 #define DIM 1000
 
@@ -71,7 +72,13 @@ int main( void )
     CPUBitmap bitmap( DIM, DIM );
     unsigned char *ptr = bitmap.get_ptr();
 
+	unsigned int64 msec_start = ps_GetOsMillisec64();
+
     kernel( ptr );
+
+	int msec_used = int(ps_GetOsMillisec64() - msec_start);
+
+	printf("Julia calculation time cost milliseconds: %d\n", msec_used);
 
     bitmap.display_and_exit();
 }

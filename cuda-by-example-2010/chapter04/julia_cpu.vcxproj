@@ -176,6 +176,7 @@
     Source file list:
    -->
   <ItemGroup>
+    <ClCompile Include="..\common\chjdbg-windows.cpp" />
     <CudaCompile Include="julia_cpu.cu" />
   </ItemGroup>
 
