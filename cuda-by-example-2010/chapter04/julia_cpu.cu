@@ -72,13 +72,14 @@ int main( void )
     CPUBitmap bitmap( DIM, DIM );
     unsigned char *ptr = bitmap.get_ptr();
 
-	unsigned int64 msec_start = ps_GetOsMillisec64(); // chj
+	unsigned int64 usec_start = ps_GetOsMicrosecs64(); // chj
 
     kernel( ptr );
 
-	int msec_used = int(ps_GetOsMillisec64() - msec_start); // chj
+	unsigned int64 usec_done = ps_GetOsMicrosecs64(); // chj
 
-	printf("Julia calculation time cost milliseconds (CPU): %d\n", msec_used);
+	printf("Julia calculation time cost milliseconds (CPU): %s\n", 
+		us_to_msecstring(usec_done-usec_start));
 
     bitmap.display_and_exit();
 }

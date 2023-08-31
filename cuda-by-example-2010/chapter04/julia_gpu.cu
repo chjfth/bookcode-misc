@@ -84,23 +84,23 @@ int main( void )
     HANDLE_ERROR( cudaMalloc( (void**)&dev_bitmap, bitmap.image_size() ) );
     data.dev_bitmap = dev_bitmap;
 
-	unsigned int64 msec_start = ps_GetOsMillisec64(); // chj
+	unsigned int64 usec_start = ps_GetOsMicrosecs64(); // chj
 
     dim3    grid(DIM, DIM);
     kernel<<<grid,1>>>( dev_bitmap );
 	
-	unsigned int64 msec_done1 = ps_GetOsMillisec64(); // chj
+	unsigned int64 usec_done1 = ps_GetOsMicrosecs64(); // chj
 
     HANDLE_ERROR( cudaMemcpy( bitmap.get_ptr(), dev_bitmap,
                               bitmap.image_size(),
                               cudaMemcpyDeviceToHost ) );
 
-	unsigned int64 msec_done2 = ps_GetOsMillisec64(); // chj
+	unsigned int64 usec_done2 = ps_GetOsMicrosecs64(); // chj
 
-	printf("Julia calculation time cost milliseconds (GPU): %d\n", 
-		int(msec_done1 - msec_start));
-	printf("cudaMemcpyDeviceToHost %d bytes, cost milliseconds: %d\n", 
-		bitmap.image_size(), int(msec_done2 - msec_done1));
+	printf("Julia calculation time cost milliseconds (GPU): %s\n", 
+		us_to_msecstring(usec_done1 - usec_start));
+	printf("cudaMemcpyDeviceToHost %d bytes, cost milliseconds: %s\n", 
+		bitmap.image_size(), us_to_msecstring(usec_done2 - usec_done1));
 
     HANDLE_ERROR( cudaFree( dev_bitmap ) );
                               
