@@ -9,9 +9,12 @@ extern"C"{
 #define int64 long long
 #endif
 
-unsigned int64 ps_GetOsMillisec64(void);
-	// Get number of milliseconds since the device booted, as timing reference.
+unsigned int64 ps_GetOsMicrosecs64(void);
+	// Get number of microseconds since the device booted, as timing reference.
 
+
+const char *us_to_msecstring(unsigned int64 usec);
+	// Microsec to millisec string.
 
 } // extern"C"
 
