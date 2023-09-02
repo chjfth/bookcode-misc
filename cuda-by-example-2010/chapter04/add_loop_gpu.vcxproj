@@ -41,7 +41,7 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230831-0000-0000-0000-152729000001}</ProjectGuid>
-    <ProjectName>add_loop_gpu</ProjectName>
+    <ProjectName>02.add_loop_gpu</ProjectName>
      <TargetName>add_loop_gpu</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>

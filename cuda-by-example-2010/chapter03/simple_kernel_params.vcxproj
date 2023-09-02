@@ -41,7 +41,7 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230830-0000-0000-0000-125526000001}</ProjectGuid>
-    <ProjectName>simple_kernel_params</ProjectName>
+    <ProjectName>03.simple_kernel_params</ProjectName>
      <TargetName>simple_kernel_params</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>

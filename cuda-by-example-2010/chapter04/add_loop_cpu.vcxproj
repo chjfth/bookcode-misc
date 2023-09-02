@@ -41,7 +41,7 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230831-0000-0000-0000-111030000001}</ProjectGuid>
-    <ProjectName>add_loop_cpu</ProjectName>
+    <ProjectName>01.add_loop_cpu</ProjectName>
      <TargetName>add_loop_cpu</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>

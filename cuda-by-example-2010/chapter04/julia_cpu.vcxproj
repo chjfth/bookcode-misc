@@ -41,7 +41,7 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230831-0000-0000-0000-173646000001}</ProjectGuid>
-    <ProjectName>julia_cpu</ProjectName>
+    <ProjectName>03.julia_cpu</ProjectName>
      <TargetName>julia_cpu</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>

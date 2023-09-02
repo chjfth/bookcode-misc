@@ -41,7 +41,7 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230830-0000-0000-0000-230441000001}</ProjectGuid>
-    <ProjectName>enum_gpu</ProjectName>
+    <ProjectName>05.enum_gpu</ProjectName>
      <TargetName>enum_gpu</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>

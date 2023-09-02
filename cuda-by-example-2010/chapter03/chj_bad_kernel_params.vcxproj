@@ -41,7 +41,7 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230830-0000-0000-0000-181517000001}</ProjectGuid>
-    <ProjectName>chj_bad_kernel_params</ProjectName>
+    <ProjectName>04.chj_bad_kernel_params</ProjectName>
      <TargetName>chj_bad_kernel_params</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>

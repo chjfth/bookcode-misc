@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple_kernel", "simple_kernel.vcxproj", "{20230830-0000-0000-0000-123813000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02.simple_kernel", "chapter03\simple_kernel.vcxproj", "{20230830-0000-0000-0000-123813000001}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple_kernel_params", "simple_kernel_params.vcxproj", "{20230830-0000-0000-0000-125526000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03.simple_kernel_params", "chapter03\simple_kernel_params.vcxproj", "{20230830-0000-0000-0000-125526000001}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hello_world", "hello_world.vcxproj", "{20230830-0000-0000-0000-125901000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01.hello_world", "chapter03\hello_world.vcxproj", "{20230830-0000-0000-0000-125901000001}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chj_bad_kernel_params", "chj_bad_kernel_params.vcxproj", "{20230830-0000-0000-0000-181517000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04.chj_bad_kernel_params", "chapter03\chj_bad_kernel_params.vcxproj", "{20230830-0000-0000-0000-181517000001}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "enum_gpu", "enum_gpu.vcxproj", "{20230830-0000-0000-0000-230441000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05.enum_gpu", "chapter03\enum_gpu.vcxproj", "{20230830-0000-0000-0000-230441000001}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "set_gpu", "set_gpu.vcxproj", "{20230831-0000-0000-0000-001243000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06.set_gpu", "chapter03\set_gpu.vcxproj", "{20230831-0000-0000-0000-001243000001}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

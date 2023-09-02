@@ -41,8 +41,8 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230902-0000-0000-0000-094237000001}</ProjectGuid>
-    <ProjectName>julia_gpu_params</ProjectName>
-     <TargetName>julia_gpu_params</TargetName>
+    <ProjectName>04a.julia_gpu_blocks</ProjectName>
+     <TargetName>julia_gpu_blocks</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
   
@@ -176,7 +176,7 @@
   <ItemGroup>
     <ClCompile Include="..\common\chjdbg-windows.cpp" />
     <ClCompile Include="..\common\chjdbg.cpp" />
-    <CudaCompile Include="julia_gpu_params.cu" />
+    <CudaCompile Include="julia_gpu_blocks.cu" />
   </ItemGroup>
 
   <!-- MSBuild system stock Cpp.targets -->

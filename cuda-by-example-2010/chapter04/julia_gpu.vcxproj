@@ -41,7 +41,7 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230901-0000-0000-0000-000104000001}</ProjectGuid>
-    <ProjectName>julia_gpu</ProjectName>
+    <ProjectName>04.julia_gpu</ProjectName>
      <TargetName>julia_gpu</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>

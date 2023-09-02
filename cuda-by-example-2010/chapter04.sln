@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "add_loop_cpu", "add_loop_cpu.vcxproj", "{20230831-0000-0000-0000-111030000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01.add_loop_cpu", "chapter04\add_loop_cpu.vcxproj", "{20230831-0000-0000-0000-111030000001}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "add_loop_gpu", "add_loop_gpu.vcxproj", "{20230831-0000-0000-0000-152729000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02.add_loop_gpu", "chapter04\add_loop_gpu.vcxproj", "{20230831-0000-0000-0000-152729000001}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "julia_cpu", "julia_cpu.vcxproj", "{20230831-0000-0000-0000-173646000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03.julia_cpu", "chapter04\julia_cpu.vcxproj", "{20230831-0000-0000-0000-173646000001}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "julia_gpu", "julia_gpu.vcxproj", "{20230901-0000-0000-0000-000104000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04.julia_gpu", "chapter04\julia_gpu.vcxproj", "{20230901-0000-0000-0000-000104000001}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "julia_gpu_params", "julia_gpu_params.vcxproj", "{20230902-0000-0000-0000-094237000001}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04a.julia_gpu_blocks", "chapter04\julia_gpu_blocks.vcxproj", "{20230902-0000-0000-0000-094237000001}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

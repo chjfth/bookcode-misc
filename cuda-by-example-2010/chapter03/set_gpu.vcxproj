@@ -41,7 +41,7 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230831-0000-0000-0000-001243000001}</ProjectGuid>
-    <ProjectName>set_gpu</ProjectName>
+    <ProjectName>06.set_gpu</ProjectName>
      <TargetName>set_gpu</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>

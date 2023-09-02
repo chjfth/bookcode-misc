@@ -41,7 +41,7 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230902-0000-0000-0000-141303000001}</ProjectGuid>
-    <ProjectName>add_loop_threads</ProjectName>
+    <ProjectName>01.add_loop_threads</ProjectName>
      <TargetName>add_loop_threads</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>

@@ -41,7 +41,7 @@
   
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20230830-0000-0000-0000-125901000001}</ProjectGuid>
-    <ProjectName>hello_world</ProjectName>
+    <ProjectName>01.hello_world</ProjectName>
      <TargetName>hello_world</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
