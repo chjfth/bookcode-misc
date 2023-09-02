@@ -174,8 +174,8 @@
     Source file list:
    -->
   <ItemGroup>
-    <CInclude Include="..\common\book.h" />
-    <CInclude Include="..\common\cpu_anim.h" />
+    <ClInclude Include="..\common\book.h" />
+    <ClInclude Include="..\common\cpu_anim.h" />
     <CudaCompile Include="ripple.cu" />
   </ItemGroup>
 
