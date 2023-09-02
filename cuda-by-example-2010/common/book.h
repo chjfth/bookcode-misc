@@ -18,14 +18,24 @@
 #define __BOOK_H__
 #include <stdio.h>
 
+static cudaError_t PrintCudaError(cudaError_t err, const char *file, int line)
+{
+	printf( "[CUDAERR:%d] %s in %s at line %d\n", 
+		err,
+		cudaGetErrorString( err ),
+		file, line 
+		);
+	return err;
+}
+
+#define PRINT_ERROR(err) (PrintCudaError(err, __FILE__, __LINE__))
+
 static void HandleError( cudaError_t err,
                          const char *file,
-                         int line ) {
+                         int line ) 
+{
     if (err != cudaSuccess) {
-        printf( "[CUDAERR:%d] %s in %s at line %d\n", 
-			err,
-			cudaGetErrorString( err ),
-            file, line );
+		PrintCudaError(err, file, line);
         exit( EXIT_FAILURE );
     }
 }
