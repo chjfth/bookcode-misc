@@ -59,9 +59,9 @@ __device__ int julia( int x, int y, int dim, float scale )
 __global__ void kernel( unsigned char *ptr, int dim, float scale ) 
 {
     // map from blockIdx to pixel position
-    int x = blockIdx.x;
-    int y = blockIdx.y;
-    int offset = x + y * gridDim.x; // assert(dim==gridDim.x)
+    int x = threadIdx.x;
+    int y = threadIdx.y;
+    int offset = x + y * dim; // or: replace `dim` with `blockDim.x`, same result
 
     // now calculate the value at that position
     int juliaValue = julia( x, y, dim, scale );
@@ -80,11 +80,11 @@ int main( int argc, char *argv[] )
 {
 	if(argc<3) {
 		printf("Need two parameters. \n");
-		printf("    julia_gpu_blocks <sample_points> <scale>\n");
+		printf("    julia_gpu_threads <sample_points> <scale>\n");
 		printf("\n");
 		printf("For example:\n");
-		printf("    julia_gpu_blocks 1000 1.5\n");
-		printf("    julia_gpu_blocks 500 5.0\n");
+		printf("    julia_gpu_threads 1000 1.5\n");
+		printf("    julia_gpu_threads 500 5.0\n");
 		return 1;
 	}
 
@@ -112,8 +112,8 @@ int main( int argc, char *argv[] )
 
 	unsigned int64 usec_start = ps_GetOsMicrosecs64(); // chj
 
-    dim3    grid(dim, dim);
-    kernel<<<grid,1>>>( dev_bitmap, dim, scale );
+    dim3    threads(dim, dim);
+    kernel<<<1,threads>>>( dev_bitmap, dim, scale );
 	
 	unsigned int64 usec_done1 = ps_GetOsMicrosecs64(); // chj
 
@@ -142,3 +142,9 @@ int main( int argc, char *argv[] )
                               
     bitmap.display_and_exit();
 }
+
+/*
+PENDINGQ: 
+	julia_gpu_threads 32 1.5
+draws ok, but if I use a larger value than 32, the entire canvas will be blank. Why?
+*/
