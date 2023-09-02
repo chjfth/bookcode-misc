@@ -43,14 +43,20 @@ struct CPUAnimBitmap {
         delete [] pixels;
     }
 
-    unsigned char* get_ptr( void ) const   { return pixels; }
-    long image_size( void ) const { return width * height * 4; }
+    unsigned char* get_ptr( void ) const { 
+		return pixels; 
+	}
+    
+	long image_size( void ) const { 
+		return width * height * 4; 
+	}
 
     void click_drag( void (*f)(void*,int,int,int,int)) {
         clickDrag = f;
     }
 
-    void anim_and_exit( void (*f)(void*,int), void(*e)(void*) ) {
+    void anim_and_exit( void (*f)(void*,int), void(*e)(void*) ) 
+	{
         CPUAnimBitmap**   bitmap = get_bitmap_ptr();
         *bitmap = this;
         fAnim = f;
@@ -72,14 +78,16 @@ struct CPUAnimBitmap {
     }
 
     // static method used for glut callbacks
-    static CPUAnimBitmap** get_bitmap_ptr( void ) {
+    static CPUAnimBitmap** get_bitmap_ptr( void ) 
+	{
         static CPUAnimBitmap*   gBitmap;
         return &gBitmap;
     }
 
     // static method used for glut callbacks
     static void mouse_func( int button, int state,
-                            int mx, int my ) {
+                            int mx, int my ) 
+	{
         if (button == GLUT_LEFT_BUTTON) {
             CPUAnimBitmap*   bitmap = *(get_bitmap_ptr());
             if (state == GLUT_DOWN) {
@@ -95,7 +103,8 @@ struct CPUAnimBitmap {
     }
 
     // static method used for glut callbacks
-    static void idle_func( void ) {
+    static void idle_func( void ) 
+	{
         static int ticks = 1;
         CPUAnimBitmap*   bitmap = *(get_bitmap_ptr());
         bitmap->fAnim( bitmap->dataBlock, ticks++ );
@@ -103,7 +112,8 @@ struct CPUAnimBitmap {
     }
 
     // static method used for glut callbacks
-    static void Key(unsigned char key, int x, int y) {
+    static void Key(unsigned char key, int x, int y) 
+	{
         switch (key) {
             case 27:
                 CPUAnimBitmap*   bitmap = *(get_bitmap_ptr());
@@ -114,7 +124,8 @@ struct CPUAnimBitmap {
     }
 
     // static method used for glut callbacks
-    static void Draw( void ) {
+    static void Draw( void ) 
+	{
         CPUAnimBitmap*   bitmap = *(get_bitmap_ptr());
         glClearColor( 0.0, 0.0, 0.0, 1.0 );
         glClear( GL_COLOR_BUFFER_BIT );
