@@ -117,7 +117,7 @@ int main( int argc, char *argv[] )
 	
 	unsigned int64 usec_done1 = ps_GetOsMicrosecs64(); // chj
 
-    HANDLE_ERROR( cudaMemcpy( bitmap.get_ptr(), dev_bitmap,
+    cudaError_t cudaerr = PRINT_ERROR( cudaMemcpy( bitmap.get_ptr(), dev_bitmap,
                               bitmap.image_size(),
                               cudaMemcpyDeviceToHost ) );
 
@@ -125,8 +125,18 @@ int main( int argc, char *argv[] )
 
 	printf("Julia calculation time cost milliseconds (GPU): %s\n", 
 		us_to_msecstring(usec_done1 - usec_start));
-	printf("cudaMemcpyDeviceToHost %d bytes, cost milliseconds: %s\n", 
-		bitmap.image_size(), us_to_msecstring(usec_done2 - usec_done1));
+	
+	if(cudaerr)
+	{
+		printf("cudaMemcpyDeviceToHost %d bytes, cost milliseconds: %s (FAIL!)\n", 
+			bitmap.image_size(), us_to_msecstring(usec_done2 - usec_done1));
+		exit(4);
+	}
+	else
+	{
+		printf("cudaMemcpyDeviceToHost %d bytes, cost milliseconds: %s\n", 
+			bitmap.image_size(), us_to_msecstring(usec_done2 - usec_done1));
+	}
 
     HANDLE_ERROR( cudaFree( dev_bitmap ) );
                               
