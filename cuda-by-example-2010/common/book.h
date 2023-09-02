@@ -20,11 +20,14 @@
 
 static cudaError_t PrintCudaError(cudaError_t err, const char *file, int line)
 {
-	printf( "[CUDAERR:%d] %s in %s at line %d\n", 
-		err,
-		cudaGetErrorString( err ),
-		file, line 
-		);
+	if(err)
+	{
+		printf( "[CUDAERR:%d] %s in %s at line %d\n", 
+			err,
+			cudaGetErrorString( err ),
+			file, line 
+			);
+	}
 	return err;
 }
 
