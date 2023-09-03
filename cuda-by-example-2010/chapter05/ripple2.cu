@@ -99,6 +99,11 @@ int main( int argc, char *argv[] )
 	HANDLE_ERROR( cudaMalloc( (void**)&data.dev_bitmap,
 		bitmap.image_size() ) );
 
-	bitmap.anim_and_exit( (void (*)(void*,int))generate_frame,
-		(void (*)(void*))cleanup );
+	char title[40] = {};
+	_snprintf_s(title, _TRUNCATE, "ripple %d", dim);
+
+	bitmap.anim_and_exit( 
+		(void (*)(void*,int))generate_frame,
+		(void (*)(void*))cleanup,
+		title);
 }

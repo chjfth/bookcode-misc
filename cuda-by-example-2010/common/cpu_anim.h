@@ -55,7 +55,7 @@ struct CPUAnimBitmap {
         clickDrag = f;
     }
 
-    void anim_and_exit( void (*f)(void*,int), void(*e)(void*) ) 
+    void anim_and_exit( void (*f)(void*,int), void(*e)(void*), const char *title=nullptr ) 
 	{
         CPUAnimBitmap**   bitmap = get_bitmap_ptr();
         *bitmap = this;
@@ -68,12 +68,14 @@ struct CPUAnimBitmap {
         glutInit( &c, &dummy );
         glutInitDisplayMode( GLUT_DOUBLE | GLUT_RGBA );
         glutInitWindowSize( width, height );
-        glutCreateWindow( "bitmap" );
+        glutCreateWindow( title ? title : "bitmap" );
         glutKeyboardFunc(Key);
         glutDisplayFunc(Draw);
-        if (clickDrag != NULL)
+        
+		if (clickDrag != NULL)
             glutMouseFunc( mouse_func );
-        glutIdleFunc( idle_func );
+        
+		glutIdleFunc( idle_func );
         glutMainLoop();
     }
 
