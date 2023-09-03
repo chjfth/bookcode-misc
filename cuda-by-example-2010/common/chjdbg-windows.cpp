@@ -4,15 +4,14 @@
 
 #include "chjdbg.h"
 
-unsigned int64 
-ps_GetOsMicrosecs64(void)
+uint64 ps_GetOsMicrosecs64(void)
 {
 	LARGE_INTEGER li = {};
 	QueryPerformanceCounter(&li);
 	return li.QuadPart / 10;
 }
 
-const char *us_to_msecstring(unsigned int64 usec)
+const char *us_to_msecstring(uint64 usec)
 {
 	static char s_buf[40];
 

@@ -17,6 +17,12 @@
 #include "cuda.h"
 #include "../common/book.h"
 #include "../common/cpu_anim.h"
+#include "../common/chjdbg.h"
+
+const int PROBE_FRAMES = 200;
+unsigned int gar_frame_rusec[PROBE_FRAMES]; // Nth-ele: relative-microseconds from animation frame 0.
+uint64 g_frame0_usec = 0;
+int g_frame_idx = 0;
 
 int dim = 1024;
 #define PI 3.1415926535897932f
@@ -56,6 +62,19 @@ struct DataBlock {
 
 void generate_frame( DataBlock *d, int ticks ) 
 {
+	uint64 now_usec = ps_GetOsMicrosecs64();
+	if(g_frame_idx==0)
+		g_frame0_usec = now_usec;
+
+	if(g_frame_idx<PROBE_FRAMES) {
+		gar_frame_rusec[g_frame_idx++] = now_usec - g_frame0_usec;
+
+		if(g_frame_idx==PROBE_FRAMES) {
+			printf("Animation frame callback timing:\n");
+			dump_microseconds_diffs(gar_frame_rusec, PROBE_FRAMES);
+		}
+	}
+
 	dim3    blocks(OCC_DIVIDE(dim,16), OCC_DIVIDE(dim,16));
 	dim3    threads(16, 16);
 
@@ -72,6 +91,8 @@ void cleanup( DataBlock *d )
 {
 	HANDLE_ERROR( cudaFree( d->dev_bitmap ) ); 
 }
+
+
 
 int main( int argc, char *argv[] ) 
 {
