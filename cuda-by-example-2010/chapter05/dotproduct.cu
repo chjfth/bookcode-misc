@@ -107,8 +107,14 @@ int main( void )
         c += partial_c[i];
     }
 
-	printf( "Does GPU value %.6g = %.6g ?\n", c,
-             2 * sum_squares( (float)(N - 1) ) );
+	float quick_ans = 2 * sum_squares( (float)(N - 1) );
+	printf( "Does GPU value %.6g == %.6g ?\n", c, quick_ans);
+	
+	if(IsFloatEqual(c, quick_ans, 1e-6f))
+		printf("Yes.\n");
+	else
+		printf("No. The program is buggy!\n");
+
 
     // free memory on the gpu side
     HANDLE_ERROR( cudaFree( dev_a ) );

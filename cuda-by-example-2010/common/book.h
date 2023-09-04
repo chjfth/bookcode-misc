@@ -17,6 +17,8 @@
 #ifndef __BOOK_H__
 #define __BOOK_H__
 #include <stdio.h>
+#include <math.h>
+#include <algorithm> // for std::max
 
 static cudaError_t PrintCudaError(cudaError_t err, const char *file, int line)
 {
@@ -230,6 +232,11 @@ void wait_for_threads( const CUTThread *threads, int num );
 
 #define OCC_DIVIDE(n, x) ( ((n)+(x)-1) / (x) ) // occupation divide
 
+template<typename FloatType>
+bool IsFloatEqual(FloatType a, FloatType b, FloatType epsilon) 
+{
+	return (fabs(a - b) <= epsilon * std::max(fabs(a), fabs(b)));
+}
 
 
 #endif  // __BOOK_H__
