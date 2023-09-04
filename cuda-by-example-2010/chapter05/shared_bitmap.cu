@@ -20,6 +20,7 @@
 
 #define DIM 512
 #define PI 3.1415926535897932f
+#define SUBDIM 32
 
 __global__ void kernel( unsigned char *ptr, bool need_sync) 
 {
@@ -28,7 +29,7 @@ __global__ void kernel( unsigned char *ptr, bool need_sync)
     int y = threadIdx.y + blockIdx.y * blockDim.y;
     int offset = x + y * blockDim.x * gridDim.x;
 
-    __shared__ float    shared[16][16];
+    __shared__ float    shared[SUBDIM][SUBDIM];
 
     // now calculate the value at that position
     const float period = 128.0f;
@@ -44,7 +45,7 @@ __global__ void kernel( unsigned char *ptr, bool need_sync)
 	}
 
     ptr[offset*4 + 0] = 0;
-    ptr[offset*4 + 1] = shared[15-threadIdx.x][15-threadIdx.y];
+    ptr[offset*4 + 1] = shared[(SUBDIM-1)-threadIdx.x][(SUBDIM-1)-threadIdx.y];
     ptr[offset*4 + 2] = 0;
     ptr[offset*4 + 3] = 255;
 }
@@ -75,8 +76,8 @@ int main( int argc, char *argv[] )
                               bitmap.image_size() ) );
     data.dev_bitmap = dev_bitmap;
 
-    dim3    grids(DIM/16,DIM/16);
-    dim3    threads(16,16);
+    dim3    grids(DIM/SUBDIM, DIM/SUBDIM);
+    dim3    threads(SUBDIM, SUBDIM);
     kernel<<<grids,threads>>>( dev_bitmap, need_sync );
 
     HANDLE_ERROR( cudaMemcpy( bitmap.get_ptr(), dev_bitmap,
