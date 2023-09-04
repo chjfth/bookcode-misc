@@ -19,7 +19,8 @@
 
 #include "gl_helper.h"
 
-struct CPUBitmap {
+struct CPUBitmap 
+{
     unsigned char    *pixels;
     int     x, y;
     void    *dataBlock;
@@ -39,7 +40,8 @@ struct CPUBitmap {
     unsigned char* get_ptr( void ) const   { return pixels; }
     long image_size( void ) const { return x * y * 4; }
 
-    void display_and_exit( void(*e)(void*) = NULL ) {
+    void display_and_exit( void(*e)(void*) = NULL ) 
+	{
         CPUBitmap**   bitmap = get_bitmap_ptr();
         *bitmap = this;
         bitmapExit = e;
@@ -57,13 +59,15 @@ struct CPUBitmap {
     }
 
      // static method used for glut callbacks
-    static CPUBitmap** get_bitmap_ptr( void ) {
+    static CPUBitmap** get_bitmap_ptr( void ) 
+	{
         static CPUBitmap   *gBitmap;
         return &gBitmap;
     }
 
    // static method used for glut callbacks
-    static void Key(unsigned char key, int x, int y) {
+    static void Key(unsigned char key, int x, int y) 
+	{
         switch (key) {
             case 27:
                 CPUBitmap*   bitmap = *(get_bitmap_ptr());
@@ -74,7 +78,8 @@ struct CPUBitmap {
     }
 
     // static method used for glut callbacks
-    static void Draw( void ) {
+    static void Draw( void ) 
+	{
         CPUBitmap*   bitmap = *(get_bitmap_ptr());
         glClearColor( 0.0, 0.0, 0.0, 1.0 );
         glClear( GL_COLOR_BUFFER_BIT );
