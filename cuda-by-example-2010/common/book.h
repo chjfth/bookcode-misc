@@ -226,6 +226,9 @@ void wait_for_threads( const CUTThread *threads, int num );
 
 #endif
 
+// Chj supplement:
+
+#define OCC_DIVIDE(n, x) ( ((n)+(x)-1) / (x) ) // occupation divide
 
 
 

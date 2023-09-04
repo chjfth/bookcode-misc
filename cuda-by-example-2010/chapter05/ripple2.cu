@@ -27,8 +27,6 @@ int g_frame_idx = 0;
 int dim = 1024;
 #define PI 3.1415926535897932f
 
-#define OCC_DIVIDE(n, x) ( ((n)+(x)-1) / (x) ) // occupation divide
-
 __global__ void kernel( unsigned char *ptr, int ticks, int dim ) 
 {
 	// map from threadIdx/BlockIdx to pixel position
