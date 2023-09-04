@@ -20,16 +20,17 @@
 
 #define DIM 512
 #define PI 3.1415926535897932f
-#define SUBDIM 32
+#define SUBDIM_MAX 64
+int SubDim = 16;
 
-__global__ void kernel( unsigned char *ptr, bool need_sync) 
+__global__ void kernel( unsigned char *ptr, bool need_sync, int subdim) 
 {
     // map from threadIdx/BlockIdx to pixel position
     int x = threadIdx.x + blockIdx.x * blockDim.x;
     int y = threadIdx.y + blockIdx.y * blockDim.y;
     int offset = x + y * blockDim.x * gridDim.x;
 
-    __shared__ float    shared[SUBDIM][SUBDIM];
+    __shared__ float    shared[SUBDIM_MAX][SUBDIM_MAX]; // cannot exceed 0xC000 bytes
 
     // now calculate the value at that position
     const float period = 128.0f;
@@ -45,7 +46,7 @@ __global__ void kernel( unsigned char *ptr, bool need_sync)
 	}
 
     ptr[offset*4 + 0] = 0;
-    ptr[offset*4 + 1] = shared[(SUBDIM-1)-threadIdx.x][(SUBDIM-1)-threadIdx.y];
+    ptr[offset*4 + 1] = shared[(subdim-1)-threadIdx.x][(subdim-1)-threadIdx.y];
     ptr[offset*4 + 2] = 0;
     ptr[offset*4 + 3] = 255;
 }
@@ -61,13 +62,22 @@ int main( int argc, char *argv[] )
 	{
 		printf("To run without __threadsync(), and see garbled image, type:\n");
 		printf("    unbalanced_syncthreads 0\n");
+		printf("    unbalanced_syncthreads 0 16\n");
+		printf("    unbalanced_syncthreads 0 32\n");
 		printf("");
 		printf("To run with __threadsync(), and see correct image, type:\n");
 		printf("    unbalanced_syncthreads 1\n");
+		printf("    unbalanced_syncthreads 1 16\n");
+		printf("    unbalanced_syncthreads 1 8\n");
+		printf("    unbalanced_syncthreads 1 4\n");
 		return 1;
 	}
 
 	bool need_sync = (argv[1][0]=='1') ? true : false;
+
+	if(argc>2)
+		SubDim = (int)strtoul(argv[2], nullptr, 0);
+
     DataBlock   data;
     CPUBitmap bitmap( DIM, DIM, &data );
     unsigned char    *dev_bitmap;
@@ -76,9 +86,9 @@ int main( int argc, char *argv[] )
                               bitmap.image_size() ) );
     data.dev_bitmap = dev_bitmap;
 
-    dim3    grids(DIM/SUBDIM, DIM/SUBDIM);
-    dim3    threads(SUBDIM, SUBDIM);
-    kernel<<<grids,threads>>>( dev_bitmap, need_sync );
+    dim3    grids(DIM/SubDim, DIM/SubDim);
+    dim3    threads(SubDim, SubDim);
+    kernel<<<grids,threads>>>( dev_bitmap, need_sync, SubDim );
 
     HANDLE_ERROR( cudaMemcpy( bitmap.get_ptr(), dev_bitmap,
                               bitmap.image_size(),
