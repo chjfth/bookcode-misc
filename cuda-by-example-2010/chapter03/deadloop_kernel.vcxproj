@@ -171,6 +171,8 @@
     Source file list:
    -->
   <ItemGroup>
+    <ClCompile Include="..\common\chjdbg-windows.cpp" />
+    <ClCompile Include="..\common\chjdbg.cpp" />
     <CudaCompile Include="deadloop_kernel.cu" />
   </ItemGroup>
 

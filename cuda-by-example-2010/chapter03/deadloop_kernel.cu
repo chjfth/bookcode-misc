@@ -15,6 +15,7 @@
 
 
 #include "../common/book.h"
+#include "../common/chjdbg.h"
 
 __global__ void kernel( void ) 
 {
@@ -25,10 +26,13 @@ __global__ void kernel( void )
 
 int main( void ) 
 {
-	printf( "Dead loop start.\n" );
+	printf( "Kernel dead loop start.\n" );
 
+	uint64 usec_start = ps_GetOsMicrosecs64();
 	kernel<<<1,1>>>();
+	uint64 usec_end = ps_GetOsMicrosecs64();
 
-	printf( "Dead loop end.\n" );
+	printf( "Kernel dead loop end. (%s millisec)\n", 
+		us_to_msecstring(usec_end - usec_start));
     return 0;
 }
