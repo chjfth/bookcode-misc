@@ -18,10 +18,10 @@
 #include "../common/book.h"
 #include "../common/cpu_bitmap.h"
 
-#define DIM 1024
+#define DIM 512
 #define PI 3.1415926535897932f
 
-__global__ void kernel( unsigned char *ptr ) 
+__global__ void kernel( unsigned char *ptr, bool need_sync) 
 {
     // map from threadIdx/BlockIdx to pixel position
     int x = threadIdx.x + blockIdx.x * blockDim.x;
@@ -39,7 +39,9 @@ __global__ void kernel( unsigned char *ptr )
 
     // removing this syncthreads shows graphically what happens
     // when it doesn't exist.  this is an example of why we need it.
-    __syncthreads();
+	if(need_sync) {
+		__syncthreads();
+	}
 
     ptr[offset*4 + 0] = 0;
     ptr[offset*4 + 1] = shared[15-threadIdx.x][15-threadIdx.y];
@@ -52,8 +54,19 @@ struct DataBlock {
     unsigned char   *dev_bitmap;
 };
 
-int main( void ) 
+int main( int argc, char *argv[] ) 
 {
+	if(argc==1)
+	{
+		printf("To run without __threadsync(), and see garbled image, type:\n");
+		printf("    unbalanced_syncthreads 0\n");
+		printf("");
+		printf("To run with __threadsync(), and see correct image, type:\n");
+		printf("    unbalanced_syncthreads 1\n");
+		return 1;
+	}
+
+	bool need_sync = (argv[1][0]=='1') ? true : false;
     DataBlock   data;
     CPUBitmap bitmap( DIM, DIM, &data );
     unsigned char    *dev_bitmap;
@@ -64,7 +77,7 @@ int main( void )
 
     dim3    grids(DIM/16,DIM/16);
     dim3    threads(16,16);
-    kernel<<<grids,threads>>>( dev_bitmap );
+    kernel<<<grids,threads>>>( dev_bitmap, need_sync );
 
     HANDLE_ERROR( cudaMemcpy( bitmap.get_ptr(), dev_bitmap,
                               bitmap.image_size(),
