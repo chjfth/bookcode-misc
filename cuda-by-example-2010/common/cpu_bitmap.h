@@ -23,7 +23,7 @@ struct CPUBitmap
 {
     unsigned char    *pixels;
     int     x, y;
-    void    *dataBlock;
+    void    *dataBlock; // user extra
     void (*bitmapExit)(void*);
 
     CPUBitmap( int width, int height, void *d = NULL ) {
@@ -37,8 +37,13 @@ struct CPUBitmap
         delete [] pixels;
     }
 
-    unsigned char* get_ptr( void ) const   { return pixels; }
-    long image_size( void ) const { return x * y * 4; }
+    unsigned char* get_ptr( void ) const { 
+		return pixels; 
+	}
+    
+	long image_size( void ) const { 
+		return x * y * 4; 
+	}
 
     void display_and_exit( void(*e)(void*) = NULL ) 
 	{

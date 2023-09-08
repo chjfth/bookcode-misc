@@ -71,12 +71,6 @@ __global__ void kernel( Sphere *s, unsigned char *ptr ) {
 }
 
 
-// globals needed by the update routine
-struct DataBlock {
-    unsigned char   *dev_bitmap;
-    Sphere          *s;
-};
-
 int main( int argc, char *argv[] ) 
 {
 	if(argc==1) {
@@ -88,14 +82,13 @@ int main( int argc, char *argv[] )
 		srand(seed);
 	}
 
-    DataBlock   data;
     // capture the start time
     cudaEvent_t     start, stop;
     HANDLE_ERROR( cudaEventCreate( &start ) );
     HANDLE_ERROR( cudaEventCreate( &stop ) );
     HANDLE_ERROR( cudaEventRecord( start, 0 ) );
 
-    CPUBitmap bitmap( DIM, DIM, &data );
+    CPUBitmap bitmap( DIM, DIM );
     unsigned char   *dev_bitmap;
     Sphere          *s;
 
