@@ -77,8 +77,17 @@ struct DataBlock {
     Sphere          *s;
 };
 
-int main( void ) 
+int main( int argc, char *argv[] ) 
 {
+	if(argc==1) {
+		printf("Hint: You can pass a integer parameter as random seed.\n");
+	}
+	else {
+		unsigned seed = strtoul(argv[1], nullptr, 0);
+		printf("Info: Use random seed %u.\n", seed);
+		srand(seed);
+	}
+
     DataBlock   data;
     // capture the start time
     cudaEvent_t     start, stop;
