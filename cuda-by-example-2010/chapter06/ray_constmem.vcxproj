@@ -40,9 +40,9 @@
   <!-- User project properties -->
   
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{20230908-0000-0000-0000-111742000001}</ProjectGuid>
-    <ProjectName>01.ray_noconst</ProjectName>
-     <TargetName>ray_noconst</TargetName>
+    <ProjectGuid>{20230908-0000-0000-0000-125129000001}</ProjectGuid>
+    <ProjectName>02.ray_constmem</ProjectName>
+     <TargetName>ray_constmem</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
   
@@ -177,7 +177,7 @@
     <ClCompile Include="..\common\chjdbg-windows.cpp" />
     <ClCompile Include="..\common\chjdbg.cpp" />
     <ClInclude Include="ray_share.h" />
-    <CudaCompile Include="ray_noconst.cu" />
+    <CudaCompile Include="ray_constmem.cu" />
   </ItemGroup>
 
   <!-- MSBuild system stock Cpp.targets -->

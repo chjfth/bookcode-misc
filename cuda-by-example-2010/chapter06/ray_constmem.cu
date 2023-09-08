@@ -13,6 +13,8 @@
  * 
  */
 
+#define USE_GPU_CONSTANT_MEM
+
 #include "ray_share.h" // Chj refactors this
 
 
@@ -35,17 +37,13 @@ int main( int argc, char *argv[] )
 
 	CPUBitmap bitmap( DIM, DIM );
 	unsigned char   *dev_bitmap;
-	Sphere          *s;
 
 	// allocate memory on the GPU for the output bitmap
 	HANDLE_ERROR( cudaMalloc( (void**)&dev_bitmap,
 		bitmap.image_size() ) );
-	// allocate memory for the Sphere dataset
-	HANDLE_ERROR( cudaMalloc( (void**)&s,
-		sizeof(Sphere) * SPHERES ) );
 
 	// allocate temp memory, initialize it, copy to
-	// memory on the GPU, then free our temp memory
+	// *constant memory* on the GPU, then free our temp memory
 	Sphere *temp_s = (Sphere*)malloc( sizeof(Sphere) * SPHERES );
 	for (int i=0; i<SPHERES; i++) {
 		temp_s[i].r = rnd( 1.0f );
@@ -56,15 +54,16 @@ int main( int argc, char *argv[] )
 		temp_s[i].z = rnd( 1000.0f ) - 500;
 		temp_s[i].radius = rnd( 100.0f ) + 20;
 	}
-	HANDLE_ERROR( cudaMemcpy( s, temp_s,
-		sizeof(Sphere) * SPHERES,
-		cudaMemcpyHostToDevice ) );
+
+	// !!! NEW : cudaMemcpyToSymbol !!!
+	HANDLE_ERROR( cudaMemcpyToSymbol( s, temp_s, sizeof(Sphere)*SPHERES ));
+	
 	free( temp_s );
 
 	// generate a bitmap from our sphere data
 	dim3    grids(DIM/16,DIM/16);
 	dim3    threads(16,16);
-	kernel<<<grids,threads>>>( s, dev_bitmap );
+	kernel<<<grids,threads>>>( dev_bitmap );
 
 	// copy our bitmap back from the GPU for display
 	HANDLE_ERROR( cudaMemcpy( bitmap.get_ptr(), dev_bitmap,
@@ -82,7 +81,6 @@ int main( int argc, char *argv[] )
 	HANDLE_ERROR( cudaEventDestroy( stop ) );
 
 	HANDLE_ERROR( cudaFree( dev_bitmap ) );
-	HANDLE_ERROR( cudaFree( s ) );
 
 	// display
 	bitmap.display_and_exit();
