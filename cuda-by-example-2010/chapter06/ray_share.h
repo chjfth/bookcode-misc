@@ -1,4 +1,4 @@
-#ifndef __rayshare_h_
+﻿#ifndef __rayshare_h_
 #define __rayshare_h_
 
 #include "cuda.h"
@@ -19,11 +19,19 @@ struct Sphere
 	float   x,y,z;
 	__device__ float hit( float ox, float oy, float *n ) 
 	{
+		// Chj: (ox,oy) is the coordinate on the imaging surface(eye-field).
+
 		float dx = ox - x;
 		float dy = oy - y;
+
+		// Hint: dx*dx + dy*dy + dz*dz = raduis*radius
+		// Now we will calculate dz from the other 3 info.
+
 		if (dx*dx + dy*dy < radius*radius) {
 			float dz = sqrtf( radius*radius - dx*dx - dy*dy );
 			*n = dz / sqrtf( radius * radius );
+			
+			// Now, (ox,oy,z+dz) is the point of the sphere surface.
 			return dz + z;
 		}
 		return -INF;
@@ -47,13 +55,19 @@ __global__ void kernel(
 	float   ox = (x - DIM/2);
 	float   oy = (y - DIM/2);
 
+	/*
+	考察每个球 Ball_n 投影到我们的视野中, 在视野中(ox,oy)这个坐标点的情况, 
+	找出是哪个球在 (ox,oy) 处的球体最靠近我们的人眼, 把这个球挑出来,
+	最靠近人眼的这个点, 称其 Z 坐标为 oz, 接着, 计算这个球在 (ox,oy,oz)
+	处呈现的 RGB 颜色值. 将该 RGB 值填入 offset[] 的恰当位置, 任务完成.
+	*/
 	float   r=0, g=0, b=0;
 	float   maxz = -INF;
 	for(int i=0; i<SPHERES; i++) {
 		float   n;
 		float   t = s[i].hit( ox, oy, &n );
 		if (t > maxz) {
-			float fscale = n;
+			float fscale = n; // n(0.0 ~ 1.0) is used to calculate RGB value
 			r = s[i].r * fscale;
 			g = s[i].g * fscale;
 			b = s[i].b * fscale;
