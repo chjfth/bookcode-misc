@@ -39,7 +39,9 @@ struct Sphere
 };
 
 #ifdef USE_GPU_CONSTANT_MEM
-__constant__ Sphere s[SPHERES];
+__constant__ Sphere s[SPHERES]; // __constant__
+#else 
+Sphere *s = nullptr; // s will point to cudaMalloc-ed space.
 #endif
 
 __global__ void kernel( 

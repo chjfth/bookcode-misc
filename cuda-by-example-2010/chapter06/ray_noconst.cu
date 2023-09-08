@@ -35,7 +35,6 @@ int main( int argc, char *argv[] )
 
 	CPUBitmap bitmap( DIM, DIM );
 	unsigned char   *dev_bitmap;
-	Sphere          *s;
 
 	// allocate memory on the GPU for the output bitmap
 	HANDLE_ERROR( cudaMalloc( (void**)&dev_bitmap,
