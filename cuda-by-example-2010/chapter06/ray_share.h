@@ -10,7 +10,9 @@
 #define rnd( x ) (x * rand() / RAND_MAX)
 #define INF     2e10f
 
-#define SPHERES 20
+#define SPHERES_MAX 1000
+
+int SPHERES = 20;
 
 struct Sphere 
 {
@@ -39,7 +41,7 @@ struct Sphere
 };
 
 #ifdef USE_GPU_CONSTANT_MEM
-__constant__ Sphere s[SPHERES]; // __constant__
+__constant__ Sphere s[SPHERES_MAX]; // __constant__
 #else 
 Sphere *s = nullptr; // s will point to cudaMalloc-ed space.
 #endif
@@ -48,7 +50,7 @@ __global__ void kernel(
 #ifndef USE_GPU_CONSTANT_MEM
 	Sphere *s,
 #endif
-	unsigned char *ptr) 
+	int spheres, unsigned char *ptr) 
 {
 	// map from threadIdx/BlockIdx to pixel position
 	int x = threadIdx.x + blockIdx.x * blockDim.x;
@@ -65,7 +67,7 @@ __global__ void kernel(
 	*/
 	float   r=0, g=0, b=0;
 	float   maxz = -INF;
-	for(int i=0; i<SPHERES; i++) {
+	for(int i=0; i<spheres; i++) {
 		float   n;
 		float   t = s[i].hit( ox, oy, &n );
 		if (t > maxz) {
@@ -81,6 +83,38 @@ __global__ void kernel(
 	ptr[offset*4 + 1] = (int)(g * 255);
 	ptr[offset*4 + 2] = (int)(b * 255);
 	ptr[offset*4 + 3] = 255;
+}
+
+
+static bool init_params(int argc, char *argv[])
+{
+	if(argc==1) {
+		printf("Hint: You can pass two params: <spheres> <seed>\n");
+		printf("For example: \n");
+		printf("    ray 10 222\n");
+		printf("\n");
+	}
+
+	if(argc>1) {
+		SPHERES = (int)strtoul(argv[1], nullptr, 0);
+	}
+
+	if(SPHERES>SPHERES_MAX) {
+		printf("Sorry, spheres cannot exceed %d.\n", SPHERES_MAX);
+		return false;
+	}
+	printf("Spheres: %d\n", SPHERES);
+
+	if(argc>2) {
+		unsigned seed = strtoul(argv[2], nullptr, 0);
+		printf("Calling srand(%u).\n", seed);
+		srand(seed);
+	}
+	else {
+		printf("Not calling srand().\n");
+	}
+
+	return true;
 }
 
 #endif

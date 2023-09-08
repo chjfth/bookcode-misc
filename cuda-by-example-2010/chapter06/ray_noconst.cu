@@ -18,14 +18,8 @@
 
 int main( int argc, char *argv[] ) 
 {
-	if(argc==1) {
-		printf("Hint: You can pass a integer parameter as random seed.\n");
-	}
-	else {
-		unsigned seed = strtoul(argv[1], nullptr, 0);
-		printf("Info: Use random seed %u.\n", seed);
-		srand(seed);
-	}
+	if(!init_params(argc, argv))
+		return 4;
 
 	// capture the start time
 	cudaEvent_t     start, stop;
@@ -63,7 +57,7 @@ int main( int argc, char *argv[] )
 	// generate a bitmap from our sphere data
 	dim3    grids(DIM/16,DIM/16);
 	dim3    threads(16,16);
-	kernel<<<grids,threads>>>( s, dev_bitmap );
+	kernel<<<grids,threads>>>( s, SPHERES, dev_bitmap );
 
 	// copy our bitmap back from the GPU for display
 	HANDLE_ERROR( cudaMemcpy( bitmap.get_ptr(), dev_bitmap,
