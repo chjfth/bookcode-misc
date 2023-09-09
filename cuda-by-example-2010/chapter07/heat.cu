@@ -6,7 +6,12 @@
 #define PI 3.1415926535897932f
 #define MAX_TEMP 1.0f
 #define MIN_TEMP 0.0001f
-#define SPEED   0.25f
+
+#define SPEED   0.25f  
+// -- Chj: this value should not exceed 1/4, bcz we calculate new temperature 
+//    of the center pixel according to 4 adjacent pixels, otherwise, the "next"
+//    temperature of the center pixel will exceed one of the surrounding pixels, 
+//    which is physically impossible.
 
 // these exist on the GPU side
 texture<float>  texConstSrc;
@@ -64,7 +69,7 @@ __global__ void copy_const_kernel( float *iptr )
 	int y = threadIdx.y + blockIdx.y * blockDim.y;
 	int offset = x + y * blockDim.x * gridDim.x;
 
-	float c = tex1Dfetch(texConstSrc,offset);
+	float c = tex1Dfetch(texConstSrc, offset);
 	if (c != 0)
 		iptr[offset] = c;
 }
@@ -92,7 +97,8 @@ void anim_gpu( DataBlock *d, int ticks )
 	// since tex is global and bound, we have to use a flag to
 	// select which is in/out per iteration
 	volatile bool dstOut = true;
-	for (int i=0; i<90; i++) {
+	for (int i=0; i<90; i++) 
+	{
 		float   *in, *out;
 		if (dstOut) {
 			in  = d->dev_inSrc;
@@ -101,17 +107,20 @@ void anim_gpu( DataBlock *d, int ticks )
 			out = d->dev_inSrc;
 			in  = d->dev_outSrc;
 		}
+		
 		copy_const_kernel<<<blocks,threads>>>( in );
+		
 		blend_kernel<<<blocks,threads>>>( out, dstOut );
+		
 		dstOut = !dstOut;
 	}
-	float_to_color<<<blocks,threads>>>( d->output_bitmap,
-		d->dev_inSrc );
+	
+	float_to_color<<<blocks,threads>>>( d->output_bitmap, d->dev_inSrc );
 
 	HANDLE_ERROR( cudaMemcpy( bitmap->get_ptr(),
-		d->output_bitmap,
-		bitmap->image_size(),
-		cudaMemcpyDeviceToHost ) );
+							d->output_bitmap,
+							bitmap->image_size(),
+							cudaMemcpyDeviceToHost ) );
 
 	HANDLE_ERROR( cudaEventRecord( d->stop, 0 ) );
 	HANDLE_ERROR( cudaEventSynchronize( d->stop ) );
