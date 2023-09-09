@@ -71,11 +71,6 @@ __global__ void kernel( unsigned char *ptr, int dim, float scale )
     ptr[offset*4 + 3] = 255;
 }
 
-// globals needed by the update routine
-struct DataBlock {
-    unsigned char   *dev_bitmap;
-};
-
 int main( int argc, char *argv[] ) 
 {
 	if(argc<3) {
@@ -103,12 +98,10 @@ int main( int argc, char *argv[] )
 
 	printf("Using sample_points=%d , scale=%g\n", dim, scale);
 
-    DataBlock   data;
-    CPUBitmap bitmap( dim, dim, &data );
+    CPUBitmap bitmap( dim, dim );
     unsigned char    *dev_bitmap;
 
     HANDLE_ERROR( cudaMalloc( (void**)&dev_bitmap, bitmap.image_size() ) );
-    data.dev_bitmap = dev_bitmap;
 
 	unsigned int64 usec_start = ps_GetOsMicrosecs64(); // chj
 
