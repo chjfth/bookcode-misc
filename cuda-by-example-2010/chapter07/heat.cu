@@ -79,7 +79,7 @@ struct DataBlock {
 
 	cudaEvent_t     start, stop;
 	float           totalTime;
-	float           frames;
+	unsigned        frames; // Chj: use unsigned
 };
 
 void anim_gpu( DataBlock *d, int ticks ) 
@@ -120,7 +120,8 @@ void anim_gpu( DataBlock *d, int ticks )
 	HANDLE_ERROR( cudaEventElapsedTime( &elapsedTime, d->start, d->stop ) );
 	d->totalTime += elapsedTime;
 	++d->frames;
-	printf( "Average Time per frame:  %3.1f ms\n", d->totalTime/d->frames );
+	printf( "[#%u] Average Time per frame:  %3.1f ms\n", 
+		d->frames, d->totalTime/d->frames );
 }
 
 // clean up memory allocated on the GPU
