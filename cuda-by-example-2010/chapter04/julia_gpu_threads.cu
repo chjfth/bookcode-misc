@@ -13,7 +13,7 @@
  * 
  */
 
-// [2023-09-02] Chj: User need to  assign parameters <dim> and <scale> .
+// [2023-09-02] Chj: User needs to assign parameters <dim> and <scale> .
 
 #include "../common/book.h"
 #include "../common/cpu_bitmap.h"
@@ -58,7 +58,7 @@ __device__ int julia( int x, int y, int dim, float scale )
 
 __global__ void kernel( unsigned char *ptr, int dim, float scale ) 
 {
-    // map from blockIdx to pixel position
+    // map from threadIdx to pixel position
     int x = threadIdx.x;
     int y = threadIdx.y;
     int offset = x + y * dim; // or: replace `dim` with `blockDim.x`, same result

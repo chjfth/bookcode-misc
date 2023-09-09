@@ -13,7 +13,7 @@
  * 
  */
 
-// [2023-09-02] Chj: User need to  assign parameters <dim> and <scale> .
+// [2023-09-02] Chj: User needs to assign parameters <dim> and <scale> .
 
 #include "../common/book.h"
 #include "../common/cpu_bitmap.h"
