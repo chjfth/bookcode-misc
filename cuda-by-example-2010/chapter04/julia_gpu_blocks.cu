@@ -74,17 +74,22 @@ __global__ void kernel( unsigned char *ptr, int dim, float scale )
 int main( int argc, char *argv[] ) 
 {
 	if(argc<3) {
-		printf("Need two parameters. \n");
-		printf("    julia_gpu_blocks <sample_points> <scale>\n");
+		printf("Need at least two parameters. \n");
+		printf("    julia_gpu_blocks <sample_points> <scale> [sleep_millisec]\n");
 		printf("\n");
 		printf("For example:\n");
 		printf("    julia_gpu_blocks 1000 1.5\n");
-		printf("    julia_gpu_blocks 500 5.0\n");
+		printf("    julia_gpu_blocks 500  5.0 156\n");
 		return 1;
 	}
 
 	dim = (int)strtoul(argv[1], nullptr, 0);
 	scale = (float)atof(argv[2]);
+
+	int sleep_millisec = 0;
+	if(argc>3) {
+		sleep_millisec = (int)strtoul(argv[3], nullptr, 0);
+	}
 
 	if(dim<=0) {
 		printf("ERROR: <sample_points> must > 0, given: %d\n", dim);
@@ -97,6 +102,9 @@ int main( int argc, char *argv[] )
 	}
 
 	printf("Using sample_points=%d , scale=%g\n", dim, scale);
+	if(sleep_millisec>0) {
+		printf("Will sleep %d millisec after GPU kernel call.\n", sleep_millisec);
+	}
 
     CPUBitmap bitmap( dim, dim );
     unsigned char    *dev_bitmap;
@@ -108,6 +116,16 @@ int main( int argc, char *argv[] )
     dim3    grid(dim, dim);
     kernel<<<grid,1>>>( dev_bitmap, dim, scale );
 	
+	unsigned int64 usec_done0 = ps_GetOsMicrosecs64(); // chj
+
+	if(sleep_millisec>0) {
+		// [2023-09-09] Chj experiment: If we sleep some seconds here, can we see 
+		// subsequent cudaMemcpy() costs less time? No, I do not see time reduction 
+		// between usec_done1 and usec_done2? No, I do not see time reduction on 
+		// a GTX 870M, whether it is a Debug build or Release build.
+		Sleep(sleep_millisec);
+	}
+
 	unsigned int64 usec_done1 = ps_GetOsMicrosecs64(); // chj
 
     cudaError_t cudaerr = PRINT_ERROR( cudaMemcpy( bitmap.get_ptr(), dev_bitmap,
@@ -117,7 +135,7 @@ int main( int argc, char *argv[] )
 	unsigned int64 usec_done2 = ps_GetOsMicrosecs64(); // chj
 
 	printf("Julia calculation time cost milliseconds (GPU): %s\n", 
-		us_to_msecstring(usec_done1 - usec_start));
+		us_to_msecstring(usec_done0 - usec_start));
 	
 	if(cudaerr)
 	{
