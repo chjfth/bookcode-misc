@@ -1,6 +1,7 @@
 #include "cuda.h"
 #include "../common/book.h"
 #include "../common/cpu_anim.h"
+#include "../common/chjdbg.h"
 
 #define DIM 1024
 #define PI 3.1415926535897932f
@@ -129,8 +130,14 @@ void anim_gpu( DataBlock *d, int ticks )
 	HANDLE_ERROR( cudaEventElapsedTime( &elapsedTime, d->start, d->stop ) );
 	d->totalTime += elapsedTime;
 	++d->frames;
-	printf( "[#%u] Average Time per frame:  %3.1f ms\n", 
+	
+	char title[80] = {};
+	C_SNPRINTF(title, sizeof(title)-1, 
+		"[#%u] Average Time per frame:  %3.1f ms", 
 		d->frames, d->totalTime/d->frames );
+
+	printf("%s\n", title);
+	glutSetWindowTitle(title);
 }
 
 // clean up memory allocated on the GPU

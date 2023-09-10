@@ -20,6 +20,13 @@ const char *us_to_msecstring(uint64 usec);
 
 void dump_microseconds_diffs(unsigned int ar_uints[], int arsize);
 
+#ifdef _MSC_VER
+#define C_SNPRINTF _snprintf_s
+#else // For Linux
+#define C_SNPRINTF snprintf
+#endif
+
+
 } // extern"C"
 
 #endif

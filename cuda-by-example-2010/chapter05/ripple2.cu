@@ -119,7 +119,7 @@ int main( int argc, char *argv[] )
 		bitmap.image_size() ) );
 
 	char title[40] = {};
-	_snprintf_s(title, _TRUNCATE, "ripple %d", dim);
+	c_snprintf(title, sizeof(title), "ripple %d", dim);
 
 	bitmap.anim_and_exit( 
 		(void (*)(void*,int))generate_frame,
