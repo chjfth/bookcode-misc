@@ -15,13 +15,10 @@
 //    which is physically impossible.
 
 // these exist on the GPU side
-texture<float>  texConstSrc;
-texture<float>  texIn;
-texture<float>  texOut;
+texture<float,2>  texConstSrc;
+texture<float,2>  texIn;
+texture<float,2>  texOut;
 
-// this kernel takes in a 2-d array of floats
-// it updates the value-of-interest by a scaled value based
-// on itself and its nearest neighbors
 __global__ void blend_kernel( float *dst, bool dstOut ) 
 {
 	// map from threadIdx/BlockIdx to pixel position
@@ -29,40 +26,23 @@ __global__ void blend_kernel( float *dst, bool dstOut )
 	int y = threadIdx.y + blockIdx.y * blockDim.y;
 	int offset = x + y * blockDim.x * gridDim.x;
 
-	int left = offset - 1;
-	int right = offset + 1;
-	if (x == 0)   left++;
-	if (x == DIM-1) right--; 
-
-	int top = offset - DIM;
-	int bottom = offset + DIM;
-	if (y == 0)   top += DIM;
-	if (y == DIM-1) bottom -= DIM;
-
 	float   t, l, c, r, b;
 	if (dstOut) {
-		t = tex1Dfetch(texIn,top);
-		l = tex1Dfetch(texIn,left);
-		c = tex1Dfetch(texIn,offset);
-		r = tex1Dfetch(texIn,right);
-		b = tex1Dfetch(texIn,bottom);
-
+		t = tex2D(texIn, x, y-1); // top
+		l = tex2D(texIn, x-1, y); // left
+		c = tex2D(texIn, x, y);   // self
+		r = tex2D(texIn, x+1, y); // right
+		b = tex2D(texIn, x, y+1); // bottom
 	} else {
-		t = tex1Dfetch(texOut,top);
-		l = tex1Dfetch(texOut,left);
-		c = tex1Dfetch(texOut,offset);
-		r = tex1Dfetch(texOut,right);
-		b = tex1Dfetch(texOut,bottom);
+		t = tex2D(texOut, x, y-1); // top
+		l = tex2D(texOut, x-1, y); // left
+		c = tex2D(texOut, x, y);   // self
+		r = tex2D(texOut, x+1, y); // right
+		b = tex2D(texOut, x, y+1); // bottom
 	}
 	dst[offset] = c + SPEED * (t + b + r + l - 4 * c);
 }
 
-// NOTE - texOffsetConstSrc could either be passed as a
-// parameter to this function, or passed in __constant__ memory
-// if we declared it as a global above, it would be
-// a parameter here: 
-// __global__ void copy_const_kernel( float *iptr,
-//                                    size_t texOffset )
 __global__ void copy_const_kernel( float *iptr ) 
 {
 	// map from threadIdx/BlockIdx to pixel position
@@ -70,7 +50,7 @@ __global__ void copy_const_kernel( float *iptr )
 	int y = threadIdx.y + blockIdx.y * blockDim.y;
 	int offset = x + y * blockDim.x * gridDim.x;
 
-	float c = tex1Dfetch(texConstSrc, offset);
+	float c = tex2D(texConstSrc, x, y);
 	if (c != 0)
 		iptr[offset] = c;
 }
@@ -96,17 +76,22 @@ int main( void )
 	HANDLE_ERROR( cudaMalloc( (void**)&data.dev_outSrc,   imageSize ) );
 	HANDLE_ERROR( cudaMalloc( (void**)&data.dev_constSrc, imageSize ) );
 
-	HANDLE_ERROR( cudaBindTexture( NULL, texConstSrc,
-								data.dev_constSrc,
-								imageSize ) );
+	cudaChannelFormatDesc desc = cudaCreateChannelDesc<float>();
 
-	HANDLE_ERROR( cudaBindTexture( NULL, texIn,
-								data.dev_inSrc,
-								imageSize ) );
+	HANDLE_ERROR( cudaBindTexture2D( NULL, texConstSrc,
+									data.dev_constSrc,
+									desc, DIM, DIM,
+									sizeof(float) * DIM ) );
 
-	HANDLE_ERROR( cudaBindTexture( NULL, texOut,
-								data.dev_outSrc,
-								imageSize ) );
+	HANDLE_ERROR( cudaBindTexture2D( NULL, texIn,
+									data.dev_inSrc,
+									desc, DIM, DIM,
+									sizeof(float) * DIM ) );
+
+	HANDLE_ERROR( cudaBindTexture2D( NULL, texOut,
+									data.dev_outSrc,
+									desc, DIM, DIM,
+									sizeof(float) * DIM ) );
 
 	// initialize the constant data
 	//

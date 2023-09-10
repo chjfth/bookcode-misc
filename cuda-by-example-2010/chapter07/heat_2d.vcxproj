@@ -40,9 +40,9 @@
   <!-- User project properties -->
   
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{20230909-0000-0000-0000-225203000001}</ProjectGuid>
-    <ProjectName>01.heat</ProjectName>
-     <TargetName>heat</TargetName>
+    <ProjectGuid>{20230909-0000-0000-0000-225203000002}</ProjectGuid>
+    <ProjectName>02.heat_2d</ProjectName>
+     <TargetName>heat_2d</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
   
@@ -176,7 +176,7 @@
    -->
   <ItemGroup>
     <ClInclude Include="heat_share.h" />
-    <CudaCompile Include="heat.cu" />
+    <CudaCompile Include="heat_2d.cu" />
   </ItemGroup>
 
   <!-- MSBuild system stock Cpp.targets -->
