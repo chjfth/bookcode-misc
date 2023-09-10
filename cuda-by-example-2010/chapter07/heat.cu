@@ -85,11 +85,12 @@ struct DataBlock {
 
 	cudaEvent_t     start, stop;
 	float           totalTime;
-	unsigned        frames; // Chj: use unsigned
+	unsigned        frames; // Chj: use unsigned instead of float
 };
 
 void anim_gpu( DataBlock *d, int ticks ) 
 {
+	(void)ticks;
 	HANDLE_ERROR( cudaEventRecord( d->start, 0 ) );
 	dim3    blocks(DIM/16,DIM/16);
 	dim3    threads(16,16);
@@ -117,6 +118,7 @@ void anim_gpu( DataBlock *d, int ticks )
 	}
 	
 	float_to_color<<<blocks,threads>>>( d->output_bitmap, d->dev_inSrc );
+	// -- after 90(an even number) iterations, dev_inSrc contains the final result.
 
 	HANDLE_ERROR( cudaMemcpy( bitmap->get_ptr(),
 							d->output_bitmap,
@@ -136,7 +138,7 @@ void anim_gpu( DataBlock *d, int ticks )
 		"[#%u] Average Time per frame:  %3.1f ms", 
 		d->frames, d->totalTime/d->frames );
 
-	printf("%s\n", title);
+	printf("%s (ticks=%d)\n", title, ticks);
 	glutSetWindowTitle(title);
 }
 
