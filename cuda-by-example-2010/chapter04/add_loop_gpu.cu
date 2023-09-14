@@ -45,7 +45,11 @@ int main( void )
 	HANDLE_ERROR( cudaMemcpy( dev_a, a, N * sizeof(int), cudaMemcpyHostToDevice ) );
 	HANDLE_ERROR( cudaMemcpy( dev_b, b, N * sizeof(int), cudaMemcpyHostToDevice ) );
 
+	printf("Start calling add<<<N,1>>> ...\n");
+
 	add<<<N,1>>>( dev_a, dev_b, dev_c );
+
+	printf("Done  calling add<<<N,1>>> ...\n");
 
 	// copy the array 'c' back from the GPU to the CPU
 	HANDLE_ERROR( cudaMemcpy( c, dev_c, N * sizeof(int), cudaMemcpyDeviceToHost ) );
