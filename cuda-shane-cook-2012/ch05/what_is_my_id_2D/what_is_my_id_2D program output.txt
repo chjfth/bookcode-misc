@@ -1,0 +1,1033 @@
+Hello, what_is_my_id_2D!
+
+==== Kernel call #0 <<<(1,4), (32,4)>>>====
+
+[ 0, 0] CT: 0   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  0 , Ytid:  0 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1, 0] CT: 1   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  1 , Ytid:  1 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2, 0] CT: 2   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  2 , Ytid:  2 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3, 0] CT: 3   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  3 , Ytid:  3 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4, 0] CT: 4   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  4 , Ytid:  4 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5, 0] CT: 5   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  5 , Ytid:  5 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6, 0] CT: 6   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  6 , Ytid:  6 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7, 0] CT: 7   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  7 , Ytid:  7 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8, 0] CT: 8   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  8 , Ytid:  8 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9, 0] CT: 9   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  9 , Ytid:  9 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10, 0] CT: 10  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 10 , Ytid: 10 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11, 0] CT: 11  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 11 , Ytid: 11 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12, 0] CT: 12  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 12 , Ytid: 12 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13, 0] CT: 13  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 13 , Ytid: 13 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14, 0] CT: 14  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 14 , Ytid: 14 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15, 0] CT: 15  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 15 , Ytid: 15 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16, 0] CT: 16  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 16 , Ytid: 16 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17, 0] CT: 17  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 17 , Ytid: 17 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18, 0] CT: 18  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 18 , Ytid: 18 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19, 0] CT: 19  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 19 , Ytid: 19 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20, 0] CT: 20  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 20 , Ytid: 20 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21, 0] CT: 21  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 21 , Ytid: 21 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22, 0] CT: 22  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 22 , Ytid: 22 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23, 0] CT: 23  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 23 , Ytid: 23 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24, 0] CT: 24  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 24 , Ytid: 24 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25, 0] CT: 25  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 25 , Ytid: 25 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26, 0] CT: 26  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 26 , Ytid: 26 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27, 0] CT: 27  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 27 , Ytid: 27 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28, 0] CT: 28  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 28 , Ytid: 28 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29, 0] CT: 29  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 29 , Ytid: 29 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30, 0] CT: 30  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 30 , Ytid: 30 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31, 0] CT: 31  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 31 , Ytid: 31 Xtid:  0 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0, 1] CT: 32  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  0 , Ytid:  0 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1, 1] CT: 33  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  1 , Ytid:  1 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2, 1] CT: 34  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  2 , Ytid:  2 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3, 1] CT: 35  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  3 , Ytid:  3 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4, 1] CT: 36  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  4 , Ytid:  4 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5, 1] CT: 37  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  5 , Ytid:  5 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6, 1] CT: 38  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  6 , Ytid:  6 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7, 1] CT: 39  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  7 , Ytid:  7 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8, 1] CT: 40  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  8 , Ytid:  8 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9, 1] CT: 41  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  9 , Ytid:  9 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10, 1] CT: 42  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 10 , Ytid: 10 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11, 1] CT: 43  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 11 , Ytid: 11 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12, 1] CT: 44  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 12 , Ytid: 12 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13, 1] CT: 45  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 13 , Ytid: 13 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14, 1] CT: 46  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 14 , Ytid: 14 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15, 1] CT: 47  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 15 , Ytid: 15 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16, 1] CT: 48  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 16 , Ytid: 16 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17, 1] CT: 49  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 17 , Ytid: 17 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18, 1] CT: 50  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 18 , Ytid: 18 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19, 1] CT: 51  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 19 , Ytid: 19 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20, 1] CT: 52  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 20 , Ytid: 20 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21, 1] CT: 53  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 21 , Ytid: 21 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22, 1] CT: 54  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 22 , Ytid: 22 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23, 1] CT: 55  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 23 , Ytid: 23 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24, 1] CT: 56  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 24 , Ytid: 24 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25, 1] CT: 57  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 25 , Ytid: 25 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26, 1] CT: 58  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 26 , Ytid: 26 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27, 1] CT: 59  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 27 , Ytid: 27 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28, 1] CT: 60  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 28 , Ytid: 28 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29, 1] CT: 61  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 29 , Ytid: 29 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30, 1] CT: 62  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 30 , Ytid: 30 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31, 1] CT: 63  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 31 , Ytid: 31 Xtid:  1 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0, 2] CT: 64  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  0 , Ytid:  0 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1, 2] CT: 65  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  1 , Ytid:  1 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2, 2] CT: 66  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  2 , Ytid:  2 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3, 2] CT: 67  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  3 , Ytid:  3 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4, 2] CT: 68  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  4 , Ytid:  4 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5, 2] CT: 69  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  5 , Ytid:  5 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6, 2] CT: 70  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  6 , Ytid:  6 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7, 2] CT: 71  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  7 , Ytid:  7 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8, 2] CT: 72  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  8 , Ytid:  8 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9, 2] CT: 73  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  9 , Ytid:  9 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10, 2] CT: 74  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 10 , Ytid: 10 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11, 2] CT: 75  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 11 , Ytid: 11 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12, 2] CT: 76  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 12 , Ytid: 12 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13, 2] CT: 77  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 13 , Ytid: 13 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14, 2] CT: 78  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 14 , Ytid: 14 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15, 2] CT: 79  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 15 , Ytid: 15 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16, 2] CT: 80  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 16 , Ytid: 16 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17, 2] CT: 81  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 17 , Ytid: 17 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18, 2] CT: 82  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 18 , Ytid: 18 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19, 2] CT: 83  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 19 , Ytid: 19 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20, 2] CT: 84  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 20 , Ytid: 20 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21, 2] CT: 85  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 21 , Ytid: 21 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22, 2] CT: 86  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 22 , Ytid: 22 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23, 2] CT: 87  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 23 , Ytid: 23 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24, 2] CT: 88  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 24 , Ytid: 24 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25, 2] CT: 89  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 25 , Ytid: 25 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26, 2] CT: 90  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 26 , Ytid: 26 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27, 2] CT: 91  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 27 , Ytid: 27 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28, 2] CT: 92  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 28 , Ytid: 28 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29, 2] CT: 93  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 29 , Ytid: 29 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30, 2] CT: 94  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 30 , Ytid: 30 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31, 2] CT: 95  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 31 , Ytid: 31 Xtid:  2 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0, 3] CT: 96  bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  0 , Ytid:  0 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1, 3] CT: 97  bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  1 , Ytid:  1 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2, 3] CT: 98  bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  2 , Ytid:  2 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3, 3] CT: 99  bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  3 , Ytid:  3 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4, 3] CT: 100 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  4 , Ytid:  4 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5, 3] CT: 101 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  5 , Ytid:  5 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6, 3] CT: 102 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  6 , Ytid:  6 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7, 3] CT: 103 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  7 , Ytid:  7 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8, 3] CT: 104 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  8 , Ytid:  8 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9, 3] CT: 105 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  9 , Ytid:  9 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10, 3] CT: 106 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 10 , Ytid: 10 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11, 3] CT: 107 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 11 , Ytid: 11 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12, 3] CT: 108 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 12 , Ytid: 12 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13, 3] CT: 109 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 13 , Ytid: 13 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14, 3] CT: 110 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 14 , Ytid: 14 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15, 3] CT: 111 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 15 , Ytid: 15 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16, 3] CT: 112 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 16 , Ytid: 16 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17, 3] CT: 113 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 17 , Ytid: 17 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18, 3] CT: 114 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 18 , Ytid: 18 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19, 3] CT: 115 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 19 , Ytid: 19 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20, 3] CT: 116 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 20 , Ytid: 20 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21, 3] CT: 117 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 21 , Ytid: 21 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22, 3] CT: 118 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 22 , Ytid: 22 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23, 3] CT: 119 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 23 , Ytid: 23 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24, 3] CT: 120 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 24 , Ytid: 24 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25, 3] CT: 121 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 25 , Ytid: 25 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26, 3] CT: 122 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 26 , Ytid: 26 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27, 3] CT: 123 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 27 , Ytid: 27 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28, 3] CT: 124 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 28 , Ytid: 28 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29, 3] CT: 125 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 29 , Ytid: 29 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30, 3] CT: 126 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 30 , Ytid: 30 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31, 3] CT: 127 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 31 , Ytid: 31 Xtid:  3 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0, 4] CT: 128 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  0 , Ytid:  0 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1, 4] CT: 129 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  1 , Ytid:  1 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2, 4] CT: 130 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  2 , Ytid:  2 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3, 4] CT: 131 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  3 , Ytid:  3 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4, 4] CT: 132 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  4 , Ytid:  4 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5, 4] CT: 133 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  5 , Ytid:  5 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6, 4] CT: 134 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  6 , Ytid:  6 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7, 4] CT: 135 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  7 , Ytid:  7 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8, 4] CT: 136 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  8 , Ytid:  8 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9, 4] CT: 137 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  9 , Ytid:  9 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10, 4] CT: 138 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 10 , Ytid: 10 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11, 4] CT: 139 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 11 , Ytid: 11 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12, 4] CT: 140 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 12 , Ytid: 12 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13, 4] CT: 141 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 13 , Ytid: 13 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14, 4] CT: 142 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 14 , Ytid: 14 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15, 4] CT: 143 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 15 , Ytid: 15 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16, 4] CT: 144 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 16 , Ytid: 16 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17, 4] CT: 145 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 17 , Ytid: 17 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18, 4] CT: 146 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 18 , Ytid: 18 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19, 4] CT: 147 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 19 , Ytid: 19 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20, 4] CT: 148 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 20 , Ytid: 20 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21, 4] CT: 149 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 21 , Ytid: 21 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22, 4] CT: 150 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 22 , Ytid: 22 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23, 4] CT: 151 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 23 , Ytid: 23 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24, 4] CT: 152 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 24 , Ytid: 24 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25, 4] CT: 153 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 25 , Ytid: 25 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26, 4] CT: 154 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 26 , Ytid: 26 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27, 4] CT: 155 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 27 , Ytid: 27 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28, 4] CT: 156 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 28 , Ytid: 28 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29, 4] CT: 157 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 29 , Ytid: 29 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30, 4] CT: 158 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 30 , Ytid: 30 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31, 4] CT: 159 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 31 , Ytid: 31 Xtid:  4 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0, 5] CT: 160 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  0 , Ytid:  0 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1, 5] CT: 161 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  1 , Ytid:  1 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2, 5] CT: 162 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  2 , Ytid:  2 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3, 5] CT: 163 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  3 , Ytid:  3 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4, 5] CT: 164 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  4 , Ytid:  4 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5, 5] CT: 165 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  5 , Ytid:  5 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6, 5] CT: 166 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  6 , Ytid:  6 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7, 5] CT: 167 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  7 , Ytid:  7 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8, 5] CT: 168 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  8 , Ytid:  8 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9, 5] CT: 169 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  9 , Ytid:  9 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10, 5] CT: 170 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 10 , Ytid: 10 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11, 5] CT: 171 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 11 , Ytid: 11 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12, 5] CT: 172 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 12 , Ytid: 12 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13, 5] CT: 173 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 13 , Ytid: 13 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14, 5] CT: 174 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 14 , Ytid: 14 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15, 5] CT: 175 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 15 , Ytid: 15 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16, 5] CT: 176 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 16 , Ytid: 16 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17, 5] CT: 177 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 17 , Ytid: 17 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18, 5] CT: 178 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 18 , Ytid: 18 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19, 5] CT: 179 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 19 , Ytid: 19 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20, 5] CT: 180 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 20 , Ytid: 20 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21, 5] CT: 181 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 21 , Ytid: 21 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22, 5] CT: 182 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 22 , Ytid: 22 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23, 5] CT: 183 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 23 , Ytid: 23 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24, 5] CT: 184 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 24 , Ytid: 24 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25, 5] CT: 185 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 25 , Ytid: 25 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26, 5] CT: 186 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 26 , Ytid: 26 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27, 5] CT: 187 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 27 , Ytid: 27 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28, 5] CT: 188 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 28 , Ytid: 28 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29, 5] CT: 189 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 29 , Ytid: 29 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30, 5] CT: 190 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 30 , Ytid: 30 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31, 5] CT: 191 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 31 , Ytid: 31 Xtid:  5 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0, 6] CT: 192 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  0 , Ytid:  0 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1, 6] CT: 193 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  1 , Ytid:  1 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2, 6] CT: 194 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  2 , Ytid:  2 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3, 6] CT: 195 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  3 , Ytid:  3 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4, 6] CT: 196 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  4 , Ytid:  4 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5, 6] CT: 197 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  5 , Ytid:  5 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6, 6] CT: 198 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  6 , Ytid:  6 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7, 6] CT: 199 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  7 , Ytid:  7 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8, 6] CT: 200 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  8 , Ytid:  8 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9, 6] CT: 201 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  9 , Ytid:  9 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10, 6] CT: 202 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 10 , Ytid: 10 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11, 6] CT: 203 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 11 , Ytid: 11 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12, 6] CT: 204 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 12 , Ytid: 12 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13, 6] CT: 205 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 13 , Ytid: 13 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14, 6] CT: 206 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 14 , Ytid: 14 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15, 6] CT: 207 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 15 , Ytid: 15 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16, 6] CT: 208 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 16 , Ytid: 16 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17, 6] CT: 209 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 17 , Ytid: 17 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18, 6] CT: 210 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 18 , Ytid: 18 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19, 6] CT: 211 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 19 , Ytid: 19 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20, 6] CT: 212 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 20 , Ytid: 20 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21, 6] CT: 213 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 21 , Ytid: 21 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22, 6] CT: 214 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 22 , Ytid: 22 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23, 6] CT: 215 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 23 , Ytid: 23 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24, 6] CT: 216 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 24 , Ytid: 24 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25, 6] CT: 217 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 25 , Ytid: 25 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26, 6] CT: 218 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 26 , Ytid: 26 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27, 6] CT: 219 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 27 , Ytid: 27 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28, 6] CT: 220 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 28 , Ytid: 28 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29, 6] CT: 221 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 29 , Ytid: 29 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30, 6] CT: 222 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 30 , Ytid: 30 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31, 6] CT: 223 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 31 , Ytid: 31 Xtid:  6 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0, 7] CT: 224 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  0 , Ytid:  0 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1, 7] CT: 225 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  1 , Ytid:  1 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2, 7] CT: 226 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  2 , Ytid:  2 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3, 7] CT: 227 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  3 , Ytid:  3 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4, 7] CT: 228 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  4 , Ytid:  4 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5, 7] CT: 229 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  5 , Ytid:  5 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6, 7] CT: 230 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  6 , Ytid:  6 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7, 7] CT: 231 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  7 , Ytid:  7 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8, 7] CT: 232 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  8 , Ytid:  8 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9, 7] CT: 233 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  9 , Ytid:  9 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10, 7] CT: 234 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 10 , Ytid: 10 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11, 7] CT: 235 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 11 , Ytid: 11 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12, 7] CT: 236 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 12 , Ytid: 12 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13, 7] CT: 237 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 13 , Ytid: 13 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14, 7] CT: 238 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 14 , Ytid: 14 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15, 7] CT: 239 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 15 , Ytid: 15 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16, 7] CT: 240 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 16 , Ytid: 16 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17, 7] CT: 241 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 17 , Ytid: 17 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18, 7] CT: 242 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 18 , Ytid: 18 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19, 7] CT: 243 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 19 , Ytid: 19 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20, 7] CT: 244 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 20 , Ytid: 20 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21, 7] CT: 245 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 21 , Ytid: 21 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22, 7] CT: 246 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 22 , Ytid: 22 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23, 7] CT: 247 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 23 , Ytid: 23 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24, 7] CT: 248 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 24 , Ytid: 24 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25, 7] CT: 249 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 25 , Ytid: 25 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26, 7] CT: 250 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 26 , Ytid: 26 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27, 7] CT: 251 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 27 , Ytid: 27 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28, 7] CT: 252 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 28 , Ytid: 28 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29, 7] CT: 253 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 29 , Ytid: 29 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30, 7] CT: 254 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 30 , Ytid: 30 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31, 7] CT: 255 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 31 , Ytid: 31 Xtid:  7 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0, 8] CT: 256 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x:  0 , Ytid:  0 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1, 8] CT: 257 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x:  1 , Ytid:  1 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2, 8] CT: 258 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x:  2 , Ytid:  2 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3, 8] CT: 259 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x:  3 , Ytid:  3 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4, 8] CT: 260 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x:  4 , Ytid:  4 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5, 8] CT: 261 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x:  5 , Ytid:  5 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6, 8] CT: 262 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x:  6 , Ytid:  6 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7, 8] CT: 263 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x:  7 , Ytid:  7 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8, 8] CT: 264 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x:  8 , Ytid:  8 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9, 8] CT: 265 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x:  9 , Ytid:  9 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10, 8] CT: 266 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 10 , Ytid: 10 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11, 8] CT: 267 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 11 , Ytid: 11 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12, 8] CT: 268 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 12 , Ytid: 12 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13, 8] CT: 269 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 13 , Ytid: 13 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14, 8] CT: 270 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 14 , Ytid: 14 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15, 8] CT: 271 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 15 , Ytid: 15 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16, 8] CT: 272 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 16 , Ytid: 16 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17, 8] CT: 273 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 17 , Ytid: 17 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18, 8] CT: 274 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 18 , Ytid: 18 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19, 8] CT: 275 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 19 , Ytid: 19 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20, 8] CT: 276 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 20 , Ytid: 20 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21, 8] CT: 277 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 21 , Ytid: 21 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22, 8] CT: 278 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 22 , Ytid: 22 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23, 8] CT: 279 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 23 , Ytid: 23 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24, 8] CT: 280 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 24 , Ytid: 24 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25, 8] CT: 281 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 25 , Ytid: 25 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26, 8] CT: 282 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 26 , Ytid: 26 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27, 8] CT: 283 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 27 , Ytid: 27 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28, 8] CT: 284 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 28 , Ytid: 28 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29, 8] CT: 285 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 29 , Ytid: 29 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30, 8] CT: 286 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 30 , Ytid: 30 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31, 8] CT: 287 bk.y: 2 bk.x: 0 , tid.y:  0 tid.x: 31 , Ytid: 31 Xtid:  8 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0, 9] CT: 288 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x:  0 , Ytid:  0 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1, 9] CT: 289 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x:  1 , Ytid:  1 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2, 9] CT: 290 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x:  2 , Ytid:  2 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3, 9] CT: 291 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x:  3 , Ytid:  3 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4, 9] CT: 292 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x:  4 , Ytid:  4 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5, 9] CT: 293 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x:  5 , Ytid:  5 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6, 9] CT: 294 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x:  6 , Ytid:  6 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7, 9] CT: 295 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x:  7 , Ytid:  7 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8, 9] CT: 296 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x:  8 , Ytid:  8 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9, 9] CT: 297 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x:  9 , Ytid:  9 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10, 9] CT: 298 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 10 , Ytid: 10 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11, 9] CT: 299 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 11 , Ytid: 11 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12, 9] CT: 300 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 12 , Ytid: 12 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13, 9] CT: 301 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 13 , Ytid: 13 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14, 9] CT: 302 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 14 , Ytid: 14 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15, 9] CT: 303 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 15 , Ytid: 15 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16, 9] CT: 304 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 16 , Ytid: 16 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17, 9] CT: 305 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 17 , Ytid: 17 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18, 9] CT: 306 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 18 , Ytid: 18 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19, 9] CT: 307 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 19 , Ytid: 19 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20, 9] CT: 308 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 20 , Ytid: 20 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21, 9] CT: 309 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 21 , Ytid: 21 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22, 9] CT: 310 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 22 , Ytid: 22 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23, 9] CT: 311 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 23 , Ytid: 23 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24, 9] CT: 312 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 24 , Ytid: 24 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25, 9] CT: 313 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 25 , Ytid: 25 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26, 9] CT: 314 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 26 , Ytid: 26 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27, 9] CT: 315 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 27 , Ytid: 27 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28, 9] CT: 316 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 28 , Ytid: 28 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29, 9] CT: 317 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 29 , Ytid: 29 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30, 9] CT: 318 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 30 , Ytid: 30 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31, 9] CT: 319 bk.y: 2 bk.x: 0 , tid.y:  1 tid.x: 31 , Ytid: 31 Xtid:  9 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0,10] CT: 320 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x:  0 , Ytid:  0 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1,10] CT: 321 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x:  1 , Ytid:  1 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2,10] CT: 322 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x:  2 , Ytid:  2 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3,10] CT: 323 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x:  3 , Ytid:  3 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4,10] CT: 324 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x:  4 , Ytid:  4 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5,10] CT: 325 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x:  5 , Ytid:  5 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6,10] CT: 326 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x:  6 , Ytid:  6 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7,10] CT: 327 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x:  7 , Ytid:  7 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8,10] CT: 328 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x:  8 , Ytid:  8 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9,10] CT: 329 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x:  9 , Ytid:  9 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10,10] CT: 330 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 10 , Ytid: 10 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11,10] CT: 331 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 11 , Ytid: 11 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12,10] CT: 332 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 12 , Ytid: 12 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13,10] CT: 333 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 13 , Ytid: 13 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14,10] CT: 334 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 14 , Ytid: 14 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15,10] CT: 335 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 15 , Ytid: 15 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16,10] CT: 336 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 16 , Ytid: 16 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17,10] CT: 337 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 17 , Ytid: 17 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18,10] CT: 338 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 18 , Ytid: 18 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19,10] CT: 339 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 19 , Ytid: 19 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20,10] CT: 340 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 20 , Ytid: 20 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21,10] CT: 341 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 21 , Ytid: 21 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22,10] CT: 342 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 22 , Ytid: 22 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23,10] CT: 343 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 23 , Ytid: 23 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24,10] CT: 344 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 24 , Ytid: 24 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25,10] CT: 345 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 25 , Ytid: 25 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26,10] CT: 346 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 26 , Ytid: 26 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27,10] CT: 347 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 27 , Ytid: 27 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28,10] CT: 348 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 28 , Ytid: 28 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29,10] CT: 349 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 29 , Ytid: 29 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30,10] CT: 350 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 30 , Ytid: 30 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31,10] CT: 351 bk.y: 2 bk.x: 0 , tid.y:  2 tid.x: 31 , Ytid: 31 Xtid: 10 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0,11] CT: 352 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x:  0 , Ytid:  0 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1,11] CT: 353 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x:  1 , Ytid:  1 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2,11] CT: 354 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x:  2 , Ytid:  2 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3,11] CT: 355 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x:  3 , Ytid:  3 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4,11] CT: 356 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x:  4 , Ytid:  4 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5,11] CT: 357 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x:  5 , Ytid:  5 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6,11] CT: 358 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x:  6 , Ytid:  6 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7,11] CT: 359 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x:  7 , Ytid:  7 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8,11] CT: 360 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x:  8 , Ytid:  8 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9,11] CT: 361 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x:  9 , Ytid:  9 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10,11] CT: 362 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 10 , Ytid: 10 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11,11] CT: 363 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 11 , Ytid: 11 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12,11] CT: 364 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 12 , Ytid: 12 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13,11] CT: 365 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 13 , Ytid: 13 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14,11] CT: 366 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 14 , Ytid: 14 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15,11] CT: 367 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 15 , Ytid: 15 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16,11] CT: 368 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 16 , Ytid: 16 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17,11] CT: 369 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 17 , Ytid: 17 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18,11] CT: 370 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 18 , Ytid: 18 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19,11] CT: 371 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 19 , Ytid: 19 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20,11] CT: 372 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 20 , Ytid: 20 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21,11] CT: 373 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 21 , Ytid: 21 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22,11] CT: 374 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 22 , Ytid: 22 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23,11] CT: 375 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 23 , Ytid: 23 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24,11] CT: 376 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 24 , Ytid: 24 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25,11] CT: 377 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 25 , Ytid: 25 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26,11] CT: 378 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 26 , Ytid: 26 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27,11] CT: 379 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 27 , Ytid: 27 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28,11] CT: 380 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 28 , Ytid: 28 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29,11] CT: 381 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 29 , Ytid: 29 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30,11] CT: 382 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 30 , Ytid: 30 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31,11] CT: 383 bk.y: 2 bk.x: 0 , tid.y:  3 tid.x: 31 , Ytid: 31 Xtid: 11 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0,12] CT: 384 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x:  0 , Ytid:  0 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1,12] CT: 385 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x:  1 , Ytid:  1 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2,12] CT: 386 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x:  2 , Ytid:  2 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3,12] CT: 387 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x:  3 , Ytid:  3 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4,12] CT: 388 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x:  4 , Ytid:  4 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5,12] CT: 389 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x:  5 , Ytid:  5 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6,12] CT: 390 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x:  6 , Ytid:  6 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7,12] CT: 391 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x:  7 , Ytid:  7 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8,12] CT: 392 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x:  8 , Ytid:  8 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9,12] CT: 393 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x:  9 , Ytid:  9 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10,12] CT: 394 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 10 , Ytid: 10 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11,12] CT: 395 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 11 , Ytid: 11 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12,12] CT: 396 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 12 , Ytid: 12 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13,12] CT: 397 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 13 , Ytid: 13 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14,12] CT: 398 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 14 , Ytid: 14 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15,12] CT: 399 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 15 , Ytid: 15 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16,12] CT: 400 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 16 , Ytid: 16 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17,12] CT: 401 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 17 , Ytid: 17 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18,12] CT: 402 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 18 , Ytid: 18 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19,12] CT: 403 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 19 , Ytid: 19 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20,12] CT: 404 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 20 , Ytid: 20 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21,12] CT: 405 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 21 , Ytid: 21 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22,12] CT: 406 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 22 , Ytid: 22 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23,12] CT: 407 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 23 , Ytid: 23 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24,12] CT: 408 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 24 , Ytid: 24 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25,12] CT: 409 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 25 , Ytid: 25 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26,12] CT: 410 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 26 , Ytid: 26 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27,12] CT: 411 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 27 , Ytid: 27 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28,12] CT: 412 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 28 , Ytid: 28 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29,12] CT: 413 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 29 , Ytid: 29 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30,12] CT: 414 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 30 , Ytid: 30 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31,12] CT: 415 bk.y: 3 bk.x: 0 , tid.y:  0 tid.x: 31 , Ytid: 31 Xtid: 12 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0,13] CT: 416 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x:  0 , Ytid:  0 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1,13] CT: 417 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x:  1 , Ytid:  1 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2,13] CT: 418 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x:  2 , Ytid:  2 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3,13] CT: 419 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x:  3 , Ytid:  3 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4,13] CT: 420 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x:  4 , Ytid:  4 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5,13] CT: 421 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x:  5 , Ytid:  5 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6,13] CT: 422 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x:  6 , Ytid:  6 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7,13] CT: 423 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x:  7 , Ytid:  7 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8,13] CT: 424 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x:  8 , Ytid:  8 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9,13] CT: 425 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x:  9 , Ytid:  9 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10,13] CT: 426 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 10 , Ytid: 10 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11,13] CT: 427 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 11 , Ytid: 11 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12,13] CT: 428 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 12 , Ytid: 12 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13,13] CT: 429 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 13 , Ytid: 13 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14,13] CT: 430 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 14 , Ytid: 14 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15,13] CT: 431 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 15 , Ytid: 15 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16,13] CT: 432 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 16 , Ytid: 16 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17,13] CT: 433 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 17 , Ytid: 17 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18,13] CT: 434 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 18 , Ytid: 18 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19,13] CT: 435 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 19 , Ytid: 19 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20,13] CT: 436 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 20 , Ytid: 20 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21,13] CT: 437 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 21 , Ytid: 21 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22,13] CT: 438 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 22 , Ytid: 22 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23,13] CT: 439 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 23 , Ytid: 23 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24,13] CT: 440 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 24 , Ytid: 24 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25,13] CT: 441 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 25 , Ytid: 25 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26,13] CT: 442 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 26 , Ytid: 26 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27,13] CT: 443 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 27 , Ytid: 27 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28,13] CT: 444 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 28 , Ytid: 28 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29,13] CT: 445 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 29 , Ytid: 29 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30,13] CT: 446 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 30 , Ytid: 30 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31,13] CT: 447 bk.y: 3 bk.x: 0 , tid.y:  1 tid.x: 31 , Ytid: 31 Xtid: 13 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0,14] CT: 448 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x:  0 , Ytid:  0 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1,14] CT: 449 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x:  1 , Ytid:  1 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2,14] CT: 450 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x:  2 , Ytid:  2 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3,14] CT: 451 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x:  3 , Ytid:  3 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4,14] CT: 452 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x:  4 , Ytid:  4 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5,14] CT: 453 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x:  5 , Ytid:  5 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6,14] CT: 454 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x:  6 , Ytid:  6 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7,14] CT: 455 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x:  7 , Ytid:  7 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8,14] CT: 456 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x:  8 , Ytid:  8 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9,14] CT: 457 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x:  9 , Ytid:  9 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10,14] CT: 458 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 10 , Ytid: 10 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11,14] CT: 459 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 11 , Ytid: 11 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12,14] CT: 460 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 12 , Ytid: 12 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13,14] CT: 461 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 13 , Ytid: 13 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14,14] CT: 462 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 14 , Ytid: 14 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15,14] CT: 463 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 15 , Ytid: 15 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16,14] CT: 464 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 16 , Ytid: 16 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17,14] CT: 465 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 17 , Ytid: 17 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18,14] CT: 466 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 18 , Ytid: 18 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19,14] CT: 467 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 19 , Ytid: 19 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20,14] CT: 468 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 20 , Ytid: 20 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21,14] CT: 469 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 21 , Ytid: 21 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22,14] CT: 470 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 22 , Ytid: 22 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23,14] CT: 471 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 23 , Ytid: 23 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24,14] CT: 472 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 24 , Ytid: 24 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25,14] CT: 473 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 25 , Ytid: 25 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26,14] CT: 474 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 26 , Ytid: 26 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27,14] CT: 475 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 27 , Ytid: 27 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28,14] CT: 476 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 28 , Ytid: 28 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29,14] CT: 477 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 29 , Ytid: 29 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30,14] CT: 478 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 30 , Ytid: 30 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31,14] CT: 479 bk.y: 3 bk.x: 0 , tid.y:  2 tid.x: 31 , Ytid: 31 Xtid: 14 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 0,15] CT: 480 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x:  0 , Ytid:  0 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 1,15] CT: 481 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x:  1 , Ytid:  1 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 2,15] CT: 482 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x:  2 , Ytid:  2 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 3,15] CT: 483 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x:  3 , Ytid:  3 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 4,15] CT: 484 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x:  4 , Ytid:  4 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 5,15] CT: 485 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x:  5 , Ytid:  5 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 6,15] CT: 486 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x:  6 , Ytid:  6 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 7,15] CT: 487 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x:  7 , Ytid:  7 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 8,15] CT: 488 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x:  8 , Ytid:  8 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[ 9,15] CT: 489 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x:  9 , Ytid:  9 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[10,15] CT: 490 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 10 , Ytid: 10 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[11,15] CT: 491 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 11 , Ytid: 11 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[12,15] CT: 492 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 12 , Ytid: 12 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[13,15] CT: 493 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 13 , Ytid: 13 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[14,15] CT: 494 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 14 , Ytid: 14 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[15,15] CT: 495 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 15 , Ytid: 15 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[16,15] CT: 496 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 16 , Ytid: 16 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[17,15] CT: 497 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 17 , Ytid: 17 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[18,15] CT: 498 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 18 , Ytid: 18 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[19,15] CT: 499 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 19 , Ytid: 19 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[20,15] CT: 500 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 20 , Ytid: 20 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[21,15] CT: 501 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 21 , Ytid: 21 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[22,15] CT: 502 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 22 , Ytid: 22 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[23,15] CT: 503 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 23 , Ytid: 23 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[24,15] CT: 504 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 24 , Ytid: 24 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[25,15] CT: 505 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 25 , Ytid: 25 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[26,15] CT: 506 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 26 , Ytid: 26 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[27,15] CT: 507 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 27 , Ytid: 27 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[28,15] CT: 508 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 28 , Ytid: 28 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[29,15] CT: 509 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 29 , Ytid: 29 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[30,15] CT: 510 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 30 , Ytid: 30 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+[31,15] CT: 511 bk.y: 3 bk.x: 0 , tid.y:  3 tid.x: 31 , Ytid: 31 Xtid: 15 , gridDim.[y/x]:1/4 blockDim.[y/x]:32/4
+
+
+==== Kernel call #1 <<<(2,2), (16,8)>>>====
+
+[ 0, 0] CT: 0   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  0 , Ytid:  0 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1, 0] CT: 1   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  1 , Ytid:  1 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2, 0] CT: 2   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  2 , Ytid:  2 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3, 0] CT: 3   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  3 , Ytid:  3 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4, 0] CT: 4   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  4 , Ytid:  4 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5, 0] CT: 5   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  5 , Ytid:  5 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6, 0] CT: 6   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  6 , Ytid:  6 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7, 0] CT: 7   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  7 , Ytid:  7 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8, 0] CT: 8   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  8 , Ytid:  8 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9, 0] CT: 9   bk.y: 0 bk.x: 0 , tid.y:  0 tid.x:  9 , Ytid:  9 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10, 0] CT: 10  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 10 , Ytid: 10 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11, 0] CT: 11  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 11 , Ytid: 11 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12, 0] CT: 12  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 12 , Ytid: 12 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13, 0] CT: 13  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 13 , Ytid: 13 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14, 0] CT: 14  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 14 , Ytid: 14 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15, 0] CT: 15  bk.y: 0 bk.x: 0 , tid.y:  0 tid.x: 15 , Ytid: 15 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16, 0] CT: 16  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x:  0 , Ytid: 16 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17, 0] CT: 17  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x:  1 , Ytid: 17 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18, 0] CT: 18  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x:  2 , Ytid: 18 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19, 0] CT: 19  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x:  3 , Ytid: 19 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20, 0] CT: 20  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x:  4 , Ytid: 20 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21, 0] CT: 21  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x:  5 , Ytid: 21 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22, 0] CT: 22  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x:  6 , Ytid: 22 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23, 0] CT: 23  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x:  7 , Ytid: 23 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24, 0] CT: 24  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x:  8 , Ytid: 24 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25, 0] CT: 25  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x:  9 , Ytid: 25 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26, 0] CT: 26  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x: 10 , Ytid: 26 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27, 0] CT: 27  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x: 11 , Ytid: 27 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28, 0] CT: 28  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x: 12 , Ytid: 28 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29, 0] CT: 29  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x: 13 , Ytid: 29 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30, 0] CT: 30  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x: 14 , Ytid: 30 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31, 0] CT: 31  bk.y: 0 bk.x: 1 , tid.y:  0 tid.x: 15 , Ytid: 31 Xtid:  0 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0, 1] CT: 32  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  0 , Ytid:  0 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1, 1] CT: 33  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  1 , Ytid:  1 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2, 1] CT: 34  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  2 , Ytid:  2 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3, 1] CT: 35  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  3 , Ytid:  3 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4, 1] CT: 36  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  4 , Ytid:  4 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5, 1] CT: 37  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  5 , Ytid:  5 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6, 1] CT: 38  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  6 , Ytid:  6 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7, 1] CT: 39  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  7 , Ytid:  7 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8, 1] CT: 40  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  8 , Ytid:  8 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9, 1] CT: 41  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x:  9 , Ytid:  9 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10, 1] CT: 42  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 10 , Ytid: 10 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11, 1] CT: 43  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 11 , Ytid: 11 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12, 1] CT: 44  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 12 , Ytid: 12 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13, 1] CT: 45  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 13 , Ytid: 13 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14, 1] CT: 46  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 14 , Ytid: 14 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15, 1] CT: 47  bk.y: 0 bk.x: 0 , tid.y:  1 tid.x: 15 , Ytid: 15 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16, 1] CT: 48  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x:  0 , Ytid: 16 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17, 1] CT: 49  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x:  1 , Ytid: 17 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18, 1] CT: 50  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x:  2 , Ytid: 18 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19, 1] CT: 51  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x:  3 , Ytid: 19 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20, 1] CT: 52  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x:  4 , Ytid: 20 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21, 1] CT: 53  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x:  5 , Ytid: 21 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22, 1] CT: 54  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x:  6 , Ytid: 22 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23, 1] CT: 55  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x:  7 , Ytid: 23 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24, 1] CT: 56  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x:  8 , Ytid: 24 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25, 1] CT: 57  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x:  9 , Ytid: 25 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26, 1] CT: 58  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x: 10 , Ytid: 26 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27, 1] CT: 59  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x: 11 , Ytid: 27 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28, 1] CT: 60  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x: 12 , Ytid: 28 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29, 1] CT: 61  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x: 13 , Ytid: 29 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30, 1] CT: 62  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x: 14 , Ytid: 30 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31, 1] CT: 63  bk.y: 0 bk.x: 1 , tid.y:  1 tid.x: 15 , Ytid: 31 Xtid:  1 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0, 2] CT: 64  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  0 , Ytid:  0 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1, 2] CT: 65  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  1 , Ytid:  1 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2, 2] CT: 66  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  2 , Ytid:  2 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3, 2] CT: 67  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  3 , Ytid:  3 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4, 2] CT: 68  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  4 , Ytid:  4 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5, 2] CT: 69  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  5 , Ytid:  5 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6, 2] CT: 70  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  6 , Ytid:  6 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7, 2] CT: 71  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  7 , Ytid:  7 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8, 2] CT: 72  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  8 , Ytid:  8 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9, 2] CT: 73  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x:  9 , Ytid:  9 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10, 2] CT: 74  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 10 , Ytid: 10 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11, 2] CT: 75  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 11 , Ytid: 11 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12, 2] CT: 76  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 12 , Ytid: 12 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13, 2] CT: 77  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 13 , Ytid: 13 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14, 2] CT: 78  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 14 , Ytid: 14 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15, 2] CT: 79  bk.y: 0 bk.x: 0 , tid.y:  2 tid.x: 15 , Ytid: 15 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16, 2] CT: 80  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x:  0 , Ytid: 16 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17, 2] CT: 81  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x:  1 , Ytid: 17 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18, 2] CT: 82  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x:  2 , Ytid: 18 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19, 2] CT: 83  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x:  3 , Ytid: 19 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20, 2] CT: 84  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x:  4 , Ytid: 20 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21, 2] CT: 85  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x:  5 , Ytid: 21 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22, 2] CT: 86  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x:  6 , Ytid: 22 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23, 2] CT: 87  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x:  7 , Ytid: 23 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24, 2] CT: 88  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x:  8 , Ytid: 24 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25, 2] CT: 89  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x:  9 , Ytid: 25 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26, 2] CT: 90  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x: 10 , Ytid: 26 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27, 2] CT: 91  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x: 11 , Ytid: 27 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28, 2] CT: 92  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x: 12 , Ytid: 28 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29, 2] CT: 93  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x: 13 , Ytid: 29 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30, 2] CT: 94  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x: 14 , Ytid: 30 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31, 2] CT: 95  bk.y: 0 bk.x: 1 , tid.y:  2 tid.x: 15 , Ytid: 31 Xtid:  2 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0, 3] CT: 96  bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  0 , Ytid:  0 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1, 3] CT: 97  bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  1 , Ytid:  1 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2, 3] CT: 98  bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  2 , Ytid:  2 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3, 3] CT: 99  bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  3 , Ytid:  3 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4, 3] CT: 100 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  4 , Ytid:  4 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5, 3] CT: 101 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  5 , Ytid:  5 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6, 3] CT: 102 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  6 , Ytid:  6 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7, 3] CT: 103 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  7 , Ytid:  7 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8, 3] CT: 104 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  8 , Ytid:  8 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9, 3] CT: 105 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x:  9 , Ytid:  9 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10, 3] CT: 106 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 10 , Ytid: 10 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11, 3] CT: 107 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 11 , Ytid: 11 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12, 3] CT: 108 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 12 , Ytid: 12 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13, 3] CT: 109 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 13 , Ytid: 13 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14, 3] CT: 110 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 14 , Ytid: 14 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15, 3] CT: 111 bk.y: 0 bk.x: 0 , tid.y:  3 tid.x: 15 , Ytid: 15 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16, 3] CT: 112 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x:  0 , Ytid: 16 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17, 3] CT: 113 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x:  1 , Ytid: 17 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18, 3] CT: 114 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x:  2 , Ytid: 18 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19, 3] CT: 115 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x:  3 , Ytid: 19 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20, 3] CT: 116 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x:  4 , Ytid: 20 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21, 3] CT: 117 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x:  5 , Ytid: 21 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22, 3] CT: 118 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x:  6 , Ytid: 22 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23, 3] CT: 119 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x:  7 , Ytid: 23 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24, 3] CT: 120 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x:  8 , Ytid: 24 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25, 3] CT: 121 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x:  9 , Ytid: 25 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26, 3] CT: 122 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x: 10 , Ytid: 26 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27, 3] CT: 123 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x: 11 , Ytid: 27 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28, 3] CT: 124 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x: 12 , Ytid: 28 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29, 3] CT: 125 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x: 13 , Ytid: 29 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30, 3] CT: 126 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x: 14 , Ytid: 30 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31, 3] CT: 127 bk.y: 0 bk.x: 1 , tid.y:  3 tid.x: 15 , Ytid: 31 Xtid:  3 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0, 4] CT: 128 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x:  0 , Ytid:  0 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1, 4] CT: 129 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x:  1 , Ytid:  1 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2, 4] CT: 130 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x:  2 , Ytid:  2 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3, 4] CT: 131 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x:  3 , Ytid:  3 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4, 4] CT: 132 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x:  4 , Ytid:  4 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5, 4] CT: 133 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x:  5 , Ytid:  5 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6, 4] CT: 134 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x:  6 , Ytid:  6 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7, 4] CT: 135 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x:  7 , Ytid:  7 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8, 4] CT: 136 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x:  8 , Ytid:  8 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9, 4] CT: 137 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x:  9 , Ytid:  9 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10, 4] CT: 138 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x: 10 , Ytid: 10 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11, 4] CT: 139 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x: 11 , Ytid: 11 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12, 4] CT: 140 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x: 12 , Ytid: 12 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13, 4] CT: 141 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x: 13 , Ytid: 13 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14, 4] CT: 142 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x: 14 , Ytid: 14 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15, 4] CT: 143 bk.y: 0 bk.x: 0 , tid.y:  4 tid.x: 15 , Ytid: 15 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16, 4] CT: 144 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x:  0 , Ytid: 16 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17, 4] CT: 145 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x:  1 , Ytid: 17 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18, 4] CT: 146 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x:  2 , Ytid: 18 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19, 4] CT: 147 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x:  3 , Ytid: 19 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20, 4] CT: 148 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x:  4 , Ytid: 20 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21, 4] CT: 149 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x:  5 , Ytid: 21 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22, 4] CT: 150 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x:  6 , Ytid: 22 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23, 4] CT: 151 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x:  7 , Ytid: 23 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24, 4] CT: 152 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x:  8 , Ytid: 24 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25, 4] CT: 153 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x:  9 , Ytid: 25 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26, 4] CT: 154 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x: 10 , Ytid: 26 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27, 4] CT: 155 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x: 11 , Ytid: 27 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28, 4] CT: 156 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x: 12 , Ytid: 28 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29, 4] CT: 157 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x: 13 , Ytid: 29 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30, 4] CT: 158 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x: 14 , Ytid: 30 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31, 4] CT: 159 bk.y: 0 bk.x: 1 , tid.y:  4 tid.x: 15 , Ytid: 31 Xtid:  4 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0, 5] CT: 160 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x:  0 , Ytid:  0 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1, 5] CT: 161 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x:  1 , Ytid:  1 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2, 5] CT: 162 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x:  2 , Ytid:  2 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3, 5] CT: 163 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x:  3 , Ytid:  3 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4, 5] CT: 164 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x:  4 , Ytid:  4 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5, 5] CT: 165 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x:  5 , Ytid:  5 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6, 5] CT: 166 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x:  6 , Ytid:  6 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7, 5] CT: 167 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x:  7 , Ytid:  7 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8, 5] CT: 168 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x:  8 , Ytid:  8 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9, 5] CT: 169 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x:  9 , Ytid:  9 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10, 5] CT: 170 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x: 10 , Ytid: 10 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11, 5] CT: 171 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x: 11 , Ytid: 11 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12, 5] CT: 172 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x: 12 , Ytid: 12 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13, 5] CT: 173 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x: 13 , Ytid: 13 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14, 5] CT: 174 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x: 14 , Ytid: 14 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15, 5] CT: 175 bk.y: 0 bk.x: 0 , tid.y:  5 tid.x: 15 , Ytid: 15 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16, 5] CT: 176 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x:  0 , Ytid: 16 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17, 5] CT: 177 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x:  1 , Ytid: 17 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18, 5] CT: 178 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x:  2 , Ytid: 18 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19, 5] CT: 179 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x:  3 , Ytid: 19 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20, 5] CT: 180 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x:  4 , Ytid: 20 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21, 5] CT: 181 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x:  5 , Ytid: 21 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22, 5] CT: 182 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x:  6 , Ytid: 22 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23, 5] CT: 183 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x:  7 , Ytid: 23 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24, 5] CT: 184 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x:  8 , Ytid: 24 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25, 5] CT: 185 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x:  9 , Ytid: 25 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26, 5] CT: 186 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x: 10 , Ytid: 26 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27, 5] CT: 187 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x: 11 , Ytid: 27 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28, 5] CT: 188 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x: 12 , Ytid: 28 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29, 5] CT: 189 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x: 13 , Ytid: 29 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30, 5] CT: 190 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x: 14 , Ytid: 30 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31, 5] CT: 191 bk.y: 0 bk.x: 1 , tid.y:  5 tid.x: 15 , Ytid: 31 Xtid:  5 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0, 6] CT: 192 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x:  0 , Ytid:  0 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1, 6] CT: 193 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x:  1 , Ytid:  1 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2, 6] CT: 194 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x:  2 , Ytid:  2 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3, 6] CT: 195 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x:  3 , Ytid:  3 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4, 6] CT: 196 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x:  4 , Ytid:  4 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5, 6] CT: 197 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x:  5 , Ytid:  5 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6, 6] CT: 198 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x:  6 , Ytid:  6 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7, 6] CT: 199 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x:  7 , Ytid:  7 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8, 6] CT: 200 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x:  8 , Ytid:  8 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9, 6] CT: 201 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x:  9 , Ytid:  9 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10, 6] CT: 202 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x: 10 , Ytid: 10 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11, 6] CT: 203 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x: 11 , Ytid: 11 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12, 6] CT: 204 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x: 12 , Ytid: 12 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13, 6] CT: 205 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x: 13 , Ytid: 13 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14, 6] CT: 206 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x: 14 , Ytid: 14 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15, 6] CT: 207 bk.y: 0 bk.x: 0 , tid.y:  6 tid.x: 15 , Ytid: 15 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16, 6] CT: 208 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x:  0 , Ytid: 16 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17, 6] CT: 209 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x:  1 , Ytid: 17 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18, 6] CT: 210 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x:  2 , Ytid: 18 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19, 6] CT: 211 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x:  3 , Ytid: 19 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20, 6] CT: 212 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x:  4 , Ytid: 20 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21, 6] CT: 213 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x:  5 , Ytid: 21 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22, 6] CT: 214 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x:  6 , Ytid: 22 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23, 6] CT: 215 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x:  7 , Ytid: 23 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24, 6] CT: 216 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x:  8 , Ytid: 24 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25, 6] CT: 217 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x:  9 , Ytid: 25 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26, 6] CT: 218 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x: 10 , Ytid: 26 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27, 6] CT: 219 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x: 11 , Ytid: 27 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28, 6] CT: 220 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x: 12 , Ytid: 28 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29, 6] CT: 221 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x: 13 , Ytid: 29 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30, 6] CT: 222 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x: 14 , Ytid: 30 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31, 6] CT: 223 bk.y: 0 bk.x: 1 , tid.y:  6 tid.x: 15 , Ytid: 31 Xtid:  6 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0, 7] CT: 224 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x:  0 , Ytid:  0 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1, 7] CT: 225 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x:  1 , Ytid:  1 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2, 7] CT: 226 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x:  2 , Ytid:  2 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3, 7] CT: 227 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x:  3 , Ytid:  3 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4, 7] CT: 228 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x:  4 , Ytid:  4 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5, 7] CT: 229 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x:  5 , Ytid:  5 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6, 7] CT: 230 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x:  6 , Ytid:  6 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7, 7] CT: 231 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x:  7 , Ytid:  7 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8, 7] CT: 232 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x:  8 , Ytid:  8 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9, 7] CT: 233 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x:  9 , Ytid:  9 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10, 7] CT: 234 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x: 10 , Ytid: 10 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11, 7] CT: 235 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x: 11 , Ytid: 11 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12, 7] CT: 236 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x: 12 , Ytid: 12 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13, 7] CT: 237 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x: 13 , Ytid: 13 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14, 7] CT: 238 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x: 14 , Ytid: 14 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15, 7] CT: 239 bk.y: 0 bk.x: 0 , tid.y:  7 tid.x: 15 , Ytid: 15 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16, 7] CT: 240 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x:  0 , Ytid: 16 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17, 7] CT: 241 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x:  1 , Ytid: 17 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18, 7] CT: 242 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x:  2 , Ytid: 18 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19, 7] CT: 243 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x:  3 , Ytid: 19 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20, 7] CT: 244 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x:  4 , Ytid: 20 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21, 7] CT: 245 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x:  5 , Ytid: 21 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22, 7] CT: 246 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x:  6 , Ytid: 22 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23, 7] CT: 247 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x:  7 , Ytid: 23 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24, 7] CT: 248 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x:  8 , Ytid: 24 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25, 7] CT: 249 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x:  9 , Ytid: 25 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26, 7] CT: 250 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x: 10 , Ytid: 26 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27, 7] CT: 251 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x: 11 , Ytid: 27 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28, 7] CT: 252 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x: 12 , Ytid: 28 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29, 7] CT: 253 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x: 13 , Ytid: 29 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30, 7] CT: 254 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x: 14 , Ytid: 30 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31, 7] CT: 255 bk.y: 0 bk.x: 1 , tid.y:  7 tid.x: 15 , Ytid: 31 Xtid:  7 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0, 8] CT: 256 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  0 , Ytid:  0 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1, 8] CT: 257 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  1 , Ytid:  1 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2, 8] CT: 258 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  2 , Ytid:  2 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3, 8] CT: 259 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  3 , Ytid:  3 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4, 8] CT: 260 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  4 , Ytid:  4 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5, 8] CT: 261 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  5 , Ytid:  5 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6, 8] CT: 262 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  6 , Ytid:  6 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7, 8] CT: 263 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  7 , Ytid:  7 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8, 8] CT: 264 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  8 , Ytid:  8 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9, 8] CT: 265 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x:  9 , Ytid:  9 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10, 8] CT: 266 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 10 , Ytid: 10 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11, 8] CT: 267 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 11 , Ytid: 11 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12, 8] CT: 268 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 12 , Ytid: 12 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13, 8] CT: 269 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 13 , Ytid: 13 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14, 8] CT: 270 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 14 , Ytid: 14 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15, 8] CT: 271 bk.y: 1 bk.x: 0 , tid.y:  0 tid.x: 15 , Ytid: 15 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16, 8] CT: 272 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x:  0 , Ytid: 16 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17, 8] CT: 273 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x:  1 , Ytid: 17 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18, 8] CT: 274 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x:  2 , Ytid: 18 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19, 8] CT: 275 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x:  3 , Ytid: 19 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20, 8] CT: 276 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x:  4 , Ytid: 20 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21, 8] CT: 277 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x:  5 , Ytid: 21 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22, 8] CT: 278 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x:  6 , Ytid: 22 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23, 8] CT: 279 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x:  7 , Ytid: 23 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24, 8] CT: 280 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x:  8 , Ytid: 24 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25, 8] CT: 281 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x:  9 , Ytid: 25 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26, 8] CT: 282 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x: 10 , Ytid: 26 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27, 8] CT: 283 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x: 11 , Ytid: 27 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28, 8] CT: 284 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x: 12 , Ytid: 28 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29, 8] CT: 285 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x: 13 , Ytid: 29 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30, 8] CT: 286 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x: 14 , Ytid: 30 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31, 8] CT: 287 bk.y: 1 bk.x: 1 , tid.y:  0 tid.x: 15 , Ytid: 31 Xtid:  8 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0, 9] CT: 288 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  0 , Ytid:  0 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1, 9] CT: 289 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  1 , Ytid:  1 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2, 9] CT: 290 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  2 , Ytid:  2 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3, 9] CT: 291 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  3 , Ytid:  3 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4, 9] CT: 292 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  4 , Ytid:  4 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5, 9] CT: 293 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  5 , Ytid:  5 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6, 9] CT: 294 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  6 , Ytid:  6 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7, 9] CT: 295 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  7 , Ytid:  7 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8, 9] CT: 296 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  8 , Ytid:  8 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9, 9] CT: 297 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x:  9 , Ytid:  9 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10, 9] CT: 298 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 10 , Ytid: 10 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11, 9] CT: 299 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 11 , Ytid: 11 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12, 9] CT: 300 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 12 , Ytid: 12 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13, 9] CT: 301 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 13 , Ytid: 13 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14, 9] CT: 302 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 14 , Ytid: 14 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15, 9] CT: 303 bk.y: 1 bk.x: 0 , tid.y:  1 tid.x: 15 , Ytid: 15 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16, 9] CT: 304 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x:  0 , Ytid: 16 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17, 9] CT: 305 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x:  1 , Ytid: 17 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18, 9] CT: 306 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x:  2 , Ytid: 18 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19, 9] CT: 307 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x:  3 , Ytid: 19 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20, 9] CT: 308 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x:  4 , Ytid: 20 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21, 9] CT: 309 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x:  5 , Ytid: 21 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22, 9] CT: 310 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x:  6 , Ytid: 22 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23, 9] CT: 311 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x:  7 , Ytid: 23 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24, 9] CT: 312 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x:  8 , Ytid: 24 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25, 9] CT: 313 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x:  9 , Ytid: 25 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26, 9] CT: 314 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x: 10 , Ytid: 26 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27, 9] CT: 315 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x: 11 , Ytid: 27 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28, 9] CT: 316 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x: 12 , Ytid: 28 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29, 9] CT: 317 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x: 13 , Ytid: 29 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30, 9] CT: 318 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x: 14 , Ytid: 30 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31, 9] CT: 319 bk.y: 1 bk.x: 1 , tid.y:  1 tid.x: 15 , Ytid: 31 Xtid:  9 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0,10] CT: 320 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  0 , Ytid:  0 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1,10] CT: 321 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  1 , Ytid:  1 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2,10] CT: 322 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  2 , Ytid:  2 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3,10] CT: 323 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  3 , Ytid:  3 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4,10] CT: 324 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  4 , Ytid:  4 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5,10] CT: 325 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  5 , Ytid:  5 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6,10] CT: 326 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  6 , Ytid:  6 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7,10] CT: 327 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  7 , Ytid:  7 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8,10] CT: 328 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  8 , Ytid:  8 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9,10] CT: 329 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x:  9 , Ytid:  9 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10,10] CT: 330 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 10 , Ytid: 10 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11,10] CT: 331 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 11 , Ytid: 11 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12,10] CT: 332 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 12 , Ytid: 12 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13,10] CT: 333 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 13 , Ytid: 13 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14,10] CT: 334 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 14 , Ytid: 14 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15,10] CT: 335 bk.y: 1 bk.x: 0 , tid.y:  2 tid.x: 15 , Ytid: 15 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16,10] CT: 336 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x:  0 , Ytid: 16 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17,10] CT: 337 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x:  1 , Ytid: 17 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18,10] CT: 338 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x:  2 , Ytid: 18 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19,10] CT: 339 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x:  3 , Ytid: 19 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20,10] CT: 340 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x:  4 , Ytid: 20 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21,10] CT: 341 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x:  5 , Ytid: 21 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22,10] CT: 342 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x:  6 , Ytid: 22 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23,10] CT: 343 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x:  7 , Ytid: 23 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24,10] CT: 344 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x:  8 , Ytid: 24 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25,10] CT: 345 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x:  9 , Ytid: 25 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26,10] CT: 346 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x: 10 , Ytid: 26 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27,10] CT: 347 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x: 11 , Ytid: 27 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28,10] CT: 348 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x: 12 , Ytid: 28 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29,10] CT: 349 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x: 13 , Ytid: 29 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30,10] CT: 350 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x: 14 , Ytid: 30 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31,10] CT: 351 bk.y: 1 bk.x: 1 , tid.y:  2 tid.x: 15 , Ytid: 31 Xtid: 10 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0,11] CT: 352 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  0 , Ytid:  0 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1,11] CT: 353 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  1 , Ytid:  1 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2,11] CT: 354 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  2 , Ytid:  2 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3,11] CT: 355 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  3 , Ytid:  3 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4,11] CT: 356 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  4 , Ytid:  4 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5,11] CT: 357 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  5 , Ytid:  5 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6,11] CT: 358 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  6 , Ytid:  6 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7,11] CT: 359 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  7 , Ytid:  7 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8,11] CT: 360 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  8 , Ytid:  8 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9,11] CT: 361 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x:  9 , Ytid:  9 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10,11] CT: 362 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 10 , Ytid: 10 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11,11] CT: 363 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 11 , Ytid: 11 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12,11] CT: 364 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 12 , Ytid: 12 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13,11] CT: 365 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 13 , Ytid: 13 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14,11] CT: 366 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 14 , Ytid: 14 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15,11] CT: 367 bk.y: 1 bk.x: 0 , tid.y:  3 tid.x: 15 , Ytid: 15 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16,11] CT: 368 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x:  0 , Ytid: 16 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17,11] CT: 369 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x:  1 , Ytid: 17 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18,11] CT: 370 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x:  2 , Ytid: 18 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19,11] CT: 371 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x:  3 , Ytid: 19 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20,11] CT: 372 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x:  4 , Ytid: 20 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21,11] CT: 373 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x:  5 , Ytid: 21 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22,11] CT: 374 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x:  6 , Ytid: 22 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23,11] CT: 375 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x:  7 , Ytid: 23 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24,11] CT: 376 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x:  8 , Ytid: 24 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25,11] CT: 377 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x:  9 , Ytid: 25 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26,11] CT: 378 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x: 10 , Ytid: 26 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27,11] CT: 379 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x: 11 , Ytid: 27 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28,11] CT: 380 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x: 12 , Ytid: 28 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29,11] CT: 381 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x: 13 , Ytid: 29 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30,11] CT: 382 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x: 14 , Ytid: 30 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31,11] CT: 383 bk.y: 1 bk.x: 1 , tid.y:  3 tid.x: 15 , Ytid: 31 Xtid: 11 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0,12] CT: 384 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x:  0 , Ytid:  0 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1,12] CT: 385 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x:  1 , Ytid:  1 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2,12] CT: 386 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x:  2 , Ytid:  2 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3,12] CT: 387 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x:  3 , Ytid:  3 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4,12] CT: 388 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x:  4 , Ytid:  4 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5,12] CT: 389 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x:  5 , Ytid:  5 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6,12] CT: 390 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x:  6 , Ytid:  6 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7,12] CT: 391 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x:  7 , Ytid:  7 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8,12] CT: 392 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x:  8 , Ytid:  8 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9,12] CT: 393 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x:  9 , Ytid:  9 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10,12] CT: 394 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x: 10 , Ytid: 10 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11,12] CT: 395 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x: 11 , Ytid: 11 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12,12] CT: 396 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x: 12 , Ytid: 12 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13,12] CT: 397 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x: 13 , Ytid: 13 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14,12] CT: 398 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x: 14 , Ytid: 14 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15,12] CT: 399 bk.y: 1 bk.x: 0 , tid.y:  4 tid.x: 15 , Ytid: 15 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16,12] CT: 400 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x:  0 , Ytid: 16 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17,12] CT: 401 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x:  1 , Ytid: 17 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18,12] CT: 402 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x:  2 , Ytid: 18 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19,12] CT: 403 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x:  3 , Ytid: 19 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20,12] CT: 404 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x:  4 , Ytid: 20 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21,12] CT: 405 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x:  5 , Ytid: 21 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22,12] CT: 406 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x:  6 , Ytid: 22 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23,12] CT: 407 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x:  7 , Ytid: 23 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24,12] CT: 408 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x:  8 , Ytid: 24 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25,12] CT: 409 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x:  9 , Ytid: 25 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26,12] CT: 410 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x: 10 , Ytid: 26 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27,12] CT: 411 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x: 11 , Ytid: 27 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28,12] CT: 412 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x: 12 , Ytid: 28 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29,12] CT: 413 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x: 13 , Ytid: 29 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30,12] CT: 414 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x: 14 , Ytid: 30 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31,12] CT: 415 bk.y: 1 bk.x: 1 , tid.y:  4 tid.x: 15 , Ytid: 31 Xtid: 12 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0,13] CT: 416 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x:  0 , Ytid:  0 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1,13] CT: 417 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x:  1 , Ytid:  1 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2,13] CT: 418 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x:  2 , Ytid:  2 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3,13] CT: 419 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x:  3 , Ytid:  3 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4,13] CT: 420 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x:  4 , Ytid:  4 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5,13] CT: 421 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x:  5 , Ytid:  5 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6,13] CT: 422 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x:  6 , Ytid:  6 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7,13] CT: 423 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x:  7 , Ytid:  7 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8,13] CT: 424 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x:  8 , Ytid:  8 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9,13] CT: 425 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x:  9 , Ytid:  9 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10,13] CT: 426 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x: 10 , Ytid: 10 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11,13] CT: 427 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x: 11 , Ytid: 11 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12,13] CT: 428 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x: 12 , Ytid: 12 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13,13] CT: 429 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x: 13 , Ytid: 13 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14,13] CT: 430 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x: 14 , Ytid: 14 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15,13] CT: 431 bk.y: 1 bk.x: 0 , tid.y:  5 tid.x: 15 , Ytid: 15 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16,13] CT: 432 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x:  0 , Ytid: 16 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17,13] CT: 433 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x:  1 , Ytid: 17 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18,13] CT: 434 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x:  2 , Ytid: 18 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19,13] CT: 435 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x:  3 , Ytid: 19 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20,13] CT: 436 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x:  4 , Ytid: 20 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21,13] CT: 437 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x:  5 , Ytid: 21 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22,13] CT: 438 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x:  6 , Ytid: 22 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23,13] CT: 439 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x:  7 , Ytid: 23 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24,13] CT: 440 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x:  8 , Ytid: 24 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25,13] CT: 441 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x:  9 , Ytid: 25 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26,13] CT: 442 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x: 10 , Ytid: 26 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27,13] CT: 443 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x: 11 , Ytid: 27 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28,13] CT: 444 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x: 12 , Ytid: 28 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29,13] CT: 445 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x: 13 , Ytid: 29 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30,13] CT: 446 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x: 14 , Ytid: 30 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31,13] CT: 447 bk.y: 1 bk.x: 1 , tid.y:  5 tid.x: 15 , Ytid: 31 Xtid: 13 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0,14] CT: 448 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x:  0 , Ytid:  0 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1,14] CT: 449 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x:  1 , Ytid:  1 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2,14] CT: 450 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x:  2 , Ytid:  2 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3,14] CT: 451 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x:  3 , Ytid:  3 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4,14] CT: 452 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x:  4 , Ytid:  4 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5,14] CT: 453 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x:  5 , Ytid:  5 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6,14] CT: 454 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x:  6 , Ytid:  6 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7,14] CT: 455 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x:  7 , Ytid:  7 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8,14] CT: 456 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x:  8 , Ytid:  8 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9,14] CT: 457 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x:  9 , Ytid:  9 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10,14] CT: 458 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x: 10 , Ytid: 10 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11,14] CT: 459 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x: 11 , Ytid: 11 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12,14] CT: 460 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x: 12 , Ytid: 12 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13,14] CT: 461 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x: 13 , Ytid: 13 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14,14] CT: 462 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x: 14 , Ytid: 14 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15,14] CT: 463 bk.y: 1 bk.x: 0 , tid.y:  6 tid.x: 15 , Ytid: 15 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16,14] CT: 464 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x:  0 , Ytid: 16 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17,14] CT: 465 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x:  1 , Ytid: 17 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18,14] CT: 466 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x:  2 , Ytid: 18 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19,14] CT: 467 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x:  3 , Ytid: 19 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20,14] CT: 468 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x:  4 , Ytid: 20 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21,14] CT: 469 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x:  5 , Ytid: 21 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22,14] CT: 470 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x:  6 , Ytid: 22 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23,14] CT: 471 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x:  7 , Ytid: 23 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24,14] CT: 472 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x:  8 , Ytid: 24 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25,14] CT: 473 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x:  9 , Ytid: 25 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26,14] CT: 474 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x: 10 , Ytid: 26 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27,14] CT: 475 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x: 11 , Ytid: 27 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28,14] CT: 476 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x: 12 , Ytid: 28 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29,14] CT: 477 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x: 13 , Ytid: 29 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30,14] CT: 478 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x: 14 , Ytid: 30 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31,14] CT: 479 bk.y: 1 bk.x: 1 , tid.y:  6 tid.x: 15 , Ytid: 31 Xtid: 14 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 0,15] CT: 480 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x:  0 , Ytid:  0 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 1,15] CT: 481 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x:  1 , Ytid:  1 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 2,15] CT: 482 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x:  2 , Ytid:  2 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 3,15] CT: 483 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x:  3 , Ytid:  3 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 4,15] CT: 484 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x:  4 , Ytid:  4 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 5,15] CT: 485 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x:  5 , Ytid:  5 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 6,15] CT: 486 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x:  6 , Ytid:  6 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 7,15] CT: 487 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x:  7 , Ytid:  7 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 8,15] CT: 488 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x:  8 , Ytid:  8 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[ 9,15] CT: 489 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x:  9 , Ytid:  9 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[10,15] CT: 490 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x: 10 , Ytid: 10 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[11,15] CT: 491 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x: 11 , Ytid: 11 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[12,15] CT: 492 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x: 12 , Ytid: 12 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[13,15] CT: 493 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x: 13 , Ytid: 13 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[14,15] CT: 494 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x: 14 , Ytid: 14 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[15,15] CT: 495 bk.y: 1 bk.x: 0 , tid.y:  7 tid.x: 15 , Ytid: 15 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[16,15] CT: 496 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x:  0 , Ytid: 16 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[17,15] CT: 497 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x:  1 , Ytid: 17 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[18,15] CT: 498 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x:  2 , Ytid: 18 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[19,15] CT: 499 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x:  3 , Ytid: 19 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[20,15] CT: 500 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x:  4 , Ytid: 20 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[21,15] CT: 501 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x:  5 , Ytid: 21 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[22,15] CT: 502 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x:  6 , Ytid: 22 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[23,15] CT: 503 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x:  7 , Ytid: 23 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[24,15] CT: 504 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x:  8 , Ytid: 24 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[25,15] CT: 505 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x:  9 , Ytid: 25 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[26,15] CT: 506 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x: 10 , Ytid: 26 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[27,15] CT: 507 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x: 11 , Ytid: 27 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[28,15] CT: 508 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x: 12 , Ytid: 28 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[29,15] CT: 509 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x: 13 , Ytid: 29 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[30,15] CT: 510 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x: 14 , Ytid: 30 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+[31,15] CT: 511 bk.y: 1 bk.x: 1 , tid.y:  7 tid.x: 15 , Ytid: 31 Xtid: 15 , gridDim.[y/x]:2/2 blockDim.[y/x]:16/8
+
