@@ -45,6 +45,7 @@ void do_main(void)
 	cudaMalloc((void **)&gpu_thread, ARRAY_SIZE_IN_BYTES);
 	cudaMalloc((void **)&gpu_warp, ARRAY_SIZE_IN_BYTES);
 	cudaMalloc((void **)&gpu_calc_thread, ARRAY_SIZE_IN_BYTES);
+	
 	/* Execute our kernel */
 	what_is_my_id<<<num_blocks, num_threads>>>(
 		gpu_block, gpu_thread, gpu_warp,
