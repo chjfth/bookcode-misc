@@ -30,7 +30,7 @@ unsigned int cpu_calc_thread[ARRAY_SIZE];
 
 void do_main(void)
 {
-	/* Total thread count ¼ 2 * 64 ¼ 128 */
+	/* Total thread count = 2 * 64 = 128 */
 	const unsigned int num_blocks = 2;
 	const unsigned int num_threads = 64;
 
