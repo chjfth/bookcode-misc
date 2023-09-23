@@ -7,7 +7,7 @@ __global__ void what_is_my_id(unsigned int * const block,
 	unsigned int * const warp,
 	unsigned int * const calc_thread)
 {
-	/* Thread id is block index * block size þ thread offset into the block */
+	/* Thread id is [block index * block size + thread offset into the block] */
 	const unsigned int thread_idx = (blockIdx.x * blockDim.x) + threadIdx.x;
 	block[thread_idx] = blockIdx.x;
 	thread[thread_idx] = threadIdx.x;

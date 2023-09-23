@@ -20,7 +20,7 @@ what_is_my_id_kp.exe  3 4      // out of order
 
 __global__ void what_is_my_id_kp()
 {
-	/* Thread id is block index * block size þ thread offset into the block */
+	/* Thread id is [block index * block size + thread offset into the block] */
 	const unsigned int thread_idx = (blockIdx.x * blockDim.x) + threadIdx.x;
 
 	printf("kp-Thread: %3u - Block: %2u - Warp %2u - Thread %3u\n",
@@ -31,14 +31,6 @@ __global__ void what_is_my_id_kp()
 }
 
 //////////////////////////////////////////////////////////////////////
-
-#define ARRAY_SIZE 128
-#define ARRAY_SIZE_IN_BYTES (sizeof(unsigned int) * (ARRAY_SIZE))
-/* Declare statically four arrays of ARRAY_SIZE each */
-unsigned int cpu_block[ARRAY_SIZE];
-unsigned int cpu_thread[ARRAY_SIZE];
-unsigned int cpu_warp[ARRAY_SIZE];
-unsigned int cpu_calc_thread[ARRAY_SIZE];
 
 void do_main(int argc, char* argv[])
 {
