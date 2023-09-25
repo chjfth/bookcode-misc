@@ -11,10 +11,10 @@ The result is, it may not be in order.
 
 For example, running Debug or Release exe on GTX 870M (driver version 376.54)
 
-what_is_my_id_kp.exe  2 64     // in order
-what_is_my_id_kp.exe  2 8      // in order
-what_is_my_id_kp.exe  3 8      // out of order
-what_is_my_id_kp.exe  3 4      // out of order
+what_is_my_id_kp.exe  2 64     // may be out of order
+what_is_my_id_kp.exe  2 8      // may be out of order
+what_is_my_id_kp.exe  3 8      // may be out of order
+what_is_my_id_kp.exe  3 4      // may be out of order
 
 */
 
@@ -23,7 +23,7 @@ __global__ void what_is_my_id_kp()
 	/* Thread id is [block index * block size + thread offset into the block] */
 	const unsigned int thread_idx = (blockIdx.x * blockDim.x) + threadIdx.x;
 
-	printf("kp-Thread: %3u - Block: %2u - Warp %2u - Thread %3u\n",
+	printf("kp-Thread: %3u - Block: %2u - Warp %2u (?) - Thread %3u\n",
 		thread_idx, 
 		blockIdx.x, 
 		threadIdx.x / warpSize, 
