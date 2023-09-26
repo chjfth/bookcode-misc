@@ -62,16 +62,18 @@ __global__ void myhistogram_03a( // @page 101 modified
 	/* Work out our thread id */
 	const unsigned int idx = (blockIdx.x * blockDim.x) + threadIdx.x;
 	const unsigned int idy = (blockIdx.y * blockDim.y) + threadIdx.y;
-	unsigned int tid = idx + idy * blockDim.x * gridDim.x;
+	Uint tid = idx + idy * blockDim.x * gridDim.x;
+	Uint threads_per_block = blockDim.x * blockDim.y;
 	
-	// Chj: Let the first thread clear the d_bin_data_shared[] array.
-	if(threadIdx.x==0)
+	// Chj: Clear the d_bin_data_shared[] array.
+	int idxBin = threadIdx.x;
+	while(idxBin < BIN256)
 	{
-		for(int i=0; i<BIN256; i++)
-			d_bin_data_shared[i] = 0;
+		d_bin_data_shared[idxBin] = 0;
+		idxBin += threads_per_block;
 	}
 
-	// Chj: All threads should wait for the first-thread's clearing done.
+	// All threads should wait for the above clearing done.
 	__syncthreads();
 
 	/* Fetch the data value as 32 bit */
@@ -90,7 +92,9 @@ __global__ void myhistogram_03a( // @page 101 modified
 	/* Wait for all threads to update shared memory, again */
 	__syncthreads();
 
-	// Chj: Let the first thread accumulate the counting result.
+#if 0
+	// Chj: Let the first thread accumulate the counting result. 
+	// ( This slows down the overall myhistogram_03a() by 5~10X. Very bad.)
 	if(threadIdx.x==0)
 	{
 		for(int i=0; i<BIN256; i++)
@@ -98,6 +102,21 @@ __global__ void myhistogram_03a( // @page 101 modified
 			atomicAdd( &d_bin_data[i], d_bin_data_shared[i] );
 		}
 	}
+#else
+	// Chj: This is much better, all threads in current block are utilized.
+	// On my RTX 3050 card, with GeForce driver 536.40, 
+	// running `myhistogram 1024000 512`, myhistogram_03a is 20X the speed of myhistogram_02.
+	//
+	// But, on my GTX 870M, with GeForce driver 376.54, 
+	// running `myhistogram 1024000 512`, myhistogram_03a is merely 20% faster than myhistogram_02.
+	threads_per_block = blockDim.x * blockDim.y;
+	idxBin = threadIdx.x;
+	while( idxBin < BIN256 )
+	{
+		atomicAdd( &d_bin_data[idxBin], d_bin_data_shared[idxBin]);
+		idxBin += threads_per_block;
+	}
+#endif
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -195,6 +214,8 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 
 	HANDLE_ERROR( cudaMemcpy(caCount, kaCount, BIN256*sizeof(int), cudaMemcpyDeviceToHost) );
 
+	const char *errprefix = nullptr;
+
 	// Verify GPU-counted result.
 	//
 	printf("Verifying... ");
@@ -204,7 +225,9 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 		{
 			printf("ERROR at sample index %d, correct: %d , wrong: %d\n",
 				i, caCount_init[i], caCount[i]);
-			exit(4);
+			
+			errprefix = "Error!!!";
+			break;
 		}
 	}
 
@@ -213,11 +236,13 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 
 	if(elapse_millisec==0)
 	{
-		printf("Success. (0 millisec)\n");
+		printf("%s (0 millisec)\n", 
+			errprefix ? errprefix : "Success.");
 	}
 	else
 	{
-		printf("Success. (%.5g millisec, %.5g GB/s)\n", 
+		printf("%s (%.5g millisec, %.5g GB/s)\n", 
+			errprefix ? errprefix : "Success.",
 			elapse_millisec, 
 			((double)sample_count/(1000*1000))/elapse_millisec);
 	}
