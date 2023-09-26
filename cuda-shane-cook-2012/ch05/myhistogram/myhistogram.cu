@@ -97,7 +97,16 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 	float elapse_millisec = 0;
 	HANDLE_ERROR( cudaEventElapsedTime( &elapse_millisec, start, stop ) );
 
-	printf("Success. (%g millisec)\n", elapse_millisec);
+	if(elapse_millisec==0)
+	{
+		printf("Success. (0 millisec)\n");
+	}
+	else
+	{
+		printf("Success. (%.5g millisec, %.5g GB/s)\n", 
+			elapse_millisec, 
+			((double)sample_count/(1000*1000))/elapse_millisec);
+	}
 
 	// Release resources.
 	HANDLE_ERROR( cudaFree(kaCount) );
