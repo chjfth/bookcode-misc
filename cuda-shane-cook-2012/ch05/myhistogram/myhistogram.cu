@@ -27,6 +27,79 @@ __global__ void myhistogram_01( // @page 98
 	}
 }
 
+__global__ void myhistogram_02( // @page 99-100
+	const unsigned int * d_hist_data, // note: each call will process 4 bytes(Uint)
+	unsigned int * d_bin_data,
+	int sample_ints) 
+{
+	/* Work out our thread id */
+	const unsigned int idx = (blockIdx.x * blockDim.x) + threadIdx.x;
+	const unsigned int idy = (blockIdx.y * blockDim.y) + threadIdx.y;
+	const unsigned int tid = idx + idy * blockDim.x * gridDim.x;
+
+	if(tid<sample_ints)
+	{
+		/* Fetch the data value */
+		const Uint value_u32 = d_hist_data[tid];
+
+		atomicAdd( &(d_bin_data[ (value_u32 & 0x000000FF) ]), 1 );
+		atomicAdd( &(d_bin_data[ (value_u32 & 0x0000FF00) >>  8 ]), 1 );
+		atomicAdd( &(d_bin_data[ (value_u32 & 0x00FF0000) >> 16 ]), 1 );
+		atomicAdd( &(d_bin_data[ (value_u32 & 0xFF000000) >> 24 ]), 1 );
+	}
+}
+
+__shared__ unsigned int d_bin_data_shared[BIN256];
+
+__global__ void myhistogram_03a( // @page 101 modified
+	const unsigned int * d_hist_data,
+	unsigned int * const d_bin_data,
+	int sample_ints)
+{
+	// Chj: Note: this program implies threadIdx.y==1
+	// Each call copes with four user samples(each sample is one byte).
+
+	/* Work out our thread id */
+	const unsigned int idx = (blockIdx.x * blockDim.x) + threadIdx.x;
+	const unsigned int idy = (blockIdx.y * blockDim.y) + threadIdx.y;
+	unsigned int tid = idx + idy * blockDim.x * gridDim.x;
+	
+	// Chj: Let the first thread clear the d_bin_data_shared[] array.
+	if(threadIdx.x==0)
+	{
+		for(int i=0; i<BIN256; i++)
+			d_bin_data_shared[i] = 0;
+	}
+
+	// Chj: All threads should wait for the first-thread's clearing done.
+	__syncthreads();
+
+	/* Fetch the data value as 32 bit */
+	const unsigned int value_u32 = d_hist_data[tid];
+	
+	// Partial counting into d_bin_data_shared[]
+	//
+	if(tid < sample_ints)
+	{
+		atomicAdd( &(d_bin_data_shared[ (value_u32 & 0x000000FF) ]), 1 );
+		atomicAdd( &(d_bin_data_shared[ (value_u32 & 0x0000FF00) >>  8 ]), 1 );
+		atomicAdd( &(d_bin_data_shared[ (value_u32 & 0x00FF0000) >> 16 ]), 1 );
+		atomicAdd( &(d_bin_data_shared[ (value_u32 & 0xFF000000) >> 24 ]), 1 );
+	}
+	
+	/* Wait for all threads to update shared memory, again */
+	__syncthreads();
+
+	// Chj: Let the first thread accumulate the counting result.
+	if(threadIdx.x==0)
+	{
+		for(int i=0; i<BIN256; i++)
+		{
+			atomicAdd( &d_bin_data[i], d_bin_data_shared[i] );
+		}
+	}
+}
+
 //////////////////////////////////////////////////////////////////////
 
 void generate_histogram(const char *title, int sample_count, int threads_per_block)
@@ -61,11 +134,51 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 	HANDLE_ERROR( cudaMalloc((void**)&kaCount, BIN256*sizeof(int)) );
 	HANDLE_ERROR( cudaMemcpy(kaCount, caCount, BIN256*sizeof(int), cudaMemcpyHostToDevice) );
 
-	HANDLE_ERROR( cudaEventRecord( start, 0 ) ); // start timing
+	// start kernel-call timing
+	HANDLE_ERROR( cudaEventRecord( start, 0 ) ); 
 
-	// Execute our kernel 
-	myhistogram_01<<<OCC_DIVIDE(sample_count, threads_per_block), threads_per_block>>>
-		(kaSamples, kaCount, sample_count);
+	//
+	// Select a kernel function to execute, according to `title`
+	//
+
+	if(strcmp(title, "p98:myhistogram_01")==0)
+	{
+		myhistogram_01<<<OCC_DIVIDE(sample_count, threads_per_block), threads_per_block>>>
+			(kaSamples, kaCount, sample_count);
+	}
+	else if(strcmp(title, "p99:myhistogram_02")==0)
+	{
+		if(sample_count%4 != 0)
+		{
+			printf("ERROR user parameter input: For %s, sample_count must be multiple of 4. You passed in %d.\n",
+				title, sample_count);
+			exit(1);
+		}
+
+		int sample_ints = sample_count/4;
+		myhistogram_02<<<OCC_DIVIDE(sample_ints, threads_per_block), threads_per_block>>>
+			((Uint*)kaSamples, kaCount, sample_ints);
+	}
+	else if(strcmp(title, "p101:myhistogram_03a")==0)
+	{
+		if(sample_count%4 != 0)
+		{
+			printf("ERROR user parameter input: For %s, sample_count must be multiple of 4. You passed in %d.\n",
+				title, sample_count);
+			exit(1);
+		}
+
+		int sample_ints = sample_count/4;
+		myhistogram_03a<<<OCC_DIVIDE(sample_ints, threads_per_block), threads_per_block>>>
+			((Uint*)kaSamples, kaCount, sample_ints);
+	}
+	else
+	{
+		printf("ERROR: Unknown title requested: %s\n", title);
+		exit(1);
+	}
+
+	// Check kernel launch success/fail.
 
 	cudaError_t kerr = cudaPeekAtLastError();
 	if(kerr) {
@@ -74,7 +187,8 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 		exit(4);
 	}
 
-	HANDLE_ERROR( cudaEventRecord( stop, 0 ) ); // stop timing
+	// stop kernel-call timing
+	HANDLE_ERROR( cudaEventRecord( stop, 0 ) ); 
 	HANDLE_ERROR( cudaEventSynchronize( stop ) );
 
 	// Copy gpu-RAM to host-RAM (acquire result)
@@ -83,7 +197,7 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 
 	// Verify GPU-counted result.
 	//
-	printf("Verifying ... ");
+	printf("Verifying... ");
 	for(i=0; i<BIN256; i++)
 	{
 		if(caCount[i]!=caCount_init[i])
@@ -147,4 +261,8 @@ main_myhistogram(int argc, char* argv[])
 	}
 
 	generate_histogram("p98:myhistogram_01", sample_count, threads_per_block);
+	printf("\n");
+	generate_histogram("p99:myhistogram_02", sample_count, threads_per_block);
+	printf("\n");
+	generate_histogram("p101:myhistogram_03a", sample_count, threads_per_block);
 }
