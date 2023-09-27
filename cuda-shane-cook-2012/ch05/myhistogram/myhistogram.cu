@@ -3,6 +3,9 @@
 
 #include "mykernels.h"
 
+__shared__ unsigned int d_bin_data_shared[BIN256];
+// -- sharedmem used by #03a, #03b and #07
+
 static void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {
 	if(sample_count%4 != 0)
@@ -14,7 +17,7 @@ static void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 }
 
 void generate_histogram(const char *title, int sample_count, int threads_per_block,
-	int Nbatch=2)
+	int Nbatch)
 {
 	int i;
 	Uchar *caSamples = new Uchar[sample_count]; // cpu mem
@@ -29,6 +32,7 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 
 	// fill caSamples[] and caCount_init[]
 	//
+	srand(0x40);
 	for(i=0; i<sample_count; i++)
 	{
 		int ball = rand() % BIN256;
@@ -166,17 +170,19 @@ main_myhistogram(int argc, char* argv[])
 		printf("    myhistogram 1024\n");
 		printf("    myhistogram 1024000 512\n");
 		printf("    myhistogram 8 1 2\n");
+		printf("    myhistogram 10240000 512 8\n");
 		exit(1);
 	}
 
 	int sample_count = strtoul(argv[1], nullptr, 0);
 	int threads_per_block = 256;
-	int Nbatch = 10;
+	int Nbatch = 1;
 
 	if(argc>2) {
 		threads_per_block = strtoul(argv[2], nullptr, 0);
 	}
 	if(argc>3) {
+		// This param is used only 
 		Nbatch = strtoul(argv[3], nullptr, 0);
 	}
 	
@@ -193,13 +199,13 @@ main_myhistogram(int argc, char* argv[])
 		exit(1);
 	}
 
-	generate_histogram("p98:myhistogram_01", sample_count, threads_per_block);
+	generate_histogram("p98:myhistogram_01", sample_count, threads_per_block, Nbatch);
 	printf("\n");
-	generate_histogram("p99:myhistogram_02", sample_count, threads_per_block);
+	generate_histogram("p99:myhistogram_02", sample_count, threads_per_block, Nbatch);
 	printf("\n");
-	generate_histogram("p101:myhistogram_03a", sample_count, threads_per_block);
+	generate_histogram("p101:myhistogram_03a", sample_count, threads_per_block, Nbatch);
 	printf("\n");
-	generate_histogram("myhistogram_03b", sample_count, threads_per_block);
+	generate_histogram("myhistogram_03b", sample_count, threads_per_block, Nbatch);
 	printf("\n");
-	generate_histogram("p102:myhistogram_07", sample_count, threads_per_block);
+	generate_histogram("p102:myhistogram_07", sample_count, threads_per_block, Nbatch);
 }

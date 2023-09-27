@@ -1,30 +1,22 @@
 #include "mykernels.h"
 
-
 __global__ void myhistogram_07( // @page 102
 	const Uint * d_hist_data,
 	Uint * d_bin_data,
 	int sample_ints,
 	Uint Nbatch) 
 {
-	// Chj: Note: this program still implies threadIdx.y==1
+	// Chj: Note: this program still implies blockDim.y==1
+
+	assert(blockDim.y==1 && gridDim.y==1);
 
 	/* Work out our thread id */
-	Uint idx = (blockIdx.x * (blockDim.x*Nbatch)) + threadIdx.x;
-	Uint idy = (blockIdx.y * blockDim.y) + threadIdx.y;
-	Uint tid = idx + idy * (blockDim.x*Nbatch) * gridDim.x;
+	Uint idxN = (blockIdx.x * (blockDim.x*Nbatch)) + threadIdx.x;
+	Uint idyN = (blockIdx.y * blockDim.y) + threadIdx.y;
+	assert(idyN==0);
+	Uint tidN = idxN + idyN * (blockDim.x*Nbatch) * gridDim.x;
 
-	Uint idx_gpu = (blockIdx.x * blockDim.x) + threadIdx.x;
-	Uint idy_gpu = (blockIdx.y * blockDim.y) + threadIdx.y;
-	Uint tid_gpu = idx + idy * blockDim.x * gridDim.x;
-	Uint tidQ = tid_gpu * Nbatch;
-	
 	Uint threads_per_block = blockDim.x * blockDim.y;
-
-	if(tid!=tidQ)
-	{
-		printf("[b=%d,t=%d]Got bad.....(%d vs %d)\n", blockIdx.x, threadIdx.x,  tid, tidQ);
-	}
 
 	// Chj: Clear the d_bin_data_shared[] array.
 	int idxBin = threadIdx.x;
@@ -45,7 +37,7 @@ __global__ void myhistogram_07( // @page 102
 	{
 		// note: tid_offset is counted in sizeof(Uint).
 
-		Uint uint_offset = tidQ + tid_offset;
+		Uint uint_offset = tidN + tid_offset;
 
 		if(uint_offset < sample_ints)
 		{

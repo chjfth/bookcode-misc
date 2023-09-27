@@ -1,15 +1,13 @@
 #include "mykernels.h"
 
 
-__shared__ unsigned int d_bin_data_shared[BIN256];
-
 __global__ void myhistogram_03a( // @page 101 modified
 	const unsigned int * d_hist_data,
 	unsigned int * d_bin_data,
 	int sample_ints)
 {
 	// Feature: Partial counting into shared-mem, then merge the result to global-mem.
-	// Chj: Note: this program implies threadIdx.y==1
+	// Chj: Note: this program implies blockDim.y==1
 	// Each call copes with four user samples(each sample is one byte).
 
 	/* Work out our thread id */
