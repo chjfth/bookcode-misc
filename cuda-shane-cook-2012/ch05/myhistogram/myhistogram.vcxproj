@@ -181,11 +181,16 @@
    -->
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClInclude Include="mykernels.h" />
     <ClInclude Include="..\..\share\share.h" />
   </ItemGroup>
 
   <ItemGroup>
     <CudaCompile Include="myhistogram.cu" />
+    <CudaCompile Include="myhistogram_01.cu" />
+    <CudaCompile Include="myhistogram_02.cu" />
+    <CudaCompile Include="myhistogram_03.cu" />
+    <CudaCompile Include="myhistogram_07.cu" />
   </ItemGroup>
 
   <!-- MSBuild system stock Cpp.targets -->
