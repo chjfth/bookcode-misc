@@ -23,7 +23,7 @@ __global__ void myhistogram_07( // @page 102
 
 	if(tid!=tidQ)
 	{
-		printf("Got bad.....(%d vs %d)\n", tid, tidQ);
+		printf("[b=%d,t=%d]Got bad.....(%d vs %d)\n", blockIdx.x, threadIdx.x,  tid, tidQ);
 	}
 
 	// Chj: Clear the d_bin_data_shared[] array.

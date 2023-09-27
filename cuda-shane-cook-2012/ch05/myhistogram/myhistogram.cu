@@ -88,7 +88,7 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 		int sample_ints = sample_count/4;
 		Uint granularity = threads_per_block * Nbatch;
 
-		myhistogram_07<<<OCC_DIVIDE(sample_count, granularity), threads_per_block>>>
+		myhistogram_07<<<OCC_DIVIDE(sample_ints, granularity), threads_per_block>>>
 			((Uint*)kaSamples, kaCount, sample_ints, Nbatch);
 	}
 	else
