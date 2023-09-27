@@ -53,9 +53,10 @@ __shared__ unsigned int d_bin_data_shared[BIN256];
 
 __global__ void myhistogram_03a( // @page 101 modified
 	const unsigned int * d_hist_data,
-	unsigned int * const d_bin_data,
+	unsigned int * d_bin_data,
 	int sample_ints)
 {
+	// Feature: Partial counting into shared-mem, then merge the result to global-mem.
 	// Chj: Note: this program implies threadIdx.y==1
 	// Each call copes with four user samples(each sample is one byte).
 
@@ -109,7 +110,6 @@ __global__ void myhistogram_03a( // @page 101 modified
 	//
 	// But, on my GTX 870M, with GeForce driver 376.54, 
 	// running `myhistogram 1024000 512`, myhistogram_03a is merely 20% faster than myhistogram_02.
-	threads_per_block = blockDim.x * blockDim.y;
 	idxBin = threadIdx.x;
 	while( idxBin < BIN256 )
 	{
@@ -118,6 +118,54 @@ __global__ void myhistogram_03a( // @page 101 modified
 	}
 #endif
 }
+
+__global__ void myhistogram_03b( // byte-by-byte operation based on myhistogram_03a
+	const Uchar * d_hist_data,
+	Uint * const d_bin_data,
+	int sample_count)
+{
+	// Chj extra: Each call copes only ONE sample byte.
+	// On RTX 3050, driver 536.40, running `myhistogram.exe 10240000 512`,
+	// This exhibits only 25% ~ 30% speed of myhistogram_03b.
+	// -- Perhaps it's due to myhistogram_03a has fewer total contending threads
+	//    (25% of myhistogram_03b).
+
+	/* Work out our thread id */
+	const unsigned int idx = (blockIdx.x * blockDim.x) + threadIdx.x;
+	const unsigned int idy = (blockIdx.y * blockDim.y) + threadIdx.y;
+	Uint tid = idx + idy * blockDim.x * gridDim.x;
+	Uint threads_per_block = blockDim.x * blockDim.y;
+
+	// Chj: Clear the d_bin_data_shared[] array.
+	int idxBin = threadIdx.x;
+	while(idxBin < BIN256)
+	{
+		d_bin_data_shared[idxBin] = 0;
+		idxBin += threads_per_block;
+	}
+
+	// All threads should wait for the above clearing done.
+	__syncthreads();
+
+	// Partial counting into d_bin_data_shared[]
+	//
+	if(tid < sample_count)
+	{
+		Uchar who = d_hist_data[tid];
+		atomicAdd( &d_bin_data_shared[who], 1 );
+	}
+
+	// All threads should wait for other-thread's histogram counting done.
+	__syncthreads();
+
+	idxBin = threadIdx.x;
+	while( idxBin < BIN256 )
+	{
+		atomicAdd( &d_bin_data[idxBin], d_bin_data_shared[idxBin]);
+		idxBin += threads_per_block;
+	}
+}
+
 
 //////////////////////////////////////////////////////////////////////
 
@@ -190,6 +238,11 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 		int sample_ints = sample_count/4;
 		myhistogram_03a<<<OCC_DIVIDE(sample_ints, threads_per_block), threads_per_block>>>
 			((Uint*)kaSamples, kaCount, sample_ints);
+	}
+	else if(strcmp(title, "myhistogram_03b")==0)
+	{
+		myhistogram_03b<<<OCC_DIVIDE(sample_count, threads_per_block), threads_per_block>>>
+			(kaSamples, kaCount, sample_count);
 	}
 	else
 	{
@@ -290,4 +343,6 @@ main_myhistogram(int argc, char* argv[])
 	generate_histogram("p99:myhistogram_02", sample_count, threads_per_block);
 	printf("\n");
 	generate_histogram("p101:myhistogram_03a", sample_count, threads_per_block);
+	printf("\n");
+	generate_histogram("myhistogram_03b", sample_count, threads_per_block);
 }
