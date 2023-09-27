@@ -3,7 +3,6 @@
 
 __shared__ unsigned int d_bin_data_shared[BIN256];
 
-
 __global__ void myhistogram_03a( // @page 101 modified
 	const unsigned int * d_hist_data,
 	unsigned int * d_bin_data,
@@ -30,13 +29,13 @@ __global__ void myhistogram_03a( // @page 101 modified
 	// All threads should wait for the above clearing done.
 	__syncthreads();
 
-	/* Fetch the data value as 32 bit */
-	const unsigned int value_u32 = d_hist_data[tid];
-	
 	// Partial counting into d_bin_data_shared[]
 	//
 	if(tid < sample_ints)
 	{
+		// Fetch four histogram elements in a group.
+		Uint value_u32 = d_hist_data[tid];
+
 		atomicAdd( &(d_bin_data_shared[ (value_u32 & 0x000000FF) ]), 1 );
 		atomicAdd( &(d_bin_data_shared[ (value_u32 & 0x0000FF00) >>  8 ]), 1 );
 		atomicAdd( &(d_bin_data_shared[ (value_u32 & 0x00FF0000) >> 16 ]), 1 );

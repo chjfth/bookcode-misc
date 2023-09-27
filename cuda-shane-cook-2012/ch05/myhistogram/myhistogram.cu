@@ -3,8 +3,18 @@
 
 #include "mykernels.h"
 
+static void ReportErrorIfNot4xSamples(const char *title, int sample_count)
+{
+	if(sample_count%4 != 0)
+	{
+		printf("ERROR user parameter input: For %s, sample_count must be multiple of 4. You passed in %d.\n",
+			title, sample_count);
+		exit(1);
+	}
+}
 
-void generate_histogram(const char *title, int sample_count, int threads_per_block)
+void generate_histogram(const char *title, int sample_count, int threads_per_block,
+	int Nbatch=2)
 {
 	int i;
 	Uchar *caSamples = new Uchar[sample_count]; // cpu mem
@@ -50,12 +60,7 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 	}
 	else if(strcmp(title, "p99:myhistogram_02")==0)
 	{
-		if(sample_count%4 != 0)
-		{
-			printf("ERROR user parameter input: For %s, sample_count must be multiple of 4. You passed in %d.\n",
-				title, sample_count);
-			exit(1);
-		}
+		ReportErrorIfNot4xSamples(title, sample_count);
 
 		int sample_ints = sample_count/4;
 		myhistogram_02<<<OCC_DIVIDE(sample_ints, threads_per_block), threads_per_block>>>
@@ -63,12 +68,7 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 	}
 	else if(strcmp(title, "p101:myhistogram_03a")==0)
 	{
-		if(sample_count%4 != 0)
-		{
-			printf("ERROR user parameter input: For %s, sample_count must be multiple of 4. You passed in %d.\n",
-				title, sample_count);
-			exit(1);
-		}
+		ReportErrorIfNot4xSamples(title, sample_count);
 
 		int sample_ints = sample_count/4;
 		myhistogram_03a<<<OCC_DIVIDE(sample_ints, threads_per_block), threads_per_block>>>
@@ -78,6 +78,18 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 	{
 		myhistogram_03b<<<OCC_DIVIDE(sample_count, threads_per_block), threads_per_block>>>
 			(kaSamples, kaCount, sample_count);
+	}
+	else if(strcmp(title, "p102:myhistogram_07")==0)
+	{
+		ReportErrorIfNot4xSamples(title, sample_count);
+
+		printf("Using Nbatch = %d\n", Nbatch);
+
+		int sample_ints = sample_count/4;
+		Uint granularity = threads_per_block * Nbatch;
+
+		myhistogram_07<<<OCC_DIVIDE(sample_count, granularity), threads_per_block>>>
+			((Uint*)kaSamples, kaCount, sample_ints, Nbatch);
 	}
 	else
 	{
@@ -148,29 +160,37 @@ main_myhistogram(int argc, char* argv[])
 	if(argc==1)
 	{
 		printf("Usage:\n");
-		printf("    myhistogram <sample_count> [threads_per_block]\n");
+		printf("    myhistogram <histogram_sample_count> [threads_per_block] [Nbatch]\n");
 		printf("\n");
 		printf("Examples:\n");
 		printf("    myhistogram 1024\n");
 		printf("    myhistogram 1024000 512\n");
+		printf("    myhistogram 8 1 2\n");
 		exit(1);
 	}
 
 	int sample_count = strtoul(argv[1], nullptr, 0);
-
 	int threads_per_block = 256;
+	int Nbatch = 10;
 
 	if(argc>2) {
 		threads_per_block = strtoul(argv[2], nullptr, 0);
+	}
+	if(argc>3) {
+		Nbatch = strtoul(argv[3], nullptr, 0);
 	}
 	
 	if(sample_count<=0) {
 		printf("Wrong sample_count number(must >0): %d\n", sample_count);
 		exit(1);
 	}
-
 	if(threads_per_block<=0) {
 		printf("Wrong threads_per_block number(must >0): %d\n", threads_per_block);
+		exit(1);
+	}
+	if(Nbatch<=0) {
+		printf("Wrong Nbatch number(must >0): %d\n", threads_per_block);
+		exit(1);
 	}
 
 	generate_histogram("p98:myhistogram_01", sample_count, threads_per_block);
@@ -180,4 +200,6 @@ main_myhistogram(int argc, char* argv[])
 	generate_histogram("p101:myhistogram_03a", sample_count, threads_per_block);
 	printf("\n");
 	generate_histogram("myhistogram_03b", sample_count, threads_per_block);
+	printf("\n");
+	generate_histogram("p102:myhistogram_07", sample_count, threads_per_block);
 }

@@ -1,6 +1,8 @@
 #ifndef __mykernels_h_
 #define __mykernels_h_
 
+extern"C"{
+
 #include "../../share/share.h"
 
 #define BIN256 256
@@ -18,6 +20,9 @@ __global__ void myhistogram_02( // @page 99-100
 	int sample_ints) ;
 
 
+extern __shared__ unsigned int d_bin_data_shared[];
+// -- GPU sharedmem used by #03a, #03b, #07
+
 __global__ void myhistogram_03a( // @page 101 modified
 	const unsigned int * d_hist_data,
 	unsigned int * d_bin_data,
@@ -30,9 +35,12 @@ __global__ void myhistogram_03b( // byte-by-byte operation based on myhistogram_
 
 
 __global__ void myhistogram_07( // @page 102
-	const unsigned char * d_hist_data,
-	unsigned int * d_bin_data,
-	int sample_count,
-	Uint Nbatch) ;
+	const Uint * d_hist_data,
+	Uint * d_bin_data,
+	int sample_ints,
+	Uint Nbatch);
+
+
+}; // extern"C"
 
 #endif
