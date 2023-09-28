@@ -58,7 +58,7 @@ static cudaError_t PrintCudaError(cudaError_t err, const char *file, int line)
 	{
 		printf( "[CUDAERR:%d] %s in %s at line %d\n", 
 			err,
-			cudaGetErrorString( err ),
+			cudaGetErrorName( err ),
 			file, line 
 			);
 	}

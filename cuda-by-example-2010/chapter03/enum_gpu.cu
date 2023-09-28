@@ -20,9 +20,11 @@ int main( void )
 {
 	cudaDeviceProp  prop = {};
 
-    int count = 0;
-    HANDLE_ERROR( cudaGetDeviceCount( &count ) );
-    for (int i=0; i< count; i++) {
+	int count = 0;
+	HANDLE_ERROR( cudaGetDeviceCount( &count ) );
+
+	for (int i=0; i< count; i++) 
+	{
         HANDLE_ERROR( cudaGetDeviceProperties( &prop, i ) );
         printf( "   --- General Information for device %d ---\n", i );
         printf( "Name:  %s\n", prop.name );
@@ -60,5 +62,5 @@ int main( void )
                     prop.maxGridSize[0], prop.maxGridSize[1],
                     prop.maxGridSize[2] );
         printf( "\n" );
-    }
+	}
 }

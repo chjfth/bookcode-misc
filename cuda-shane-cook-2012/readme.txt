@@ -4,7 +4,7 @@ Some code from the book:
 
 	[CUDA2012] MK - CUDA Programming, by Shane Cook (2012).pdf
 
-No official source archive provided by the author.
+No official source archive provided by the book author.
 
 The reader must cherry pick the source code lines from the book, and create CUDA .vcxproj-s 
 by himself.

@@ -24,9 +24,10 @@ static cudaError_t PrintCudaError(cudaError_t err, const char *file, int line)
 {
 	if(err)
 	{
-		printf( "[CUDAERR:%d] %s in %s at line %d\n", 
+		printf( "[CUDAERR:%d](%s) %s in %s at line %d\n", 
 			err,
-			cudaGetErrorString( err ),
+			cudaGetErrorName(err),
+			cudaGetErrorString(err),
 			file, line 
 			);
 	}
