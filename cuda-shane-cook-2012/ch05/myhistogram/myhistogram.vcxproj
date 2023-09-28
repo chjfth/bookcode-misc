@@ -181,6 +181,7 @@
    -->
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\..\share\share_utils.cpp" />
     <ClInclude Include="mykernels.h" />
     <ClInclude Include="..\..\share\share.h" />
   </ItemGroup>

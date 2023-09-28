@@ -199,6 +199,8 @@ main_myhistogram(int argc, char* argv[])
 		exit(1);
 	}
 
+	myPrintGpuInfo();
+
 	generate_histogram("p98:myhistogram_01", sample_count, threads_per_block, Nbatch);
 	printf("\n");
 	generate_histogram("p99:myhistogram_02", sample_count, threads_per_block, Nbatch);

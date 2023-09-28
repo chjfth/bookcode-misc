@@ -45,4 +45,6 @@ static void HandleError( cudaError_t err,
 	exit( EXIT_FAILURE );}}
 
 
+void myPrintGpuInfo();
+
 #endif
