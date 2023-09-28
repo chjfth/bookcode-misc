@@ -9,8 +9,6 @@ int main(int argc, char* argv[])
 {
 	setlocale(LC_ALL, "");
 	
-	printf("Hello, myhistogram!\n");
-
 	main_myhistogram(argc, argv);
 
 	return 0;

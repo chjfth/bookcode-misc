@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "../../share/share.h"
 #include "mykernels.h"
 
 __shared__ unsigned int d_bin_data_shared[BIN256];

@@ -5,11 +5,18 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <cuda.h>
+#include <cuda_runtime.h>
 
 typedef unsigned char Uchar;
 typedef unsigned int Uint;
 
 #define OCC_DIVIDE(n, x) ( ((n)+(x)-1) / (x) ) // occupation divide
+
+#ifdef _MSC_VER
+#define C_SNPRINTF _snprintf_s
+#else // For Linux
+#define C_SNPRINTF snprintf
+#endif
 
 
 static cudaError_t PrintCudaError(cudaError_t err, const char *file, int line)
