@@ -10,9 +10,6 @@ quite appositely matches the author's words.
 #include "../../share/share.h"
 #include "mykernels.h"
 
-__shared__ unsigned int d_bin_data_shared[BIN256];
-// -- sharedmem used by #03a, #03b and #07
-
 
 void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {

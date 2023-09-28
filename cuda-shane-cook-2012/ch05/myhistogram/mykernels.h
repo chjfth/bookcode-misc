@@ -17,7 +17,7 @@ __global__ void myhistogram_02( // @page 99-100
 	int sample_ints) ;
 
 
-extern __shared__ unsigned int d_bin_data_shared[];
+__shared__ unsigned int d_bin_data_shared[BIN256];
 // -- GPU sharedmem used by #03a, #03b, #07
 
 __global__ void myhistogram_03a( // @page 101 modified
