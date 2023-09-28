@@ -1,3 +1,9 @@
+/*  Orignial code from [CUDA2012] Shane Cook's book, CH05, page 97-103.
+2023.09.27, Chj adds caller code to the kernel functions and applies many fixes 
+to his original kernel code. Now it runs smoothly, and the program's behavior
+quite appositely matches the author's words.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
