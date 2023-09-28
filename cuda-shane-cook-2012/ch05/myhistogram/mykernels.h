@@ -5,9 +5,6 @@ extern"C"{
 
 #include "../../share/share.h"
 
-#define BIN256 256
-
-
 __global__ void myhistogram_01( // @page 98
 	const unsigned char * d_hist_data,
 	unsigned int * d_bin_data,

@@ -1,5 +1,6 @@
 #include "share.h"
 
+
 static const char *getstr_cores_per_sm(int ccpmajor, int ccpminor, int SM_count)
 {
 	struct CPSmap_st 
@@ -59,15 +60,26 @@ void myPrintGpuInfo()
 		exit(2);
 	}
 	HANDLE_ERROR(cuerr);
+
+	int drvver = 0, sdkver = 0;
+	HANDLE_ERROR( cudaDriverGetVersion(&drvver) );
+	HANDLE_ERROR( cudaRuntimeGetVersion(&sdkver) );
 	
 	HANDLE_ERROR( cudaGetDeviceProperties( &prop, 0 ) );
 
 	char gpustr[120] = {};
-	printf("GPU: %s\nCompute-capability:%d.%d, SM-count:%d Cores-per-SM:%s\n",
+	printf("GPU: %s, CUDA driver: %d\n",
 		prop.name,
+		drvver
+		);
+	printf("Compute-capability:%d.%d, SM-count:%d Cores-per-SM:%s\n",
 		prop.major, prop.minor,
 		prop.multiProcessorCount,
 		getstr_cores_per_sm(prop.major, prop.minor, prop.multiProcessorCount)
 		);
 	printf("\n");
 }
+
+
+
+

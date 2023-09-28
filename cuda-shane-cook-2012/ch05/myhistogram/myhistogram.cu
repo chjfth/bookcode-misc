@@ -13,7 +13,8 @@ quite appositely matches the author's words.
 __shared__ unsigned int d_bin_data_shared[BIN256];
 // -- sharedmem used by #03a, #03b and #07
 
-static void ReportErrorIfNot4xSamples(const char *title, int sample_count)
+
+void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {
 	if(sample_count%4 != 0)
 	{
@@ -23,10 +24,9 @@ static void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 	}
 }
 
-void generate_histogram(const char *title, int sample_count, int threads_per_block,
+void generate_histogram_gpu(const char *title, int sample_count, int threads_per_block,
 	int Nbatch)
 {
-	int i;
 	Uchar *caSamples = new Uchar[sample_count]; // cpu mem
 	Uchar *kaSamples = nullptr; // gpu mem
 	Uint caCount_init[BIN256] = {}; // histogram init counted, the correct answer
@@ -38,14 +38,7 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 	HANDLE_ERROR( cudaEventCreate(&stop) );
 
 	// fill caSamples[] and caCount_init[]
-	//
-	srand(0x40);
-	for(i=0; i<sample_count; i++)
-	{
-		int ball = rand() % BIN256;
-		caSamples[i] = ball;
-		caCount_init[ball]++ ;
-	}
+	prepare_samples(caSamples, sample_count, caCount_init);
 
 	printf("[%s] Counting %d samples ...\n", title, sample_count);
 
@@ -104,7 +97,7 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 	}
 	else
 	{
-		printf("ERROR: Unknown title requested: %s\n", title);
+		printf("ERROR: Unknown GPU title requested: %s\n", title);
 		exit(1);
 	}
 
@@ -130,17 +123,9 @@ void generate_histogram(const char *title, int sample_count, int threads_per_blo
 	// Verify GPU-counted result.
 	//
 	printf("Verifying... ");
-	for(i=0; i<BIN256; i++)
-	{
-		if(caCount[i]!=caCount_init[i])
-		{
-			printf("ERROR at sample index %d, correct: %d , wrong: %d\n",
-				i, caCount_init[i], caCount[i]);
-			
-			errprefix = "Error!!!";
-			break;
-		}
-	}
+	bool vsucc = verify_bin_result(caCount_init, caCount);
+	if(!vsucc)
+		errprefix = "Error!!!";
 
 	float elapse_millisec = 0;
 	HANDLE_ERROR( cudaEventElapsedTime( &elapse_millisec, start, stop ) );
@@ -206,15 +191,20 @@ main_myhistogram(int argc, char* argv[])
 		exit(1);
 	}
 
+	generate_histogram_cpu("CPU_one_thread", sample_count);
+	printf("\n");
+	generate_histogram_cpu("CPU_two_threads", sample_count);
+	printf("\n");
+
 	myPrintGpuInfo();
 
-	generate_histogram("p98:myhistogram_01", sample_count, threads_per_block, Nbatch);
+	generate_histogram_gpu("p98:myhistogram_01", sample_count, threads_per_block, Nbatch);
 	printf("\n");
-	generate_histogram("p99:myhistogram_02", sample_count, threads_per_block, Nbatch);
+	generate_histogram_gpu("p99:myhistogram_02", sample_count, threads_per_block, Nbatch);
 	printf("\n");
-	generate_histogram("p101:myhistogram_03a", sample_count, threads_per_block, Nbatch);
+	generate_histogram_gpu("p101:myhistogram_03a", sample_count, threads_per_block, Nbatch);
 	printf("\n");
-	generate_histogram("myhistogram_03b", sample_count, threads_per_block, Nbatch);
+	generate_histogram_gpu("myhistogram_03b", sample_count, threads_per_block, Nbatch);
 	printf("\n");
-	generate_histogram("p102:myhistogram_07", sample_count, threads_per_block, Nbatch);
+	generate_histogram_gpu("p102:myhistogram_07", sample_count, threads_per_block, Nbatch);
 }
