@@ -102,12 +102,12 @@ void generate_histogram_cpu(const char *title, int sample_count)
 
 	if(usec_used==0)
 	{
-		printf("%s (0 millisec)\n", 
+		printf("%s REAL: 0 millisec\n", 
 			errprefix ? errprefix : "Success.");
 	}
 	else
 	{
-		printf("%s (%.5g millisec, %.5g GB/s)\n", 
+		printf("%s REAL: %.5g millisec, %.5g GB/s\n", 
 			errprefix ? errprefix : "Success.",
 			(double)usec_used/1000,
 			(double)sample_count/1000/usec_used);

@@ -29,15 +29,18 @@ void generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	Uint caCount_init[BIN256] = {}; // histogram init counted, the correct answer
 	Uint caCount[BIN256] = {}; 
 	Uint *kaCount = nullptr;      // histogram counted by gpu
-	
-	cudaEvent_t start = nullptr, stop = nullptr; // for GPU timing
-	HANDLE_ERROR( cudaEventCreate(&start) );
-	HANDLE_ERROR( cudaEventCreate(&stop) );
 
 	// fill caSamples[] and caCount_init[]
 	prepare_samples(caSamples, sample_count, caCount_init);
 
 	printf("[%s] Counting %d samples ...\n", title, sample_count);
+
+	// Start REAL timing (will calculate realworld elapsed time)
+	uint64 usec_start = ps_GetOsMicrosecs64();
+
+	cudaEvent_t start = nullptr, stop = nullptr; // for GPU timing
+	HANDLE_ERROR( cudaEventCreate(&start) );
+	HANDLE_ERROR( cudaEventCreate(&stop) );
 
 	// Copy host-RAM to gpu-RAM
 
@@ -115,6 +118,10 @@ void generate_histogram_gpu(const char *title, int sample_count, int threads_per
 
 	HANDLE_ERROR( cudaMemcpy(caCount, kaCount, BIN256*sizeof(int), cudaMemcpyDeviceToHost) );
 
+	// Stop REAL timing 
+	uint64 usec_stop = ps_GetOsMicrosecs64();
+	uint64 usec_used = usec_stop - usec_start;
+
 	const char *errprefix = nullptr;
 
 	// Verify GPU-counted result.
@@ -124,20 +131,22 @@ void generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	if(!vsucc)
 		errprefix = "Error!!!";
 
-	float elapse_millisec = 0;
-	HANDLE_ERROR( cudaEventElapsedTime( &elapse_millisec, start, stop ) );
+	float gpu_elapse_millisec = 0;
+	HANDLE_ERROR( cudaEventElapsedTime( &gpu_elapse_millisec, start, stop ) );
 
-	if(elapse_millisec==0)
+	if(gpu_elapse_millisec==0)
 	{
-		printf("%s (0 millisec)\n", 
-			errprefix ? errprefix : "Success.");
+		printf("%s REAL: %.5g millisec (GPU-only: 0 millisec)\n", 
+			errprefix ? errprefix : "Success.",
+			(double)usec_used/1000);
 	}
 	else
 	{
-		printf("%s (%.5g millisec, %.5g GB/s)\n", 
+		printf("%s REAL: %.5g millisec (GPU-only: %.5g millisec, %.5g GB/s)\n", 
 			errprefix ? errprefix : "Success.",
-			elapse_millisec, 
-			((double)sample_count/(1000*1000))/elapse_millisec);
+			(double)usec_used/1000,
+			gpu_elapse_millisec, 
+			((double)sample_count/(1000*1000))/gpu_elapse_millisec);
 	}
 
 	// Release resources.
