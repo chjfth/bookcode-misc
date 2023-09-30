@@ -48,8 +48,12 @@ bool ggt_simple_thread_waitend(GGT_HSimpleThread h);
 
 
 MakeCleanupPtrClass_delete(Cec_delete_Uchar, Uchar*)
-MakeCleanupPtrClass(Cec_cudaFree, cudaError_t, cudaFree, void*)
-MakeCleanupPtrClass(Cec_cudaEventDestroy, cudaError_t, cudaEventDestroy, cudaEvent_t)
+
+inline cudaError_t wrapper_cudaFree(void *p){ return cudaFree(p); }
+MakeCleanupPtrClass(Cec_cudaFree, cudaError_t, wrapper_cudaFree, void*)
+
+inline cudaError_t wrapper_cudaEventDestroy(cudaEvent_t evt){ return cudaEventDestroy(evt); }
+MakeCleanupPtrClass(Cec_cudaEventDestroy, cudaError_t, wrapper_cudaEventDestroy, cudaEvent_t)
 
 
 void prepare_samples(Uchar *arSamples, int sample_count, Uint arCount[BIN256]);

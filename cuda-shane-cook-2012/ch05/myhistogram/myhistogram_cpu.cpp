@@ -40,6 +40,8 @@ void _cpu_count_histogram(void *param) // as CPU thread function
 
 	for(int i=0; i<tp.sample_count; i++)
 	{
+		// Note: Since x86 & x64 "inc 1" is only one instruction(inherently atomic),
+		// I just do plain ++ here.
 		tp.arCount[tp.arSamples[i]]++;
 	}
 }
