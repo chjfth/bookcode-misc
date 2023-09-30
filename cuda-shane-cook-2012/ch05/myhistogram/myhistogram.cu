@@ -21,10 +21,12 @@ void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 	}
 }
 
-void generate_histogram_gpu(const char *title, int sample_count, int threads_per_block,
+bool generate_histogram_gpu(const char *title, int sample_count, int threads_per_block,
 	int Nbatch)
 {
 	Uchar *caSamples = new Uchar[sample_count]; // cpu mem
+	Cec_delete_Uchar _caSamples(caSamples);
+
 	Uchar *kaSamples = nullptr; // gpu mem
 	Uint caCount_init[BIN256] = {}; // histogram init counted, the correct answer
 	Uint caCount[BIN256] = {}; 
@@ -40,14 +42,18 @@ void generate_histogram_gpu(const char *title, int sample_count, int threads_per
 
 	cudaEvent_t start = nullptr, stop = nullptr; // for GPU timing
 	HANDLE_ERROR( cudaEventCreate(&start) );
+	Cec_cudaEventDestroy _start(start);
 	HANDLE_ERROR( cudaEventCreate(&stop) );
+	Cec_cudaEventDestroy _stop(stop);
 
 	// Copy host-RAM to gpu-RAM
 
 	HANDLE_ERROR( cudaMalloc((void**)&kaSamples, sample_count) );
+	Cec_cudaFree _kaSamples(kaSamples);
 	HANDLE_ERROR( cudaMemcpy(kaSamples, caSamples, sample_count, cudaMemcpyHostToDevice) );
 
 	HANDLE_ERROR( cudaMalloc((void**)&kaCount, BIN256*sizeof(int)) );
+	Cec_cudaFree _kaCount(kaCount);
 	HANDLE_ERROR( cudaMemcpy(kaCount, caCount, BIN256*sizeof(int), cudaMemcpyHostToDevice) );
 
 	// start kernel-call timing
@@ -97,8 +103,8 @@ void generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	}
 	else
 	{
-		printf("ERROR: Unknown GPU title requested: %s\n", title);
-		exit(1);
+		printf("[%s] Unknown GPU title requested.\n", title);
+		return false;
 	}
 
 	// Check kernel launch success/fail.
@@ -107,7 +113,7 @@ void generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	if(kerr) {
 		printf("[%s] ERROR launching kernel call, errcode: %d (%s)\n", title, 
 			kerr, cudaGetErrorString(kerr));
-		exit(4);
+		return false;
 	}
 
 	// stop kernel-call timing
@@ -149,10 +155,7 @@ void generate_histogram_gpu(const char *title, int sample_count, int threads_per
 			((double)sample_count/(1000*1000))/gpu_elapse_millisec);
 	}
 
-	// Release resources.
-	HANDLE_ERROR( cudaFree(kaCount) );
-	HANDLE_ERROR( cudaFree(kaSamples) );
-	delete caSamples;
+	return true;
 }
 
 

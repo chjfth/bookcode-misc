@@ -1,9 +1,9 @@
 #ifndef __mykernels_h_
 #define __mykernels_h_
 
-extern"C"{
-
 #include "../../share/share.h"
+
+extern"C"{
 
 __global__ void myhistogram_01( // @page 98
 	const unsigned char * d_hist_data,

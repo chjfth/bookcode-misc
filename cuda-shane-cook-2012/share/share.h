@@ -7,6 +7,7 @@
 #include <assert.h>
 #include <cuda.h>
 #include <cuda_runtime.h>
+#include "EnsureClnup.h"
 
 extern"C"{
 
@@ -43,6 +44,12 @@ GGT_HSimpleThread ggt_simple_thread_create(PROC_ggt_simple_thread proc, void *pa
 // return non-NULL handle on thread creation success.
 
 bool ggt_simple_thread_waitend(GGT_HSimpleThread h);
+
+
+
+MakeCleanupPtrClass_delete(Cec_delete_Uchar, Uchar*)
+MakeCleanupPtrClass(Cec_cudaFree, cudaError_t, cudaFree, void*)
+MakeCleanupPtrClass(Cec_cudaEventDestroy, cudaError_t, cudaEventDestroy, cudaEvent_t)
 
 
 void prepare_samples(Uchar *arSamples, int sample_count, Uint arCount[BIN256]);
