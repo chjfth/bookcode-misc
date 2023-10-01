@@ -10,6 +10,7 @@ quite appositely matches the author's words.
 #include "../../share/share.h"
 #include "mykernels.h"
 
+const char *g_version = "20230930.1";
 
 void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {
@@ -35,7 +36,8 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	// fill caSamples[] and caCount_init[]
 	prepare_samples(caSamples, sample_count, caCount_init);
 
-	printf("[%s] Counting %d samples ...\n", title, sample_count);
+	printf("[%s] Counting %d samples, %d threads ...\n", title, 
+		sample_count, threads_per_block);
 
 	// Start REAL timing (will calculate realworld elapsed time)
 	uint64 usec_start = ps_GetOsMicrosecs64();
@@ -164,6 +166,7 @@ main_myhistogram(int argc, char* argv[])
 {
 	if(argc==1)
 	{
+		printf("myhistogram.exe version %s\n", g_version);
 		printf("Usage:\n");
 		printf("    myhistogram <histogram_sample_count> [threads_per_block] [Nbatch]\n");
 		printf("\n");
