@@ -111,7 +111,7 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 
 	// Check kernel launch success/fail.
 
-	cudaError_t kerr = cudaPeekAtLastError();
+	cudaError_t kerr = cudaGetLastError();
 	if(kerr) {
 		printf("[%s] ERROR launching kernel call, errcode: %d (%s)\n", title, 
 			kerr, cudaGetErrorString(kerr));
