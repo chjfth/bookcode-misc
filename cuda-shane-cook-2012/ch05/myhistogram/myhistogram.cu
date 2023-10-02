@@ -10,7 +10,7 @@ quite appositely matches the author's words.
 #include "../../share/share.h"
 #include "mykernels.h"
 
-const char *g_version = "20231002.2";
+const char *g_version = "20231003.1";
 
 void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {
@@ -85,6 +85,8 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	}
 	assert(num_blocks>0);
 
+	dim3 griddim = my_blocks_to_dim3(num_blocks);
+
 	printf("[%s] Counting %d samples (%d blocks * %d threads) ...\n", title, 
 		sample_count, num_blocks, threads_per_block);
 
@@ -107,29 +109,29 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 
 	if(strcmp(title, "p98:myhistogram_01")==0)
 	{
-		myhistogram_01<<<num_blocks, threads_per_block>>>
+		myhistogram_01<<<griddim, threads_per_block>>>
 			(kaSamples, kaCount, sample_count);
 	}
 	else if(strcmp(title, "p99:myhistogram_02")==0)
 	{
-		myhistogram_02<<<num_blocks, threads_per_block>>>
+		myhistogram_02<<<griddim, threads_per_block>>>
 			((Uint*)kaSamples, kaCount, sample_ints);
 	}
 	else if(strcmp(title, "myhistogram_03b")==0)
 	{
-		myhistogram_03b<<<num_blocks, threads_per_block>>>
+		myhistogram_03b<<<griddim, threads_per_block>>>
 			(kaSamples, kaCount, sample_count);
 	}
 	else if(strcmp(title, "p101:myhistogram_03a")==0)
 	{
-		myhistogram_03a<<<num_blocks, threads_per_block>>>
+		myhistogram_03a<<<griddim, threads_per_block>>>
 			((Uint*)kaSamples, kaCount, sample_ints);
 	}
 	else if(strcmp(title, "p102:myhistogram_07")==0)
 	{
 		printf("Using Nbatch = %d\n", Nbatch);
 
-		myhistogram_07<<<num_blocks, threads_per_block>>>
+		myhistogram_07<<<griddim, threads_per_block>>>
 			((Uint*)kaSamples, kaCount, sample_ints, Nbatch);
 	}
 	else
@@ -195,9 +197,10 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 extern"C" void 
 main_myhistogram(int argc, char* argv[])
 {
+	printf("myhistogram version %s\n", g_version);
+
 	if(argc==1)
 	{
-		printf("myhistogram.exe version %s\n", g_version);
 		printf("Usage:\n");
 		printf("    myhistogram <histogram_sample_count> [threads_per_block] [Nbatch]\n");
 		printf("\n");

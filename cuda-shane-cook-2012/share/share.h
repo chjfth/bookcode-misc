@@ -98,6 +98,36 @@ static void HandleError( cudaError_t err,
 
 void myPrintGpuInfo();
 
+inline dim3 my_blocks_to_dim3(int num_blocks)
+{
+	const int WIDTHX = 16384;
+	const int WIDTHY = 16384;
+	dim3 d(1, 1, 1);
+
+	if(num_blocks<=WIDTHX)
+	{
+		d.x = num_blocks;
+	}
+	else
+	{
+		d.x = WIDTHX;
+
+		int yz = OCC_DIVIDE(num_blocks, WIDTHX);
+
+		if(yz<=WIDTHY)
+		{
+			d.y = yz;
+		}
+		else
+		{
+			d.y = OCC_DIVIDE(yz, WIDTHY);
+		}
+	}
+
+	return d;
+}
+
+
 }; // extern"C"
 
 #endif
