@@ -10,7 +10,7 @@ quite appositely matches the author's words.
 #include "../../share/share.h"
 #include "mykernels.h"
 
-const char *g_version = "20231002.1";
+const char *g_version = "20231002.2";
 
 void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {
@@ -36,29 +36,69 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	// fill caSamples[] and caCount_init[]
 	prepare_samples(caSamples, sample_count, caCount_init);
 
-	printf("[%s] Counting %d samples, %d threads/blk ...\n", title, 
-		sample_count, threads_per_block);
-
-	// Start REAL timing (will calculate realworld elapsed time)
-	uint64 usec_start = ps_GetOsMicrosecs64();
-
 	cudaEvent_t start = nullptr, stop = nullptr; // for GPU timing
 	HANDLE_ERROR( cudaEventCreate(&start) );
 	Cec_cudaEventDestroy _start(start);
 	HANDLE_ERROR( cudaEventCreate(&stop) );
 	Cec_cudaEventDestroy _stop(stop);
 
-	// Copy host-RAM to gpu-RAM
-
+	// Allocate GPU RAM.
 	HANDLE_ERROR( cudaMalloc((void**)&kaSamples, sample_count) );
 	Cec_cudaFree _kaSamples(kaSamples);
-	HANDLE_ERROR( cudaMemcpy(kaSamples, caSamples, sample_count, cudaMemcpyHostToDevice) );
-
 	HANDLE_ERROR( cudaMalloc((void**)&kaCount, BIN256*sizeof(int)) );
 	Cec_cudaFree _kaCount(kaCount);
+
+	int sample_ints = sample_count/4;
+	int num_blocks = 0;
+
+	if(strcmp(title, "p98:myhistogram_01")==0)
+	{
+		num_blocks = OCC_DIVIDE(sample_count, threads_per_block);
+	}
+	else if(strcmp(title, "p99:myhistogram_02")==0)
+	{
+		ReportErrorIfNot4xSamples(title, sample_count);
+
+		num_blocks = OCC_DIVIDE(sample_ints, threads_per_block);
+	}
+	else if(strcmp(title, "myhistogram_03b")==0)
+	{
+		num_blocks = OCC_DIVIDE(sample_count, threads_per_block);
+	}
+	else if(strcmp(title, "p101:myhistogram_03a")==0)
+	{
+		ReportErrorIfNot4xSamples(title, sample_count);
+
+		num_blocks = OCC_DIVIDE(sample_ints, threads_per_block);
+	}
+	else if(strcmp(title, "p102:myhistogram_07")==0)
+	{
+		ReportErrorIfNot4xSamples(title, sample_count);
+
+		Uint granularity = threads_per_block * Nbatch;
+		num_blocks = OCC_DIVIDE(sample_ints, granularity);
+	}
+	else
+	{
+		printf("[%s] Unknown GPU title requested.\n", title);
+		return false;
+	}
+	assert(num_blocks>0);
+
+	printf("[%s] Counting %d samples (%d blocks * %d threads) ...\n", title, 
+		sample_count, num_blocks, threads_per_block);
+
+	// Start REAL timing (will calculate real-world elapsed milliseconds)
+	uint64 usec_start = ps_GetOsMicrosecs64();
+
+	// Copy host-RAM to gpu-RAM
+
+	HANDLE_ERROR( cudaMemcpy(kaSamples, caSamples, sample_count, cudaMemcpyHostToDevice) );
 	HANDLE_ERROR( cudaMemcpy(kaCount, caCount, BIN256*sizeof(int), cudaMemcpyHostToDevice) );
 
-	// start kernel-call timing
+	//////////////////////////////
+	// start kernel-call timing //
+	//////////////////////////////
 	HANDLE_ERROR( cudaEventRecord( start, 0 ) ); 
 
 	//
@@ -67,40 +107,29 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 
 	if(strcmp(title, "p98:myhistogram_01")==0)
 	{
-		myhistogram_01<<<OCC_DIVIDE(sample_count, threads_per_block), threads_per_block>>>
+		myhistogram_01<<<num_blocks, threads_per_block>>>
 			(kaSamples, kaCount, sample_count);
 	}
 	else if(strcmp(title, "p99:myhistogram_02")==0)
 	{
-		ReportErrorIfNot4xSamples(title, sample_count);
-
-		int sample_ints = sample_count/4;
-		myhistogram_02<<<OCC_DIVIDE(sample_ints, threads_per_block), threads_per_block>>>
-			((Uint*)kaSamples, kaCount, sample_ints);
-	}
-	else if(strcmp(title, "p101:myhistogram_03a")==0)
-	{
-		ReportErrorIfNot4xSamples(title, sample_count);
-
-		int sample_ints = sample_count/4;
-		myhistogram_03a<<<OCC_DIVIDE(sample_ints, threads_per_block), threads_per_block>>>
+		myhistogram_02<<<num_blocks, threads_per_block>>>
 			((Uint*)kaSamples, kaCount, sample_ints);
 	}
 	else if(strcmp(title, "myhistogram_03b")==0)
 	{
-		myhistogram_03b<<<OCC_DIVIDE(sample_count, threads_per_block), threads_per_block>>>
+		myhistogram_03b<<<num_blocks, threads_per_block>>>
 			(kaSamples, kaCount, sample_count);
+	}
+	else if(strcmp(title, "p101:myhistogram_03a")==0)
+	{
+		myhistogram_03a<<<num_blocks, threads_per_block>>>
+			((Uint*)kaSamples, kaCount, sample_ints);
 	}
 	else if(strcmp(title, "p102:myhistogram_07")==0)
 	{
-		ReportErrorIfNot4xSamples(title, sample_count);
-
 		printf("Using Nbatch = %d\n", Nbatch);
 
-		int sample_ints = sample_count/4;
-		Uint granularity = threads_per_block * Nbatch;
-
-		myhistogram_07<<<OCC_DIVIDE(sample_ints, granularity), threads_per_block>>>
+		myhistogram_07<<<num_blocks, threads_per_block>>>
 			((Uint*)kaSamples, kaCount, sample_ints, Nbatch);
 	}
 	else
@@ -118,7 +147,9 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 		return false;
 	}
 
-	// stop kernel-call timing
+	/////////////////////////////
+	// stop kernel-call timing //
+	/////////////////////////////
 	HANDLE_ERROR( cudaEventRecord( stop, 0 ) ); 
 	HANDLE_ERROR( cudaEventSynchronize( stop ) );
 

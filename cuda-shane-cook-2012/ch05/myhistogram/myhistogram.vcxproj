@@ -131,6 +131,9 @@
     </ClCompile>
     <CudaCompile Condition="'$(Platform)'=='x64'">
       <TargetMachinePlatform>64</TargetMachinePlatform>
+      <!-- 
+      <CodeGeneration>compute_30,sm_30</CodeGeneration>
+      -->
     </CudaCompile>
     <Link>
       <SubSystem>Console</SubSystem>
