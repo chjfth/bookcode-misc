@@ -10,7 +10,7 @@ quite appositely matches the author's words.
 #include "../../share/share.h"
 #include "mykernels.h"
 
-const char *g_version = "20230930.1";
+const char *g_version = "20231002.1";
 
 void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {
@@ -36,7 +36,7 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	// fill caSamples[] and caCount_init[]
 	prepare_samples(caSamples, sample_count, caCount_init);
 
-	printf("[%s] Counting %d samples, %d threads ...\n", title, 
+	printf("[%s] Counting %d samples, %d threads/blk ...\n", title, 
 		sample_count, threads_per_block);
 
 	// Start REAL timing (will calculate realworld elapsed time)
@@ -173,14 +173,14 @@ main_myhistogram(int argc, char* argv[])
 		printf("Examples:\n");
 		printf("    myhistogram 1024\n");
 		printf("    myhistogram 1024000 512\n");
-		printf("    myhistogram 8 1 2\n");
+		printf("    myhistogram 16 1 2\n");
 		printf("    myhistogram 10240000 512 8\n");
 		exit(1);
 	}
 
 	int sample_count = strtoul(argv[1], nullptr, 0);
 	int threads_per_block = 256;
-	int Nbatch = 1;
+	int Nbatch = 8;
 
 	if(argc>2) {
 		threads_per_block = strtoul(argv[2], nullptr, 0);
@@ -214,9 +214,9 @@ main_myhistogram(int argc, char* argv[])
 	printf("\n");
 	generate_histogram_gpu("p99:myhistogram_02", sample_count, threads_per_block, Nbatch);
 	printf("\n");
-	generate_histogram_gpu("p101:myhistogram_03a", sample_count, threads_per_block, Nbatch);
-	printf("\n");
 	generate_histogram_gpu("myhistogram_03b", sample_count, threads_per_block, Nbatch);
+	printf("\n");
+	generate_histogram_gpu("p101:myhistogram_03a", sample_count, threads_per_block, Nbatch);
 	printf("\n");
 	generate_histogram_gpu("p102:myhistogram_07", sample_count, threads_per_block, Nbatch);
 }

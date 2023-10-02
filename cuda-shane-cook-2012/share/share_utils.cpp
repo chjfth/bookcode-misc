@@ -68,7 +68,7 @@ void myPrintGpuInfo()
 	HANDLE_ERROR( cudaGetDeviceProperties( &prop, 0 ) );
 
 	char gpustr[120] = {};
-	printf("GPU: %s, CUDA driver: %d\n",
+	printf("==== GPU: %s, CUDA driver: %d ====\n",
 		prop.name,
 		drvver
 		);
