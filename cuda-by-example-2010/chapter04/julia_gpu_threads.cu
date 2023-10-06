@@ -110,6 +110,11 @@ int main( int argc, char *argv[] )
 	
 	unsigned int64 usec_done1 = ps_GetOsMicrosecs64(); // chj
 
+#define CHECK_MY_KERNEL_LAUNCH // 2023-10-06
+#ifdef CHECK_MY_KERNEL_LAUNCH
+	PRINT_ERROR(cudaGetLastError());
+#endif
+
     cudaError_t cudaerr = PRINT_ERROR( cudaMemcpy( bitmap.get_ptr(), dev_bitmap,
                               bitmap.image_size(),
                               cudaMemcpyDeviceToHost ) );
@@ -137,7 +142,18 @@ int main( int argc, char *argv[] )
 }
 
 /*
-PENDINGQ: 
+Q: 
+
 	julia_gpu_threads 32 1.5
-draws ok, but if I use a larger value than 32, the entire canvas will be blank. Why?
+
+draws ok, but if I use a larger value than 32 (e.g. 100), the entire canvas will be blank. Why?
+
+A: [2023-10-06] That's because, using dim=100, we will exceed the limit of MaxThreadsPerBlock.
+
+On most GPU model, MaxThreadsPerBlock is 1024, so 32*32=1024, just within the limit.
+
+Using dim=100, cudaGetLastError() will report kernel-launch error with 
+
+	[CUDAERR:9](cudaErrorInvalidConfiguration)
+
 */
