@@ -10,7 +10,7 @@ quite appositely matches the author's words.
 #include "../../share/share.h"
 #include "mykernels.h"
 
-const char *g_version = "20231003.1";
+const char *g_version = "20231007.1";
 
 void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {
@@ -170,7 +170,7 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	printf("Verifying... ");
 	bool vsucc = verify_bin_result(caCount_init, caCount);
 	if(!vsucc)
-		errprefix = "Error!!!";
+		errprefix = " ##### ERROR DETECTED. #####\n";
 
 	float gpu_elapse_millisec = 0;
 	HANDLE_ERROR( cudaEventElapsedTime( &gpu_elapse_millisec, start, stop ) );

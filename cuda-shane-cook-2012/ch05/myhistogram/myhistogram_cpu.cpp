@@ -100,7 +100,7 @@ void generate_histogram_cpu(const char *title, int sample_count)
 	const char *errprefix = nullptr;
 	bool vsucc = verify_bin_result(arCount_init, arCount);
 	if(!vsucc)
-		errprefix = "Error!!!";
+		errprefix = " ##### Error Detected. #####\n";
 
 	if(usec_used==0)
 	{
