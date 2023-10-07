@@ -10,7 +10,7 @@ quite appositely matches the author's words.
 #include "../../share/share.h"
 #include "mykernels.h"
 
-const char *g_version = "20231007.1";
+const char *g_version = "20231007.2";
 
 void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {

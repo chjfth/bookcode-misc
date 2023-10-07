@@ -8,12 +8,11 @@ __global__ void myhistogram_07( // @page 102
 {
 	// Chj: Note: this program still implies blockDim.y==1
 
-	assert(blockDim.y==1 && gridDim.y==1);
+	assert(blockDim.y==1);
 
 	/* Work out our thread id */
 	Uint idxN = (blockIdx.x * (blockDim.x*Nbatch)) + threadIdx.x;
 	Uint idyN = (blockIdx.y * blockDim.y) + threadIdx.y;
-	assert(idyN==0);
 	Uint tidN = idxN + idyN * (blockDim.x*Nbatch) * gridDim.x;
 
 	Uint threads_per_block = blockDim.x * blockDim.y;
