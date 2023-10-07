@@ -195,6 +195,7 @@
     <CudaCompile Include="myhistogram.cu" />
     <CudaCompile Include="myhistogram_01.cu" />
     <CudaCompile Include="myhistogram_02.cu" />
+    <CudaCompile Include="myhistogram_02N.cu" />
     <CudaCompile Include="myhistogram_03.cu" />
     <CudaCompile Include="myhistogram_07.cu" />
   </ItemGroup>

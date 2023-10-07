@@ -14,7 +14,13 @@ __global__ void myhistogram_01( // @page 98
 __global__ void myhistogram_02( // @page 99-100
 	const unsigned int * d_hist_data, // note: each call will process 4 bytes(Uint)
 	unsigned int * d_bin_data,
-	int sample_ints) ;
+	int sample_ints);
+
+__global__ void myhistogram_02N( // #02 with Nbatch param
+	const Uint *d_hist_data, 
+	Uint *d_bin_data,
+	int sample_ints,
+	Uint Nbatch);
 
 
 __shared__ unsigned int d_bin_data_shared[BIN256];

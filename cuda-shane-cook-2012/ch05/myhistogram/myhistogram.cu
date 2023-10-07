@@ -10,7 +10,7 @@ quite appositely matches the author's words.
 #include "../../share/share.h"
 #include "mykernels.h"
 
-const char *g_version = "20231007.2";
+const char *g_version = "20231007.3";
 
 void ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {
@@ -51,27 +51,20 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	int sample_ints = sample_count/4;
 	int num_blocks = 0;
 
-	if(strcmp(title, "p98:myhistogram_01")==0)
+	if(strcmp(title, "p98:myhistogram_01")==0 || 
+		strcmp(title, "myhistogram_03b")==0)
 	{
 		num_blocks = OCC_DIVIDE(sample_count, threads_per_block);
 	}
-	else if(strcmp(title, "p99:myhistogram_02")==0)
+	else if(strcmp(title, "p99:myhistogram_02")==0 ||
+		strcmp(title, "p101:myhistogram_03a")==0)
 	{
 		ReportErrorIfNot4xSamples(title, sample_count);
 
 		num_blocks = OCC_DIVIDE(sample_ints, threads_per_block);
 	}
-	else if(strcmp(title, "myhistogram_03b")==0)
-	{
-		num_blocks = OCC_DIVIDE(sample_count, threads_per_block);
-	}
-	else if(strcmp(title, "p101:myhistogram_03a")==0)
-	{
-		ReportErrorIfNot4xSamples(title, sample_count);
-
-		num_blocks = OCC_DIVIDE(sample_ints, threads_per_block);
-	}
-	else if(strcmp(title, "p102:myhistogram_07")==0)
+	else if(strcmp(title, "myhistogram_02N")==0 ||
+		strcmp(title, "p102:myhistogram_07")==0)
 	{
 		ReportErrorIfNot4xSamples(title, sample_count);
 
@@ -116,6 +109,13 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	{
 		myhistogram_02<<<griddim, threads_per_block>>>
 			((Uint*)kaSamples, kaCount, sample_ints);
+	}
+	else if(strcmp(title, "myhistogram_02N")==0)
+	{
+		printf("Using Nbatch = %d\n", Nbatch);
+
+		myhistogram_02N<<<griddim, threads_per_block>>>
+			((Uint*)kaSamples, kaCount, sample_ints, Nbatch);
 	}
 	else if(strcmp(title, "myhistogram_03b")==0)
 	{
@@ -247,6 +247,8 @@ main_myhistogram(int argc, char* argv[])
 	generate_histogram_gpu("p98:myhistogram_01", sample_count, threads_per_block, Nbatch);
 	printf("\n");
 	generate_histogram_gpu("p99:myhistogram_02", sample_count, threads_per_block, Nbatch);
+	printf("\n");
+	generate_histogram_gpu("myhistogram_02N", sample_count, threads_per_block, Nbatch);
 	printf("\n");
 	generate_histogram_gpu("myhistogram_03b", sample_count, threads_per_block, Nbatch);
 	printf("\n");
