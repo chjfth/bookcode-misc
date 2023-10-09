@@ -10,16 +10,18 @@ quite appositely matches the author's words.
 #include "../../share/share.h"
 #include "mykernels.h"
 
-const char *g_version = "20231007.3";
+const char *g_version = "20231009.1";
 
-void ReportErrorIfNot4xSamples(const char *title, int sample_count)
+bool ReportErrorIfNot4xSamples(const char *title, int sample_count)
 {
 	if(sample_count%4 != 0)
 	{
-		printf("ERROR user parameter input: For %s, sample_count must be multiple of 4. You passed in %d.\n",
+		printf("[%s]ERROR user parameter input: sample_count must be multiple of 4. You passed in %d.\n",
 			title, sample_count);
-		exit(1);
+		return false;
 	}
+	else
+		return true;
 }
 
 bool generate_histogram_gpu(const char *title, int sample_count, int threads_per_block,
@@ -59,14 +61,16 @@ bool generate_histogram_gpu(const char *title, int sample_count, int threads_per
 	else if(strcmp(title, "p99:myhistogram_02")==0 ||
 		strcmp(title, "p101:myhistogram_03a")==0)
 	{
-		ReportErrorIfNot4xSamples(title, sample_count);
+		if(!ReportErrorIfNot4xSamples(title, sample_count))
+			return false;
 
 		num_blocks = OCC_DIVIDE(sample_ints, threads_per_block);
 	}
 	else if(strcmp(title, "myhistogram_02N")==0 ||
 		strcmp(title, "p102:myhistogram_07")==0)
 	{
-		ReportErrorIfNot4xSamples(title, sample_count);
+		if(!ReportErrorIfNot4xSamples(title, sample_count))
+			return false;
 
 		Uint granularity = threads_per_block * Nbatch;
 		num_blocks = OCC_DIVIDE(sample_ints, granularity);
