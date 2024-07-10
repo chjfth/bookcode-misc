@@ -1,0 +1,5 @@
+Use compile command:
+
+	nvcc main.cpp myhistogram_cpu.cpp ../../share/share_utils.cpp ../../share/share_utils_linux.cpp  *.cu
+
+Verified on Ubuntu 20.04 with CUDA SDK 10.1 .
