@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <tchar.h>
+// #include <tchar.h>
 #include <locale.h>
 
 extern"C" void main_myhistogram(int argc, char* argv[]);
