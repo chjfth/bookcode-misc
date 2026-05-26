@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32002.261
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pimpl", "pimpl.vslinux.vcxproj", "{20260526-0000-0000-0000-082501000001}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "p150-error", "p150-error\p150-error.vslinux.vcxproj", "{20260526-0000-0000-0000-084915000001}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pimpl_ensureclnup", "pimpl_ensureclnup.vslinux.vcxproj", "{20260526-0000-0000-0000-102951000001}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pimpl_AutoClean", "pimpl_AutoClean.vslinux.vcxproj", "{20260526-0000-0000-0000-102951000002}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,6 +151,38 @@ Global
 		{20260526-0000-0000-0000-102951000001}.Release|x64.Build.0 = Release|x64
 		{20260526-0000-0000-0000-102951000001}.Release|x86.ActiveCfg = Release|Win32
 		{20260526-0000-0000-0000-102951000001}.Release|x86.Build.0 = Release|Win32
+		{20260526-0000-0000-0000-102951000002}.Debug-msvc|ARM.ActiveCfg = Debug-msvc|ARM
+		{20260526-0000-0000-0000-102951000002}.Debug-msvc|ARM.Build.0 = Debug-msvc|ARM
+		{20260526-0000-0000-0000-102951000002}.Debug-msvc|ARM64.ActiveCfg = Debug-msvc|ARM64
+		{20260526-0000-0000-0000-102951000002}.Debug-msvc|ARM64.Build.0 = Debug-msvc|ARM64
+		{20260526-0000-0000-0000-102951000002}.Debug-msvc|x64.ActiveCfg = Debug-msvc|x64
+		{20260526-0000-0000-0000-102951000002}.Debug-msvc|x64.Build.0 = Debug-msvc|x64
+		{20260526-0000-0000-0000-102951000002}.Debug-msvc|x86.ActiveCfg = Debug-msvc|Win32
+		{20260526-0000-0000-0000-102951000002}.Debug-msvc|x86.Build.0 = Debug-msvc|Win32
+		{20260526-0000-0000-0000-102951000002}.Debug-remote-gcc|ARM.ActiveCfg = Debug-remote-gcc|ARM
+		{20260526-0000-0000-0000-102951000002}.Debug-remote-gcc|ARM.Build.0 = Debug-remote-gcc|ARM
+		{20260526-0000-0000-0000-102951000002}.Debug-remote-gcc|ARM64.ActiveCfg = Debug-remote-gcc|ARM64
+		{20260526-0000-0000-0000-102951000002}.Debug-remote-gcc|ARM64.Build.0 = Debug-remote-gcc|ARM64
+		{20260526-0000-0000-0000-102951000002}.Debug-remote-gcc|x64.ActiveCfg = Debug-remote-gcc|x64
+		{20260526-0000-0000-0000-102951000002}.Debug-remote-gcc|x64.Build.0 = Debug-remote-gcc|x64
+		{20260526-0000-0000-0000-102951000002}.Debug-remote-gcc|x86.ActiveCfg = Debug-remote-gcc|x86
+		{20260526-0000-0000-0000-102951000002}.Debug-remote-gcc|x86.Build.0 = Debug-remote-gcc|x86
+		{20260526-0000-0000-0000-102951000002}.Debug-WSL-gcc|ARM.ActiveCfg = Debug-WSL-gcc|ARM
+		{20260526-0000-0000-0000-102951000002}.Debug-WSL-gcc|ARM.Build.0 = Debug-WSL-gcc|ARM
+		{20260526-0000-0000-0000-102951000002}.Debug-WSL-gcc|ARM64.ActiveCfg = Debug-WSL-gcc|ARM64
+		{20260526-0000-0000-0000-102951000002}.Debug-WSL-gcc|ARM64.Build.0 = Debug-WSL-gcc|ARM64
+		{20260526-0000-0000-0000-102951000002}.Debug-WSL-gcc|x64.ActiveCfg = Debug-WSL-gcc|x64
+		{20260526-0000-0000-0000-102951000002}.Debug-WSL-gcc|x64.Build.0 = Debug-WSL-gcc|x64
+		{20260526-0000-0000-0000-102951000002}.Debug-WSL-gcc|x86.ActiveCfg = Debug-WSL-gcc|x86
+		{20260526-0000-0000-0000-102951000002}.Debug-WSL-gcc|x86.Build.0 = Debug-WSL-gcc|x86
+		{20260526-0000-0000-0000-102951000002}.Release|ARM.ActiveCfg = Release|ARM
+		{20260526-0000-0000-0000-102951000002}.Release|ARM.Build.0 = Release|ARM
+		{20260526-0000-0000-0000-102951000002}.Release|ARM64.ActiveCfg = Release|ARM64
+		{20260526-0000-0000-0000-102951000002}.Release|ARM64.Build.0 = Release|ARM64
+		{20260526-0000-0000-0000-102951000002}.Release|x64.ActiveCfg = Release|x64
+		{20260526-0000-0000-0000-102951000002}.Release|x64.Build.0 = Release|x64
+		{20260526-0000-0000-0000-102951000002}.Release|x86.ActiveCfg = Release|Win32
+		{20260526-0000-0000-0000-102951000002}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
