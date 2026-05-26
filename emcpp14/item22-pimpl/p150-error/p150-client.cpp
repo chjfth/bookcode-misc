@@ -1,0 +1,25 @@
+#include "p150-widget.h"
+
+void do_client()
+{
+	// This is deliberate error code.
+	// 
+	// According to EMCPP14 p150 :
+	// This file compiles error, bcz Widget::Impl's class definition is missing.
+	// In the case of using unique_ptr, only a class declaration(incomplete type)
+	// is NOT enough.
+
+	Widget w;
+
+	// VC2019 16.11:
+	//    error C2027: use of undefined type 'Widget::Impl'
+	//
+	// gcc-10.5, gcc-12:
+	//    error: invalid application of ‘sizeof’ to incomplete type ‘Widget::Impl’
+}
+
+int main(int argc, char* argv[])
+{
+	do_client();
+	return 0;
+}
