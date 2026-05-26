@@ -23,7 +23,7 @@ Widget::Widget()
 }
 
 #ifndef USE_ALTERNATIVE
-// Define Wdiget's dtor after Widget::Impl's class body has been seen.
+// Define Widget's dtor after Widget::Impl's class body has been seen.
 Widget::~Widget()
 {	
 }
@@ -31,7 +31,7 @@ Widget::~Widget()
 
 // move-ctor/assign
 //
-Widget::Widget(Widget && rhs) = default; // declarations
+Widget::Widget(Widget && rhs) = default;
 Widget& Widget::operator=(Widget && rhs) = default;
 
 // copy-ctor/assign

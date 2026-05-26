@@ -2,7 +2,9 @@
 
 void do_client()
 {
-	Widget w;
+	Widget w1;
+
+	Widget w2 = w1;
 }
 
 int main(int argc, char *argv[])
