@@ -18,7 +18,6 @@ public:
 };
 
 
-
 class Widget
 {
 public:
@@ -32,6 +31,13 @@ public:
 	// copy-ctor/assign
 	Widget(const Widget& rhs);
 	Widget& operator=(const Widget& rhs);
+
+#if 0
+	static void test_incomplete_type()
+	{
+		AutoClean<Impl> aci(nullptr); // wacky-test
+	}
+#endif
 
 private:
 	struct Impl;

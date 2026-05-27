@@ -12,5 +12,7 @@ int main(int argc, char *argv[])
 {
 	do_client();
 
+//	Widget::test_incomplete_type();
+
 	return 0;
 }
