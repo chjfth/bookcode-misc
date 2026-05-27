@@ -64,3 +64,4 @@ Widget& Widget::operator=(const Widget & rhs)
 	*pImpl = *rhs.pImpl;
 	return *this;
 }
+
