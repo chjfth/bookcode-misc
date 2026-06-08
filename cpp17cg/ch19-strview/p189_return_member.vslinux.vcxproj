@@ -74,9 +74,9 @@
   <!-- User project properties -->
   
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{20260608-0000-0000-0000-092014000001}</ProjectGuid>
-    <ProjectName>strview_ret_member</ProjectName>
-    <TargetName>strview_ret_member</TargetName>
+    <ProjectGuid>{20260608-0000-0000-0000-181132000001}</ProjectGuid>
+    <ProjectName>p189_return_member</ProjectName>
+    <TargetName>p189_return_member</TargetName>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(Configuration.EndsWith('-gcc'))" Label="Globals">
@@ -229,12 +229,12 @@
 
     <!-- [20230326.R1] This is to workround a possible msvc 16.11 VSLinux bug: 
       When launching WSL_1_0 exe, VSIDE will go hard to launch exe inside:
-        /mnt/d/gitw/Templates/msvc/strview_ret_member/bin/x64/Debug-WSL-gcc
+        /mnt/d/gitw/Templates/msvc/p189_return_member/bin/x64/Debug-WSL-gcc
       instead of the correct:
-        /mnt/d/gitw/Templates/msvc/strview_ret_member/bin.linux/x64/Debug-WSL-gcc
+        /mnt/d/gitw/Templates/msvc/p189_return_member/bin.linux/x64/Debug-WSL-gcc
       .
       Without this workaround, user needs to set the `<DebuggerWorkingDirectory>$(OutDir)</DebuggerWorkingDirectory>` 
-      into strview_ret_member.vcxproj.user to make it work.
+      into p189_return_member.vcxproj.user to make it work.
     -->
     <DebuggerWorkingDirectory>$(OutDir)</DebuggerWorkingDirectory>
 
@@ -267,10 +267,10 @@
 
       <PreprocessorDefinitions>;;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 
-      <AdditionalIncludeDirectories>.\devdbg;.;..\..\__chjcxx\common-include\include\mswin;..\..\__chjcxx\common-include\include;..\..\__WinConst;;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\_devdbg;.;..\..\__chjcxx\common-include\include\mswin;..\..\__chjcxx\common-include\include;..\..\__WinConst;;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>    
     <Link>
       <SubSystem>Console</SubSystem>
@@ -339,10 +339,10 @@
   -->
   <ItemDefinitionGroup Condition=" $(Configuration.EndsWith('-gcc'))">
     <ClCompile>
-      <CppLanguageStandard>c++17</CppLanguageStandard>
+      <CppLanguageStandard>c++14</CppLanguageStandard>
       <PreprocessorDefinitions>;;__int64=long long;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 
-      <AdditionalIncludeDirectories>.\devdbg;.;..\..\__chjcxx\common-include\include\linux;..\..\__chjcxx\common-include\include;;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\_devdbg;.;..\..\__chjcxx\common-include\include\linux;..\..\__chjcxx\common-include\include;;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>;;.\myextralib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -386,7 +386,7 @@
     Source file list:
    -->
   <ItemGroup>
-    <ClCompile Include="strview_ret_member.cpp" />
+    <ClCompile Include="p189_return_member.cpp" />
   </ItemGroup>
   <ItemGroup>
     <!-- 

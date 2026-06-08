@@ -7,20 +7,20 @@
 class Person {
 	std::string name;
 public:
-	Person(const char *_name) : name(_name)
+	Person(const char* _name) : name(_name)
 	{}
-	
+
 	std::string_view getName() const { // don’t do this
 		return name;
 	}
 };
 
-Person CreatePerson(const char *name)
+Person CreatePerson(const char* name)
 {
 	return Person(name);
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
 	Person person1("Tim");
 
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	std::cout << "name1: " << n1 << '\n'; // no problem
 
 	auto n2 = CreatePerson("Tom").getName(); // Bad! n2 refers to temporal string.
-	std::cout << "name2: " << n2 << '\n'; 
-	
+	std::cout << "name2: " << n2 << '\n';
+
 	return 0;
 }
